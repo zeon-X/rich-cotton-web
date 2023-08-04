@@ -36,7 +36,7 @@ const Product = () => {
   //   }}
   return (
     <div>
-      <section id="product" className="max-w-[1190pxpx] w-full mx-auto py-12">
+      <section id="product" className="max-w-[1190px] w-full mx-auto py-12">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-5xl font-medium">Our Products</h1>
           <h2 className="text-lg mt-3">
