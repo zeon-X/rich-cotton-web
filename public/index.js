@@ -1,3 +1,3 @@
-import logo from "./icon.png";
+import logo from "./assets/icon.png";
 
 export { logo };
