@@ -46,7 +46,7 @@ const Clients = () => {
 
   return (
     <div>
-      <section id="client" className="max-w-[1280px] w-full mx-auto py-12">
+      <section id="client" className="max-w-[1190pxpx] w-full mx-auto py-12">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-5xl font-medium">Our Clients</h1>
           <h2 className="text-lg mt-3">

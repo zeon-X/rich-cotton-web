@@ -77,7 +77,7 @@ const Team = () => {
 
   return (
     <div>
-      <section id="team" className="max-w-[1280px] w-full mx-auto py-12">
+      <section id="team" className="max-w-[1190pxpx] w-full mx-auto py-12">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-5xl font-medium">Our Team</h1>
           <h2 className="text-lg mt-3">
@@ -105,7 +105,7 @@ const Team = () => {
 */}
 
                   <div className="flex gap-4 mt-6">
-                    <a className="rounded-full p-2" href={x?.social?.fb}>
+                    <a className="rounded-full p-2 border" href={x?.social?.fb}>
                       {" "}
                       <Image
                         src={
@@ -116,7 +116,10 @@ const Team = () => {
                         alt=""
                       />{" "}
                     </a>
-                    <a className="rounded-full p-2" href={x?.social?.insta}>
+                    <a
+                      className="rounded-full p-2 border"
+                      href={x?.social?.insta}
+                    >
                       {" "}
                       <Image
                         src={"https://i.ibb.co/Qr41Gcx/instagram-min.png"}
@@ -125,7 +128,10 @@ const Team = () => {
                         alt=""
                       />{" "}
                     </a>
-                    <a className="rounded-full p-2" href={x?.social?.linkedin}>
+                    <a
+                      className="rounded-full p-2 border"
+                      href={x?.social?.linkedin}
+                    >
                       {" "}
                       <Image
                         src={"https://i.ibb.co/1Tn56Hd/linkedin-min.png"}
@@ -134,7 +140,10 @@ const Team = () => {
                         alt=""
                       />{" "}
                     </a>
-                    <a className="rounded-full p-2" href={x?.social?.twitter}>
+                    <a
+                      className="rounded-full p-2 border"
+                      href={x?.social?.twitter}
+                    >
                       {" "}
                       <Image
                         src={"https://i.ibb.co/BrDM9nQ/twitter-min.png"}

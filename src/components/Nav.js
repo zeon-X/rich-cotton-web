@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <div className="w-full flex flex-col " id="sticky">
       <div className="w-full bg-[#F9F9F9] lg:flex md:hidden sm:hidden items-center h-[40px] ">
-        <div className="max-w-[1280px] w-full mx-auto flex justify-between items-center">
+        <div className="max-w-[1190pxpx] w-full mx-auto flex justify-between items-center">
           <p className="flex gap-4 text-sm text-[#C2C2C2]">
             <a href="tel:+8801715865149">+8801715865149</a>
             <a href="mail:info@richcotton.net">info@richcotton.net</a>
@@ -15,7 +15,7 @@ const Nav = () => {
       </div>
 
       <div className="w-full shadow flex items-center h-[96px]">
-        <div className="max-w-[1280px] w-full mx-auto flex justify-between items-center  ">
+        <div className="max-w-[1190pxpx] w-full mx-auto flex justify-between items-center  ">
           <nav className="flex justify-between items-center w-full">
             <Image src={logo} height={70} width={60} alt="" />
             <div className="flex-none hidden lg:block">
