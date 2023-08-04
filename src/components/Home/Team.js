@@ -95,8 +95,8 @@ const Team = () => {
                     alt={x?.name}
                     className="rounded-full"
                   />
-                  <h1>{x?.name}</h1>
-                  <h2>{x?.position}</h2>
+                  <h1 className="text-lg font-semibold mt-4">{x?.name}</h1>
+                  <h2 className="text-sm ">{x?.position}</h2>
                   {/* 
                       
                       
@@ -104,8 +104,8 @@ const Team = () => {
 
 */}
 
-                  <div className="flex gap-4">
-                    <a href={x?.social?.fb}>
+                  <div className="flex gap-4 mt-6">
+                    <a className="rounded-full p-2" href={x?.social?.fb}>
                       {" "}
                       <Image
                         src={
@@ -116,7 +116,7 @@ const Team = () => {
                         alt=""
                       />{" "}
                     </a>
-                    <a href={x?.social?.insta}>
+                    <a className="rounded-full p-2" href={x?.social?.insta}>
                       {" "}
                       <Image
                         src={"https://i.ibb.co/Qr41Gcx/instagram-min.png"}
@@ -125,7 +125,7 @@ const Team = () => {
                         alt=""
                       />{" "}
                     </a>
-                    <a href={x?.social?.linkedin}>
+                    <a className="rounded-full p-2" href={x?.social?.linkedin}>
                       {" "}
                       <Image
                         src={"https://i.ibb.co/1Tn56Hd/linkedin-min.png"}
@@ -134,7 +134,7 @@ const Team = () => {
                         alt=""
                       />{" "}
                     </a>
-                    <a href={x?.social?.twitter}>
+                    <a className="rounded-full p-2" href={x?.social?.twitter}>
                       {" "}
                       <Image
                         src={"https://i.ibb.co/BrDM9nQ/twitter-min.png"}
