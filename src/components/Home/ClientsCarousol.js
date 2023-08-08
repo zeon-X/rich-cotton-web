@@ -1,4 +1,5 @@
 "use client";
+import useWindowDimensions from "@/utilities/hooks/useWindowDimensions";
 import Carousel from "nuka-carousel";
 import { useEffect, useRef, useState } from "react";
 let cli = [
@@ -48,22 +49,24 @@ const ClientsCarousol = () => {
   const [slidesToScroll, setSlidesToScroll] = useState(3);
   const [cellSpacing, setCellSpacing] = useState(20);
 
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
-  const w = windowSize.current[0];
+  // const windowSize = useRef([window.innerWidth, window.innerHeight]);
+  // const w = windowSize?.current[0];
 
-  // useEffect(() => {
-  //   if (w <= 480) {
-  //     setSlidesToShow(3);
-  //     setSlidesToScroll(2);
-  //     setCellSpacing(10);
-  //   } else if (w > 480 && w < 1024) {
-  //     setSlidesToShow(3);
-  //     setSlidesToScroll(2);
-  //     setCellSpacing(15);
-  //   }
-  // }, [w]);
+  const { height, width } = useWindowDimensions();
 
-  // console.log(w);
+  useEffect(() => {
+    if (width <= 480) {
+      setSlidesToShow(3);
+      setSlidesToScroll(2);
+      setCellSpacing(10);
+    } else if (width > 480 && width < 1024) {
+      setSlidesToShow(3);
+      setSlidesToScroll(2);
+      setCellSpacing(15);
+    }
+  }, [width]);
+
+  console.log(width);
 
   return (
     <Carousel
