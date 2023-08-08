@@ -46,14 +46,14 @@ const Services = () => {
       <section id="service" className="max-w-[1190px] w-full mx-auto py-12">
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-4xl font-medium">Our Services</h1>
-          <h2 className="text-xs mt-3 text-green">
+          <h2 className="text-xs mt-3 text-green text-center">
             Elevating Your Fashion Experience: Our Exceptional Services
           </h2>
 
-          <div className="mt-14 w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
+          <div className="mt-14 w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 lg:gap-6 sm:gap-2">
             {ser?.map((x, index) => {
               return (
-                <div className="border rounded-lg p-6 flex flex-col justify-center items-center">
+                <div className="border rounded-lg lg:p-6 md:p-4 sm:p-4 flex flex-col justify-center items-center">
                   <div className="h-[100px] w-[100px] border rounded-full flex justify-center items-center ">
                     <Image
                       src={x?.icon}

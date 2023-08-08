@@ -48,22 +48,22 @@ const ClientsCarousol = () => {
   const [slidesToScroll, setSlidesToScroll] = useState(3);
   const [cellSpacing, setCellSpacing] = useState(20);
 
-  const windowSize = useRef([window.innerWidth, window.innerHeight]);
-  const w = windowSize.current[0];
+  // const windowSize = useRef([window.innerWidth, window.innerHeight]);
+  // const w = windowSize.current[0];
 
-  useEffect(() => {
-    if (w <= 480) {
-      setSlidesToShow(3);
-      setSlidesToScroll(2);
-      setCellSpacing(10);
-    } else if (w > 480 && w < 1024) {
-      setSlidesToShow(3);
-      setSlidesToScroll(2);
-      setCellSpacing(15);
-    }
-  }, [w]);
+  // useEffect(() => {
+  //   if (w <= 480) {
+  //     setSlidesToShow(3);
+  //     setSlidesToScroll(2);
+  //     setCellSpacing(10);
+  //   } else if (w > 480 && w < 1024) {
+  //     setSlidesToShow(3);
+  //     setSlidesToScroll(2);
+  //     setCellSpacing(15);
+  //   }
+  // }, [w]);
 
-  console.log(w);
+  // console.log(w);
 
   return (
     <Carousel
