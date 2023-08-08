@@ -76,27 +76,43 @@ const Team = () => {
   ];
 
   return (
-    <div>
-      <section id="team" className="max-w-[1190px] w-full mx-auto py-12">
+    <div className="lg:px-6 md:px-4 sm:px-3">
+      <section id="team" className="max-w-[1190px] w-full mx-auto py-14">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-medium">Our Team</h1>
-          <h2 className="text-lg mt-3">
+          <h1 className="text-4xl font-medium">Our Team</h1>
+          <h2 className="text-xs mt-3 text-green">
             Elevating Your Fashion Experience: Our Exceptional Team
           </h2>
 
-          <div className="mt-14 w-full flex flex-wrap justify-center gap-6">
+          <div className="mt-14 w-full flex flex-wrap justify-center lg:gap-6 md:gap-4 sm:gap-2">
             {te?.map((x, index) => {
               return (
-                <div className="w-[280px] h-[360px] rounded-xl border flex flex-col justify-center items-center">
+                <div className="lg:w-[260px] lg:h-[340px] md:w-[200px] md:h-[280px] sm:w-[160px] sm:h-[240px] rounded-lg border flex flex-col justify-center items-center">
                   <Image
                     src={x?.image}
-                    height={160}
-                    width={160}
+                    height={140}
+                    width={140}
                     alt={x?.name}
-                    className="rounded-full"
+                    className="rounded-full lg:block md:hidden sm:hidden"
                   />
-                  <h1 className="text-lg font-semibold mt-4">{x?.name}</h1>
-                  <h2 className="text-sm ">{x?.position}</h2>
+                  <Image
+                    src={x?.image}
+                    height={120}
+                    width={120}
+                    alt={x?.name}
+                    className="rounded-full lg:hidden md:block sm:hidden"
+                  />
+                  <Image
+                    src={x?.image}
+                    height={100}
+                    width={100}
+                    alt={x?.name}
+                    className="rounded-full lg:hidden md:hidden sm:block"
+                  />
+                  <h1 className="lg:text-lg sm:text-md  font-semibold mt-4">
+                    {x?.name}
+                  </h1>
+                  <h2 className="lg:text-sm sm:text-xs ">{x?.position}</h2>
                   {/* 
                       
                       
@@ -104,15 +120,15 @@ const Team = () => {
 
 */}
 
-                  <div className="flex gap-4 mt-6">
+                  <div className="flex lg:gap-2 md:gap-2 sm:gap-1 mt-6">
                     <a className="rounded-full p-2 border" href={x?.social?.fb}>
                       {" "}
                       <Image
                         src={
                           "https://i.ibb.co/WFpLDq4/facebook-app-symbol-min.png"
                         }
-                        height={20}
-                        width={20}
+                        height={14}
+                        width={14}
                         alt=""
                       />{" "}
                     </a>
@@ -123,8 +139,8 @@ const Team = () => {
                       {" "}
                       <Image
                         src={"https://i.ibb.co/Qr41Gcx/instagram-min.png"}
-                        height={20}
-                        width={20}
+                        height={14}
+                        width={14}
                         alt=""
                       />{" "}
                     </a>
@@ -135,8 +151,8 @@ const Team = () => {
                       {" "}
                       <Image
                         src={"https://i.ibb.co/1Tn56Hd/linkedin-min.png"}
-                        height={20}
-                        width={20}
+                        height={14}
+                        width={14}
                         alt=""
                       />{" "}
                     </a>
@@ -147,8 +163,8 @@ const Team = () => {
                       {" "}
                       <Image
                         src={"https://i.ibb.co/BrDM9nQ/twitter-min.png"}
-                        height={20}
-                        width={20}
+                        height={14}
+                        width={14}
                         alt=""
                       />{" "}
                     </a>

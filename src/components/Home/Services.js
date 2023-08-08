@@ -42,18 +42,18 @@ const Services = () => {
   ];
 
   return (
-    <div>
+    <div className="lg:px-6 md:px-4 sm:px-3">
       <section id="service" className="max-w-[1190px] w-full mx-auto py-12">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-medium">Our Services</h1>
-          <h2 className="text-lg mt-3">
+          <h1 className="text-4xl font-medium">Our Services</h1>
+          <h2 className="text-xs mt-3 text-green">
             Elevating Your Fashion Experience: Our Exceptional Services
           </h2>
 
           <div className="mt-14 w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
             {ser?.map((x, index) => {
               return (
-                <div className="border rounded-xl p-6 flex flex-col justify-center items-center">
+                <div className="border rounded-lg p-6 flex flex-col justify-center items-center">
                   <div className="h-[100px] w-[100px] border rounded-full flex justify-center items-center ">
                     <Image
                       src={x?.icon}
@@ -62,7 +62,7 @@ const Services = () => {
                       alt={x?.title}
                     />
                   </div>
-                  <h1 className="text-center text-xl font-semibold mt-6">
+                  <h1 className="text-center text-lg font-medium mt-6">
                     {x?.title}
                   </h1>
                   <p className="text-center text-sm mt-4">{x?.description}</p>

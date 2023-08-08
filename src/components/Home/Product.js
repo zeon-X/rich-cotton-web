@@ -35,34 +35,38 @@ const Product = () => {
   //     backgroundImage: `url(${x?.img})`,
   //   }}
   return (
-    <div>
+    <div className="lg:px-6 md:px-4 sm:px-3">
       <section id="product" className="max-w-[1190px] w-full mx-auto py-12">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-5xl font-medium">Our Products</h1>
-          <h2 className="text-lg mt-3">
+          <h1 className="text-4xl font-medium">Our Products</h1>
+          <h2 className="text-xs mt-3 text-green">
             Click on the product category to see our full range of products.
           </h2>
 
-          {/* <div className="mt-10 w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6"> */}
-          <div className="mt-14 w-full flex flex-wrap justify-center gap-6">
+          <div className="mt-10 w-full grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-6">
+            {/* <div className="mt-14 w-full flex flex-wrap justify-center gap-6"> */}
             {pro?.map((x, index) => {
               return (
                 <div
                   onClick={() => {
                     router.push("/products");
                   }}
-                  className="h-[360px] w-[400px] relative shadow rounded-xl"
+                  className="max-h-[360px] h-full w-full relative shadow rounded"
                 >
-                  <img src={x?.img} height={270} className="rounded-xl" />
+                  <img
+                    src={x?.img}
+                    height={270}
+                    className="rounded w-full h-full"
+                  />
 
                   <div className="absolute top-0 h-full w-full  ">
                     <div
                       style={{
                         backgroundColor: "rgba(0,0,0,0.8)",
                       }}
-                      className="h-full opacity-0 hover:cursor-pointer hover:opacity-1"
+                      className="h-[360px] opacity-0 hover:cursor-pointer hover:opacity-1"
                     ></div>
-                    <div className="absolute bg-lgreen  bottom-0 p-6  w-full rounded-bl-xl rounded-br-xl">
+                    <div className="absolute bg-black  bottom-0 p-6  w-full rounded-bl rounded-br">
                       <h1 className="text-white font-semibold text-2xl">
                         {x?.title}
                       </h1>

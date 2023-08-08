@@ -1,6 +1,6 @@
 import Drawer from "@/components/Drawer";
 import "@/styles/globals.css";
-import { Sora } from "next/font/google";
+import { Roboto, Sora } from "next/font/google";
 
 const getfont = Sora({ subsets: ["latin"] });
 

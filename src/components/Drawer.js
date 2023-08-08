@@ -28,6 +28,9 @@ const Drawer = ({ children }) => {
             <a href="#">Home</a>
           </li>
           <li>
+            <a href="#about">About Us</a>
+          </li>
+          <li>
             <a href="#product">Product</a>
           </li>
           <li>

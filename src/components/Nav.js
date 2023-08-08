@@ -6,7 +6,7 @@ const Nav = () => {
   return (
     <div className="w-full flex flex-col " id="sticky">
       <div className="w-full bg-[#F9F9F9] lg:flex md:hidden sm:hidden items-center h-[40px] ">
-        <div className="max-w-[1190px] w-full mx-auto flex justify-between items-center">
+        <div className="max-w-[1190px] w-full mx-auto lg:px-6 md:px-4 sm:px-3 flex justify-between items-center">
           <p className="flex gap-4 text-sm text-[#C2C2C2]">
             <a href="tel:+8801715865149">+8801715865149</a>
             <a href="mail:info@richcotton.net">info@richcotton.net</a>
@@ -15,13 +15,16 @@ const Nav = () => {
       </div>
 
       <div className="w-full shadow flex items-center h-[96px]">
-        <div className="max-w-[1190px] w-full mx-auto flex justify-between items-center  ">
+        <div className="max-w-[1190px] w-full mx-auto lg:px-6 md:px-4 sm:px-3 flex justify-between items-center  ">
           <nav className="flex justify-between items-center w-full">
             <Image src={logo} height={70} width={60} alt="" />
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
                 <li>
                   <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#about">About Us</a>
                 </li>
                 <li>
                   <a href="#product">Product</a>
