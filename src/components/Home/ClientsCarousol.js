@@ -48,8 +48,8 @@ const ClientsCarousol = () => {
   const [slidesToScroll, setSlidesToScroll] = useState(3);
   const [cellSpacing, setCellSpacing] = useState(20);
 
-  // const windowSize = useRef([window.innerWidth, window.innerHeight]);
-  // const w = windowSize.current[0];
+  const windowSize = useRef([window.innerWidth, window.innerHeight]);
+  const w = windowSize.current[0];
 
   // useEffect(() => {
   //   if (w <= 480) {
