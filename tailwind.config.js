@@ -12,9 +12,7 @@ module.exports = {
       colors: {
         green: "#16AA1B",
         lgreen: "#1acf21",
-      },
-      screens: {
-        "8xl": "1920px",
+        mgreen: "#00925E",
       },
     },
     screens: {

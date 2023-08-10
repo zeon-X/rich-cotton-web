@@ -1,8 +1,11 @@
 import Drawer from "@/components/Drawer";
 import "@/styles/globals.css";
-import { Roboto, Sora } from "next/font/google";
+import { Nunito, Roboto, Sora } from "next/font/google";
 
-const getfont = Sora({ subsets: ["latin"] });
+const getfont = Nunito({
+  subsets: ["latin"],
+  display: "fallback", // <--
+});
 
 export const metadata = {
   title: "Rich Cotton Ltd. - A house of fashion garments soureing",

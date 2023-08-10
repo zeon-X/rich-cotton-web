@@ -1,6 +1,7 @@
 import React from "react";
 import Nav from "./Nav";
 import { logo } from "../../public";
+import Image from "next/image";
 
 const Drawer = ({ children }) => {
   return (
@@ -19,9 +20,24 @@ const Drawer = ({ children }) => {
         <ul className="menu p-4 w-80 h-full bg-white shadow">
           {/* Sidebar content here */}
 
-          <div class="flex gap-2 items-center ">
-            <img src={logo} class="mb-6" height="60" width="70" alt="" />
-            <p class="text-[#128816] text-xl font-bold">Rich Cotton Ltd.</p>
+          <div class="flex gap-2 items-center mb-6 ml-4">
+            <Image
+              src={logo}
+              height={70}
+              width={60}
+              alt=""
+              className="lg:block sm:hidden"
+            />
+            <Image
+              src={logo}
+              height={50}
+              width={40}
+              alt=""
+              className="lg:hidden sm:block"
+            />
+            <p className="text-mgreen lg:text-3xl sm:text-xl font-extrabold">
+              Rich Cotton Ltd.
+            </p>
           </div>
 
           <li>
