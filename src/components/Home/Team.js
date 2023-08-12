@@ -79,8 +79,10 @@ const Team = () => {
     <div className="lg:px-6 md:px-4 sm:px-3">
       <section id="team" className="max-w-[1190px] w-full mx-auto py-14">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-4xl font-medium">Our Team</h1>
-          <h2 className="text-xs mt-3 text-green">
+          <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">
+            Our Team
+          </h1>
+          <h2 className="text-xs mt-3 text-greenxx">
             Elevating Your Fashion Experience: Our Exceptional Team
           </h2>
 
@@ -121,7 +123,12 @@ const Team = () => {
 */}
 
                   <div className="flex lg:gap-2 md:gap-2 sm:gap-1 mt-6">
-                    <a className="rounded-full p-2 border" href={x?.social?.fb}>
+                    <a
+                      className="rounded-full p-2 border"
+                      href={x?.social?.fb}
+                      aria-label="Facebook"
+                      target="_blank"
+                    >
                       {" "}
                       <Image
                         src={
@@ -135,6 +142,8 @@ const Team = () => {
                     <a
                       className="rounded-full p-2 border"
                       href={x?.social?.insta}
+                      aria-label="Instagram"
+                      target="_blank"
                     >
                       {" "}
                       <Image
@@ -147,6 +156,8 @@ const Team = () => {
                     <a
                       className="rounded-full p-2 border"
                       href={x?.social?.linkedin}
+                      aria-label="Linked In"
+                      target="_blank"
                     >
                       {" "}
                       <Image
@@ -159,6 +170,8 @@ const Team = () => {
                     <a
                       className="rounded-full p-2 border"
                       href={x?.social?.twitter}
+                      aria-label="Twitter"
+                      target="_blank"
                     >
                       {" "}
                       <Image

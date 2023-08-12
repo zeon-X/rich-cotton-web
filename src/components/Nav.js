@@ -54,7 +54,7 @@ const Nav = () => {
         </div>
       </div>
 
-      <div className="w-full shadow flex items-center lg:h-[96px] md:h-[76px] sm:h-[66px]">
+      <div className="w-full shadow  flex items-center lg:h-[96px] md:h-[76px] sm:h-[66px]">
         <div className="max-w-[1190px] w-full mx-auto lg:px-6 md:px-4 sm:px-3 flex justify-between items-center  ">
           <nav className="flex justify-between items-center w-full">
             <div className="flex gap-2 items-center">
@@ -79,7 +79,7 @@ const Nav = () => {
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#home">Home</a>
                 </li>
                 <li>
                   <a href="#about">About Us</a>

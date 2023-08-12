@@ -35,13 +35,13 @@ const Drawer = ({ children }) => {
               alt=""
               className="lg:hidden sm:block"
             />
-            <p className="text-mgreen lg:text-3xl sm:text-xl font-extrabold">
+            <p className="text-mgreen lg:text-3xl md:text-xl lg:block md:block sm:hidden font-extrabold">
               Rich Cotton Ltd.
             </p>
           </div>
 
           <li>
-            <a href="#">Home</a>
+            <a href="#home">Home</a>
           </li>
           <li>
             <a href="#about">About Us</a>

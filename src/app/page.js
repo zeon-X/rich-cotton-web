@@ -1,5 +1,6 @@
 import About from "@/components/Home/About";
 import Clients from "@/components/Home/Clients";
+import HomeCarousol from "@/components/Home/HomeCarousol";
 import Product from "@/components/Home/Product";
 import Services from "@/components/Home/Services";
 import Team from "@/components/Home/Team";
@@ -7,6 +8,7 @@ import Team from "@/components/Home/Team";
 export default function Home() {
   return (
     <main className="">
+      <HomeCarousol />
       <About />
       <Product />
       <Clients />

@@ -51,8 +51,10 @@ const Services = () => {
     <div className="lg:px-6 md:px-4 sm:px-3">
       <section id="service" className="max-w-[1190px] w-full mx-auto py-12">
         <div className="flex flex-col justify-center items-center">
-          <h1 className="text-4xl font-medium">Our Services</h1>
-          <h2 className="text-xs mt-3 text-green text-center">
+          <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">
+            Our Services
+          </h1>
+          <h2 className="text-xs mt-3 text-greenxx text-center">
             Elevating Your Fashion Experience: Our Exceptional Services
           </h2>
 

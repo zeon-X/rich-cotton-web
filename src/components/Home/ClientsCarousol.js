@@ -102,7 +102,11 @@ const ClientsCarousol = () => {
         wrapAround={true}
         zoomScale={0.8}
         renderCenterLeftControls={({ previousSlide }) => (
-          <button className="p-1 border rounded-full" onClick={previousSlide}>
+          <button
+            className="p-1 border rounded-full"
+            onClick={previousSlide}
+            aria-label="click left"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
@@ -118,7 +122,11 @@ const ClientsCarousol = () => {
           </button>
         )}
         renderCenterRightControls={({ nextSlide }) => (
-          <button className="p-1 border rounded-full" onClick={nextSlide}>
+          <button
+            className="p-1 border rounded-full"
+            onClick={nextSlide}
+            aria-label="click right"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 20 20"
