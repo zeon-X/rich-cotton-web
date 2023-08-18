@@ -1,5 +1,6 @@
 import Image from "next/image";
 import React from "react";
+import { md } from "../../../public";
 
 const About = () => {
   return (
@@ -16,19 +17,17 @@ const About = () => {
           <div className="lg:w-5/12 md:w-5/12 sm:w-full">
             <div className=" w-full shadow-sm border p-6">
               <Image
-                src={
-                  "https://i.ibb.co/c6Mz643/326330018-865900591346454-4335407135782960927-n.jpg"
-                }
+                src={md}
                 height={200}
                 width={200}
                 alt=""
-                className="rounded-full mx-auto mb-0 sm:mb-4"
+                className="rounded-full shadow mx-auto mb-0 sm:mb-4"
               />
               <div className="max-w-[420px] mx-auto w-full lg:p-6 sm:p-0">
                 <h1 className="text-lg font-semibold text-center">
                   Message From Managing Director
                 </h1>
-                <p className="lg:text-md md:text-md sm:text-xs mt-4  text-center">
+                <p className="lg:text-sm md:text-sm sm:text-xs mt-4  text-center">
                   <i>
                     "Welcome to our website! As the managing director of this
                     company, I would like to thank you for taking the time to

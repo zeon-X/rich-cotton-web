@@ -2,6 +2,7 @@ import React from "react";
 import Nav from "./Nav";
 import { logo } from "../../public";
 import Image from "next/image";
+import BeforeNav from "./BeforeNav";
 
 const Drawer = ({ children }) => {
   return (
@@ -9,7 +10,8 @@ const Drawer = ({ children }) => {
       <input id="drawer_nav_bar" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="w-full  bg-base-300">
+        <BeforeNav />
+        <div className="w-full sticky top-0 z-50 bg-base-300">
           <Nav />
         </div>
         {/* Page content here */}

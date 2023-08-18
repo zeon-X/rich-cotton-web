@@ -6,26 +6,32 @@ const Product = () => {
   const router = useRouter();
   let pro = [
     {
-      title: "Men's Clothing",
+      title: "Men's Wear",
       img: " https://i.ibb.co/ZfNb2CS/Depositphotos-208473398-XL-scaled.jpg",
       category: "Shirts, T-Shirts, Polo Shirts",
       link: "",
     },
     {
-      title: "Womans's Clothing",
+      title: "Ladies's Wear",
       img: "https://i.ibb.co/0M1Y2RC/V-neck-Blouses.png",
       category: "Shirts, Tops, T-Shirts, Polo Shirts",
       link: "",
     },
     {
-      title: "Kid's Boys",
+      title: "Kid's Wear",
       img: "https://i.ibb.co/kDsZ8vZ/boys-fashion.jpg",
       category: "Shirts, Pant, Panjabi",
       link: "",
     },
 
     {
-      title: "Kid's Girls",
+      title: "Active Wear",
+      img: "https://i.ibb.co/WnbBrGb/dolce-and-gabbana-childrenswear-kidswear-kids-children-girls-wear-clothes-apparel.jpg",
+      category: "Shirts, Tops, T-Shirts, Polo Shirts",
+      link: "",
+    },
+    {
+      title: "Work Wear",
       img: "https://i.ibb.co/WnbBrGb/dolce-and-gabbana-childrenswear-kidswear-kids-children-girls-wear-clothes-apparel.jpg",
       category: "Shirts, Tops, T-Shirts, Polo Shirts",
       link: "",
@@ -45,7 +51,7 @@ const Product = () => {
             Click on the product category to see our full range of products.
           </h2>
 
-          <div className="mt-10 w-full grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 gap-6">
+          <div className="mt-10 w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
             {/* <div className="mt-14 w-full flex flex-wrap justify-center gap-6"> */}
             {pro?.map((x, index) => {
               return (
