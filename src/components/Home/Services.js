@@ -54,7 +54,7 @@ const Services = () => {
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">
             Our Services
           </h1>
-          <h2 className="text-xs mt-3 text-greenxx text-center">
+          <h2 className="text-xs text-center mt-3 text-greenxx  text-center">
             Elevating Your Fashion Experience: Our Exceptional Services
           </h2>
 

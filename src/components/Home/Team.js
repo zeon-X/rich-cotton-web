@@ -82,7 +82,7 @@ const Team = () => {
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">
             Our Team
           </h1>
-          <h2 className="text-xs mt-3 text-greenxx">
+          <h2 className="text-xs text-center mt-3 text-greenxx ">
             Elevating Your Fashion Experience: Our Exceptional Team
           </h2>
 

@@ -8,7 +8,7 @@ const Clients = () => {
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">
             Our Clients
           </h1>
-          <h2 className="text-xs mt-3 text-greenxx">
+          <h2 className="text-xs text-center mt-3 text-greenxx ">
             Celebrating Styles: Our Diverse Array of Satisfied Clients
           </h2>
 

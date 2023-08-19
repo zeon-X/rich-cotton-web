@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import { logo } from "../../public";
 import Image from "next/image";
 import BeforeNav from "./BeforeNav";
+import Footer from "./Footer";
 
 const Drawer = ({ children }) => {
   return (
@@ -16,6 +17,7 @@ const Drawer = ({ children }) => {
         </div>
         {/* Page content here */}
         {children}
+        <Footer />
       </div>
       <div className="drawer-side">
         <label htmlFor="drawer_nav_bar" className="drawer-overlay"></label>

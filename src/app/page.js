@@ -1,5 +1,6 @@
 import About from "@/components/Home/About";
 import Clients from "@/components/Home/Clients";
+import Contact from "@/components/Home/Contact";
 import HomeCarousol from "@/components/Home/HomeCarousol";
 import Product from "@/components/Home/Product";
 import Services from "@/components/Home/Services";
@@ -14,6 +15,7 @@ export default function Home() {
       <Clients />
       <Services />
       <Team />
+      <Contact />
     </main>
   );
 }
