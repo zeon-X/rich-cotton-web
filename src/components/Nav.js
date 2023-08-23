@@ -8,7 +8,7 @@ const Nav = () => {
       <div className="w-full shadow bg-white flex items-center lg:h-[86px] md:h-[76px] sm:h-[66px]">
         <div className="max-w-[1190px] w-full mx-auto lg:px-6 md:px-4 sm:px-3 flex justify-between items-center  ">
           <nav className="flex justify-between items-center w-full">
-            <div className="flex gap-2 items-center">
+            <div className="flex gap-4 items-center">
               <Image
                 src={logo}
                 height={70}
@@ -23,9 +23,14 @@ const Nav = () => {
                 alt=""
                 className="lg:hidden sm:block"
               />
-              <p className="text-mgreen lg:text-3xl sm:text-xl font-extrabold">
-                Rich Cotton Ltd.
-              </p>
+              <div>
+                <p className="text-mgreen lg:text-2xl sm:text-xl font-semiboldd">
+                  Rich Cotton Limited
+                </p>
+                <p className="text-mgreenn lg:text-xs  sm:text-xs uppercase tracking-widest ">
+                  Fashion whereever you go
+                </p>
+              </div>
             </div>
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">

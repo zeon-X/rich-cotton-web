@@ -66,7 +66,7 @@ const Contact = () => {
 
           <div className="lg:w-1/2 sm:w-full">
             <h1 className="lg:text-2xl md:text-xl sm:text-xl">
-              Richcotton Ltd.
+              Rich Cotton Ltd.
             </h1>
 
             <div className="mt-6 flex flex-col gap-4">

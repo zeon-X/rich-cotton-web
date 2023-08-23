@@ -6,7 +6,7 @@ import { hCar1, hCar2, hCar3 } from "../../../public";
 const HomeCarousol = () => {
   return (
     <section id="home" className="">
-      <div className="w-full overflow-hidden">
+      <div className="w-full mx-auto overflow-hidden">
         <Carousel
           slidesToShow={1}
           slidesToScroll={1}
@@ -55,7 +55,17 @@ const HomeCarousol = () => {
             </button>
           )}
         >
-          <div className="w-full h-full relative">
+          <div className="flex justify-center items-center">
+            <Image src={hCar1} height={660} width={1800} alt={""} />
+          </div>
+          <div className="flex justify-center items-center">
+            <Image src={hCar2} height={660} width={1800} alt={""} />
+          </div>
+          <div className="flex justify-center items-center">
+            <Image src={hCar3} height={660} width={1800} alt={""} />
+          </div>
+
+          {/* <div className="w-full h-full relative">
             <Image src={hCar1} height={660} width={1800} alt={""} />
             <div className="absolute top-2/4 left-2/4"></div>
           </div>
@@ -66,7 +76,7 @@ const HomeCarousol = () => {
           <div className="w-full h-full relative">
             <Image src={hCar3} height={660} width={1800} alt={""} />
             <div className="absolute top-2/4 left-2/4"></div>
-          </div>
+          </div> */}
         </Carousel>
       </div>
     </section>

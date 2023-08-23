@@ -9,32 +9,32 @@ const Product = () => {
       title: "Men's Wear",
       img: " https://i.ibb.co/ZfNb2CS/Depositphotos-208473398-XL-scaled.jpg",
       category: "Shirts, T-Shirts, Polo Shirts",
-      link: "",
+      link: "mens-wear",
     },
     {
       title: "Ladies's Wear",
       img: "https://i.ibb.co/0M1Y2RC/V-neck-Blouses.png",
       category: "Shirts, Tops, T-Shirts, Polo Shirts",
-      link: "",
+      link: "ladies-wear",
     },
     {
       title: "Kid's Wear",
       img: "https://i.ibb.co/kDsZ8vZ/boys-fashion.jpg",
       category: "Shirts, Pant, Panjabi",
-      link: "",
+      link: "kids-wear",
     },
 
     {
       title: "Active Wear",
       img: "https://i.ibb.co/WnbBrGb/dolce-and-gabbana-childrenswear-kidswear-kids-children-girls-wear-clothes-apparel.jpg",
       category: "Shirts, Tops, T-Shirts, Polo Shirts",
-      link: "",
+      link: "active-wear",
     },
     {
       title: "Work Wear",
       img: "https://i.ibb.co/WnbBrGb/dolce-and-gabbana-childrenswear-kidswear-kids-children-girls-wear-clothes-apparel.jpg",
       category: "Shirts, Tops, T-Shirts, Polo Shirts",
-      link: "",
+      link: "work-wear",
     },
   ];
   //   style={{
@@ -57,7 +57,7 @@ const Product = () => {
               return (
                 <div
                   onClick={() => {
-                    router.push("/products");
+                    router.push(`/products/${x?.link}`);
                   }}
                   className="max-h-[360px] h-full w-full relative shadow rounded"
                 >

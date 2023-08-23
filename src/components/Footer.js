@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="bg-mgreen w-full">
         <div className="max-w-[1190px] mx-auto lg:px-0 md:px-2 sm:px-2 py-10 text-white flex justify-between items-center">
           <p className="text-sm">
-            Copyright © 2018 Richcotton Ltd. | Developed By{" "}
+            Copyright © 2018 Rich Cotton Ltd. | Developed By{" "}
             <a target="_blank" href="aleehatech.com">
               AleehaTech
             </a>

@@ -54,8 +54,8 @@ const About = () => {
             </div>
 
             <p className="lg:text-lg md:text-md sm:text-md ">
-              Richcotton is one of the leading apparel sourcing, buying office
-              and Woven factory in Bangladesh. Richcotton has been doing
+              Rich Cotton is one of the leading apparel sourcing, buying office
+              and Woven factory in Bangladesh. Rich Cotton has been doing
               business with European, American, Canadian, British, Australian &
               South Africans clothing brands.
               <br /> <br />
