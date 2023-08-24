@@ -1,7 +1,7 @@
 import React from "react";
 
 const Certifications = () => {
-  return <div></div>;
+  return <section></section>;
 };
 
 export default Certifications;

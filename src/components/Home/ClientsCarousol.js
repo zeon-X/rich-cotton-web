@@ -93,7 +93,7 @@ const ClientsCarousol = () => {
   console.log(width);
 
   return (
-    <div className="w-full overflow-hidden">
+    <section className="w-full overflow-hidden">
       <Carousel
         slidesToShow={slidesToShow}
         slidesToScroll={slidesToScroll}
@@ -153,7 +153,7 @@ const ClientsCarousol = () => {
           );
         })}
       </Carousel>
-    </div>
+    </section>
   );
 };
 

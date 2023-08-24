@@ -2,7 +2,7 @@ import ClientsCarousol from "./ClientsCarousol";
 
 const Clients = () => {
   return (
-    <div className="lg:px-6 md:px-4 sm:px-3">
+    <section className="lg:px-6 md:px-4 sm:px-3">
       <section id="client" className="max-w-[1190px] w-full mx-auto py-12">
         <div className="flex flex-col justify-center items-center">
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">
@@ -17,7 +17,7 @@ const Clients = () => {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 

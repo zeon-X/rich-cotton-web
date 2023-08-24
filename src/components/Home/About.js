@@ -4,7 +4,7 @@ import { md } from "../../../public";
 
 const About = () => {
   return (
-    <div className="lg:px-6 md:px-4 sm:px-6">
+    <section className="lg:px-6 md:px-4 sm:px-6">
       <section id="about" className="max-w-[1190px] w-full mx-auto py-12">
         {/* <div className="flex flex-col justify-center items-center">
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">About Us</h1>
@@ -80,7 +80,7 @@ const About = () => {
           </div>
         </div>
       </section>
-    </div>
+    </section>
   );
 };
 

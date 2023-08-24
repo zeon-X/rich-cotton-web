@@ -1,11 +1,12 @@
 import Image from "next/image";
 import React from "react";
 import { logo } from "../../public";
+import Link from "next/link";
 
 const Nav = () => {
   return (
     <div className="w-full flex flex-col ">
-      <div className="w-full shadow bg-white flex items-center lg:h-[86px] md:h-[76px] sm:h-[66px]">
+      <div className="w-full  bg-white flex items-center lg:h-[86px] md:h-[76px] sm:h-[66px]">
         <div className="max-w-[1190px] w-full mx-auto lg:px-6 md:px-4 sm:px-3 flex justify-between items-center  ">
           <nav className="flex justify-between items-center w-full">
             <div className="flex gap-4 items-center">
@@ -35,25 +36,26 @@ const Nav = () => {
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
                 <li>
-                  <a href="#home">Home</a>
+                  <a href="/#home">Home</a>
                 </li>
                 <li>
-                  <a href="#about">About Us</a>
+                  <a href="/#about">About Us</a>
                 </li>
                 <li>
-                  <a href="#product">Product</a>
+                  <a href="/#product">Product</a>
                 </li>
                 <li>
-                  <a href="#client">Clients</a>
+                  <a href="/#client">Clients</a>
                 </li>
                 <li>
-                  <a href="#service">Services</a>
+                  <a href="/#service">Services</a>
                 </li>
                 <li>
-                  <a href="#team">Team</a>
+                  <a href="/#team">Team</a>
                 </li>
                 <li>
-                  <a href="#contact">Contact</a>
+                  <a href="/#contact">Contact</a>
+                  {/* <Link href={"/#contact"}/> */}
                 </li>
               </ul>
             </div>
