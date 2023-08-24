@@ -1,11 +1,7 @@
-"use client";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import CategoryProductComponent from "./CategoryProductComponent";
 
 const ProductCategory = ({ productsData, productsTitle, parentCategory }) => {
-  const router = useRouter();
-
   const categories = productsData.map((product) => product.category);
   const uniqueCategories = [...new Set(categories)];
 
@@ -58,29 +54,7 @@ const ProductCategory = ({ productsData, productsTitle, parentCategory }) => {
 
       <div className="flex flex-wrap gap-6 justify-center items-start mt-8">
         {displayProducts?.map((product, index) => {
-          return (
-            <div
-              key={index}
-              onClick={() => {
-                router.push(
-                  `products/${parentCategory}/${product?.productCode}`
-                );
-              }}
-              className="w-[280px] border cursor-pointer hover:scale-95"
-            >
-              <Image
-                src={product?.img}
-                height={240}
-                width={240}
-                alt={product?.product}
-                className="mx-auto my-6"
-              />
-              <div className="bg-lgreen py-3">
-                <h1 className="text-xl text-center">{product?.productCode}</h1>
-                <h2 className="text-md text-center">{product?.category}</h2>
-              </div>
-            </div>
-          );
+          return <CategoryProductComponent key={index} product={product} />;
         })}
       </div>
     </div>

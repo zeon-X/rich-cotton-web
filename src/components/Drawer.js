@@ -24,7 +24,7 @@ const Drawer = ({ children }) => {
         <ul className="menu p-4 w-80 h-full bg-white shadow">
           {/* Sidebar content here */}
 
-          <div class="flex gap-2 items-center mb-6 ml-4">
+          <div className="flex gap-2 items-center mb-6 ml-4">
             <Image
               src={logo}
               height={70}

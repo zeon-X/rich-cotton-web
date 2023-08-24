@@ -1,5 +1,7 @@
 "use client";
-import ProductCategory from "@/components/Products/ProductCategory";
+import ProductDetails from "@/components/Products/ProductDetails";
+import SimilarProductSuggestion from "@/components/Products/SimilarProductSuggestion";
+import { useEffect, useState } from "react";
 
 let data = [
   {
@@ -191,55 +193,56 @@ let data = [
   },
 ];
 
-let title = [
-  {
-    name: "Men's wear",
-    tag: "mens-wear",
-  },
-  {
-    name: "Ladies wear",
-    tag: "ladies-wear",
-  },
-  {
-    name: "Kids wear",
-    tag: "kids-wear",
-  },
-  {
-    name: "Active wear",
-    tag: "active-wear",
-  },
-  {
-    name: "Work wear",
-    tag: "work-wear",
-  },
-];
-
-const page = ({ params }) => {
-  const category = params.slug;
-
-  const filteredProducts = data.filter(
-    (product) => product.parentCategory == category
+const findProductByCodeAndCategory = (products, productCode, parentCategory) =>
+  products.find(
+    (product) =>
+      product.productCode === productCode &&
+      product.parentCategory === parentCategory
   );
 
-  // console.log(filteredProducts);
+const filterProductsByCategoryAndExclude = (
+  products,
+  category,
+  excludedProductCode
+) =>
+  products.filter(
+    (product) =>
+      product.category === category &&
+      product.productCode !== excludedProductCode
+  );
 
-  let matchedTitle = title.find((item) => item?.tag == category);
+const page = ({ params }) => {
+  const productId = params.product;
+  const slug = params.slug;
 
-  if (matchedTitle) {
-    matchedTitle = matchedTitle?.name;
-  } else {
-    matchedTitle = "Rich Cotton Ltd Products";
-  }
+  //   console.log(productId, slug);
+  const [productDetailsData, setProductDetailsData] = useState({});
+  const [similarProductsData, setSimilarProductsData] = useState([]);
 
-  console.log(matchedTitle);
+  useEffect(() => {
+    const foundProduct = findProductByCodeAndCategory(data, productId, slug);
+    if (foundProduct) {
+      //   console.log("Found product:", foundProduct);
+      setProductDetailsData(foundProduct);
+
+      const filteredProducts = filterProductsByCategoryAndExclude(
+        data,
+        foundProduct?.category,
+        productId
+      );
+      setSimilarProductsData(filteredProducts);
+      console.log(filteredProducts);
+    } else {
+      //   console.log("Product not found");
+      setProductDetailsData({});
+      setSimilarProductsData([]);
+    }
+  }, [slug, productId]);
 
   return (
     <section className="max-w-[1190px] w-full mx-auto py-12">
-      <ProductCategory
-        productsData={filteredProducts}
-        productsTitle={matchedTitle}
-        parentCategory={category}
-      />
+      <ProductDetails productDetails={productDetailsData} />
+      <SimilarProductSuggestion similarProductsData={similarProductsData} />
     </section>
   );
 };

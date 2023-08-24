@@ -5,34 +5,37 @@ import Link from "next/link";
 
 const Nav = () => {
   return (
-    <div className="w-full flex flex-col ">
+    <div className="w-full flex flex-col border-b">
       <div className="w-full  bg-white flex items-center lg:h-[86px] md:h-[76px] sm:h-[66px]">
         <div className="max-w-[1190px] w-full mx-auto lg:px-6 md:px-4 sm:px-3 flex justify-between items-center  ">
           <nav className="flex justify-between items-center w-full">
-            <div className="flex gap-4 items-center">
-              <Image
-                src={logo}
-                height={70}
-                width={60}
-                alt=""
-                className="lg:block sm:hidden"
-              />
-              <Image
-                src={logo}
-                height={50}
-                width={40}
-                alt=""
-                className="lg:hidden sm:block"
-              />
-              <div>
-                <p className="text-mgreen lg:text-2xl sm:text-xl font-semiboldd">
-                  Rich Cotton Limited
-                </p>
-                <p className="text-mgreenn lg:text-xs  sm:text-xs uppercase tracking-widest ">
-                  Fashion whereever you go
-                </p>
-              </div>
-            </div>
+            <Link href={"/"}>
+              {" "}
+              <div className="flex gap-4 items-center">
+                <Image
+                  src={logo}
+                  height={70}
+                  width={60}
+                  alt=""
+                  className="lg:block sm:hidden"
+                />
+                <Image
+                  src={logo}
+                  height={50}
+                  width={40}
+                  alt=""
+                  className="lg:hidden sm:block"
+                />
+                <div>
+                  <p className="text-mgreen lg:text-2xl sm:text-xl font-semiboldd">
+                    Rich Cotton Limited
+                  </p>
+                  <p className="text-mgreenn lg:text-xs  sm:text-xs uppercase tracking-widest ">
+                    Fashion whereever you go
+                  </p>
+                </div>
+              </div>{" "}
+            </Link>
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
                 <li>
