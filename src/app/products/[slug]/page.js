@@ -191,26 +191,37 @@ let data = [
   },
 ];
 
-let title = [
+let pro = [
   {
-    name: "Men's wear",
-    tag: "mens-wear",
+    title: "Men's Wear",
+    img: " https://i.ibb.co/ZfNb2CS/Depositphotos-208473398-XL-scaled.jpg",
+    category: "Shirts, T-Shirts, Polo Shirts",
+    link: "mens-wear",
   },
   {
-    name: "Ladies wear",
-    tag: "ladies-wear",
+    title: "Ladies's Wear",
+    img: "https://i.ibb.co/0M1Y2RC/V-neck-Blouses.png",
+    category: "Shirts, Tops, T-Shirts, Polo Shirts",
+    link: "ladies-wear",
   },
   {
-    name: "Kids wear",
-    tag: "kids-wear",
+    title: "Kid's Wear",
+    img: "https://i.ibb.co/kDsZ8vZ/boys-fashion.jpg",
+    category: "Shirts, Pant, Panjabi",
+    link: "kids-wear",
+  },
+
+  {
+    title: "Active Wear",
+    img: "https://i.ibb.co/WnbBrGb/dolce-and-gabbana-childrenswear-kidswear-kids-children-girls-wear-clothes-apparel.jpg",
+    category: "Shirts, Tops, T-Shirts, Polo Shirts",
+    link: "active-wear",
   },
   {
-    name: "Active wear",
-    tag: "active-wear",
-  },
-  {
-    name: "Work wear",
-    tag: "work-wear",
+    title: "Work Wear",
+    img: "https://i.ibb.co/WnbBrGb/dolce-and-gabbana-childrenswear-kidswear-kids-children-girls-wear-clothes-apparel.jpg",
+    category: "Shirts, Tops, T-Shirts, Polo Shirts",
+    link: "work-wear",
   },
 ];
 
@@ -223,10 +234,10 @@ const page = ({ params }) => {
 
   // console.log(filteredProducts);
 
-  let matchedTitle = title.find((item) => item?.tag == category);
+  let matchedTitle = pro.find((item) => item?.link == category);
 
   if (matchedTitle) {
-    matchedTitle = matchedTitle?.name;
+    matchedTitle = matchedTitle?.title;
   } else {
     matchedTitle = "Rich Cotton Ltd Products";
   }
