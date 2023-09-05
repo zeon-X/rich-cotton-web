@@ -1,240 +1,76 @@
 "use client";
 import ProductCategory from "@/components/Products/ProductCategory";
+import parentCategory from "../../../../public/assets/data/parentCategory";
+// import { productFakeData } from "../../../../public/assets/data/productFakeData";
+import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import axios from "axios";
 
-let data = [
-  {
-    parentCategory: "mens-wear",
-    productCode: "MJ001",
-    category: "Men's Jacket",
-    product: "Leather Biker Jacket",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Genuine Leather",
-    wash: "Dry Clean Only",
-    price: 199.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MJ002",
-    category: "Men's Jacket",
-    product: "Quilted Bomber Jacket",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Polyester",
-    wash: "Machine Washable",
-    price: 149.99,
-    deliveryTime: "3-5 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MDB001",
-    category: "Men's Non Denim Bottoms",
-    product: "Chinos",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Cotton",
-    wash: "Machine Washable",
-    price: 59.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MDB002",
-    category: "Men's Non Denim Bottoms",
-    product: "Cotton Khakis",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Cotton",
-    wash: "Machine Washable",
-    price: 49.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MST001",
-    category: "Men's Shirts/T-Shirts/Polo Shirts",
-    product: "Classic White Shirt",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Cotton",
-    wash: "Machine Washable",
-    price: 79.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MST002",
-    category: "Men's Shirts/T-Shirts/Polo Shirts",
-    product: "Striped Polo T-Shirt",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Cotton",
-    wash: "Machine Washable",
-    price: 29.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MS001",
-    category: "Men's Shorts",
-    product: "Cargo Shorts",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Cotton",
-    wash: "Machine Washable",
-    price: 39.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MS002",
-    category: "Men's Shorts",
-    product: "Denim Shorts",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Denim",
-    wash: "Machine Washable",
-    price: 49.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MSW001",
-    category: "Men's Sweater",
-    product: "Crewneck Sweater",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Wool",
-    wash: "Dry Clean Only",
-    price: 89.99,
-    deliveryTime: "3-5 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MSW002",
-    category: "Men's Sweater",
-    product: "V-Neck Pullover",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Wool",
-    wash: "Dry Clean Only",
-    price: 79.99,
-    deliveryTime: "3-5 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MSS001",
-    category: "Men's Swim Short",
-    product: "Patterned Swim Trunks",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Polyester",
-    wash: "Machine Washable",
-    price: 34.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "mens-wear",
-    productCode: "MJH001",
-    category: "Men’s Joggers/Hoodies",
-    product: "Fleece Hoodie",
-    img: "https://i.ibb.co/0y10ZS9/sp.jpg",
-    fabric: "Fleece",
-    wash: "Machine Washable",
-    price: 69.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "ladies-wear",
-    productCode: "LJ001",
-    category: "Ladies Jackets",
-    product: "Leather Biker Jacket",
-    img: "https://i.ibb.co/tPczS6r/mp.jpg",
-    fabric: "Leather",
-    wash: "Dry Clean Only",
-    price: 149.99,
-    deliveryTime: "3-5 business days",
-  },
-  {
-    parentCategory: "ladies-wear",
-    productCode: "LND001",
-    category: "Ladies Non Denim Bottoms",
-    product: "Pleated Trousers",
-    img: "https://i.ibb.co/tPczS6r/mp.jpg",
-    fabric: "Polyester",
-    wash: "Machine Washable",
-    price: 54.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "ladies-wear",
-    productCode: "LS001",
-    category: "Ladies Sweaters",
-    product: "Cashmere Blend Sweater",
-    img: "https://i.ibb.co/tPczS6r/mp.jpg",
-    fabric: "Cashmere Blend",
-    wash: "Hand Wash Only",
-    price: 129.99,
-    deliveryTime: "3-5 business days",
-  },
-  {
-    parentCategory: "ladies-wear",
-    productCode: "LDB001",
-    category: "Ladies’ Denim Bottoms",
-    product: "Skinny Jeans",
-    img: "https://i.ibb.co/tPczS6r/mp.jpg",
-    fabric: "Denim",
-    wash: "Machine Washable",
-    price: 79.99,
-    deliveryTime: "2-4 business days",
-  },
-  {
-    parentCategory: "ladies-wear",
-    productCode: "LST001",
-    category: "Ladies’ Shirts/Tops/T-Shirts/Polo Shirts",
-    product: "Striped Button-Down Shirt",
-    img: "https://i.ibb.co/tPczS6r/mp.jpg",
-    fabric: "Cotton",
-    wash: "Machine Washable",
-    price: 44.99,
-    deliveryTime: "2-4 business days",
-  },
-];
-
-let pro = [
-  {
-    title: "Men's Wear",
-    img: " https://i.ibb.co/ZfNb2CS/Depositphotos-208473398-XL-scaled.jpg",
-    category: "Shirts, T-Shirts, Polo Shirts",
-    link: "mens-wear",
-  },
-  {
-    title: "Ladies's Wear",
-    img: "https://i.ibb.co/0M1Y2RC/V-neck-Blouses.png",
-    category: "Shirts, Tops, T-Shirts, Polo Shirts",
-    link: "ladies-wear",
-  },
-  {
-    title: "Kid's Wear",
-    img: "https://i.ibb.co/kDsZ8vZ/boys-fashion.jpg",
-    category: "Shirts, Pant, Panjabi",
-    link: "kids-wear",
-  },
-
-  {
-    title: "Active Wear",
-    img: "https://i.ibb.co/WnbBrGb/dolce-and-gabbana-childrenswear-kidswear-kids-children-girls-wear-clothes-apparel.jpg",
-    category: "Shirts, Tops, T-Shirts, Polo Shirts",
-    link: "active-wear",
-  },
-  {
-    title: "Work Wear",
-    img: "https://i.ibb.co/WnbBrGb/dolce-and-gabbana-childrenswear-kidswear-kids-children-girls-wear-clothes-apparel.jpg",
-    category: "Shirts, Tops, T-Shirts, Polo Shirts",
-    link: "work-wear",
-  },
-];
+// let data = productFakeData;
+let parentCategoryData = parentCategory;
 
 const page = ({ params }) => {
   const category = params.slug;
+  console.log(category);
 
-  const filteredProducts = data.filter(
-    (product) => product.parentCategory == category
-  );
+  const [data, setData] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+
+  useEffect(() => {
+    // Define an async function to fetch the data
+    async function fetchData() {
+      // Swal.showLoading();
+
+      let timerInterval;
+      Swal.fire({
+        title: "Auto close alert!",
+        html: "I will close in <b></b> milliseconds.",
+        timer: 4000,
+        timerProgressBar: true,
+        didOpen: () => {
+          Swal.showLoading();
+          const b = Swal.getHtmlContainer().querySelector("b");
+          timerInterval = setInterval(() => {
+            b.textContent = Swal.getTimerLeft();
+          }, 100);
+        },
+        willClose: () => {
+          clearInterval(timerInterval);
+        },
+      }).then((result) => {
+        /* Read more about handling dismissals below */
+        if (result.dismiss === Swal.DismissReason.timer) {
+          console.log("I was closed by the timer");
+        }
+      });
+
+      try {
+        const response = await axios.get("/api/products");
+        setData(response?.data?.product);
+
+        console.log(response?.data?.product);
+        // FILTERING PRODUCTS BY MAIN CATEGORY
+        let temFilteredProducts = response?.data?.product?.filter(
+          (product) => product.parentCategory == category
+        );
+
+        setFilteredProducts(temFilteredProducts);
+        Swal.close();
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        Swal.close();
+      }
+    }
+
+    // Call the fetchData function
+    fetchData();
+  }, []);
+
+  console.log(data);
 
   // console.log(filteredProducts);
 
-  let matchedTitle = pro.find((item) => item?.link == category);
+  let matchedTitle = parentCategoryData.find((item) => item?.link == category);
 
   if (matchedTitle) {
     matchedTitle = matchedTitle?.title;
@@ -245,7 +81,7 @@ const page = ({ params }) => {
   console.log(matchedTitle);
 
   return (
-    <section className="max-w-[1190px] w-full mx-auto py-12">
+    <section className="max-w-[1190px] min-h-screen w-full mx-auto py-12">
       <ProductCategory
         productsData={filteredProducts}
         productsTitle={matchedTitle}
