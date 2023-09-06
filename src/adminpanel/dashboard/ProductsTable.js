@@ -1,27 +1,13 @@
 "use client";
 import axios from "axios";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 import Swal from "sweetalert2";
 
 const ProductsTable = ({ data, handleDataChange, changeValue }) => {
+  const route = useRouter();
   const [expandedItem, setExpandedItem] = useState(null);
-
-  async function deleteProduct(productId) {
-    try {
-      // Send a DELETE request to the API endpoint with the product ID
-      let res = await axios.delete(`/api/products/${productId}`);
-      if (res.status == 200) {
-        handleDataChange(changeValue + 1);
-        Swal.fire("Deleted!", "Your product has been deleted.", "success");
-        // Remove the deleted product from the local state
-      }
-    } catch (error) {
-      Swal.fire("Error!", "Error deleting product.", "error");
-      console.error("Error deleting product:", error);
-      throw error;
-    }
-  }
 
   const handleDetailsClick = (item) => {
     if (expandedItem === item) {
@@ -32,8 +18,10 @@ const ProductsTable = ({ data, handleDataChange, changeValue }) => {
     }
   };
 
-  const handleEditClick = (item) => {
+  const handleEditClick = async (item) => {
     // Implement edit functionality here
+    localStorage.setItem("updateProductData", JSON.stringify(item));
+    route.push(`/rich-cotton-admin-panel/update-product/${item?.id}`);
   };
 
   const handleDeleteClick = async (productId) => {
@@ -49,12 +37,27 @@ const ProductsTable = ({ data, handleDataChange, changeValue }) => {
       if (result.isConfirmed) {
         Swal.showLoading();
 
-        try {
-          // Call the deleteProduct function with the productId
-          deleteProduct(productId);
-        } catch (error) {
-          console.error("Error deleting product:", error);
+        async function deleteProduct(productId, handleDataChange, changeValue) {
+          try {
+            // Send a DELETE request to the API endpoint with the product ID
+            let res = await axios.delete(`/api/products/${productId}`);
+            if (res.status == 200) {
+              handleDataChange(changeValue + 1);
+              Swal.fire(
+                "Deleted!",
+                "Your product has been deleted.",
+                "success"
+              );
+              // Remove the deleted product from the local state
+            }
+          } catch (error) {
+            Swal.fire("Error!", "Error deleting product.", "error");
+            console.error("Error deleting product:", error);
+            throw error;
+          }
         }
+
+        deleteProduct(productId, handleDataChange, changeValue);
       }
     });
   };
