@@ -4,12 +4,14 @@ import Image from "next/image";
 import Carousel from "nuka-carousel";
 import { useEffect, useRef, useState } from "react";
 import { clientData } from "../../../public/assets/data/clientData";
-const cli = clientData;
+import Swal from "sweetalert2";
+import axios from "axios";
 
 const ClientsCarousol = () => {
   const [slidesToShow, setSlidesToShow] = useState(4);
   const [slidesToScroll, setSlidesToScroll] = useState(3);
   const [cellSpacing, setCellSpacing] = useState(10);
+  const [cli, setCli] = useState(clientData);
 
   // const windowSize = useRef([window.innerWidth, window.innerHeight]);
   // const w = windowSize?.current[0];
@@ -28,7 +30,30 @@ const ClientsCarousol = () => {
     }
   }, [width]);
 
-  console.log(width);
+  // console.log(width);
+
+  // const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Define an async function to fetch the data
+    async function fetchData() {
+      try {
+        Swal.showLoading();
+        const response = await axios.get("/api/clients");
+        let fetchedClients = response?.data?.clients;
+        // setData(fetchedClients);
+        // let tem = [...cli, ...fetchedClients];
+        setCli([...cli, ...fetchedClients]);
+        Swal.close();
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        Swal.close();
+      }
+    }
+
+    // Call the fetchData function
+    fetchData();
+  }, []); // The empty dependency array ensures this effect runs only once, similar to componentDidMount
 
   return (
     <section className="w-full overflow-hidden">

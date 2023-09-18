@@ -23,8 +23,8 @@ const page = ({ params }) => {
 
       let timerInterval;
       Swal.fire({
-        title: "Auto close alert!",
-        html: "I will close in <b></b> milliseconds.",
+        title: "Loading!",
+        html: "It will close in <b></b> milliseconds.",
         timer: 4000,
         timerProgressBar: true,
         didOpen: () => {

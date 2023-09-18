@@ -1,4 +1,3 @@
-import About from "@/components/Home/About";
 import Clients from "@/components/Home/Clients";
 import Contact from "@/components/Home/Contact";
 import HomeCarousol from "@/components/Home/HomeCarousol";
@@ -10,7 +9,6 @@ export default function Home() {
   return (
     <main className="">
       <HomeCarousol />
-      <About />
       <Product />
       <Clients />
       <Services />

@@ -5,7 +5,7 @@ import { md } from "../../../public";
 const About = () => {
   return (
     <section className="lg:px-6 md:px-4 sm:px-6">
-      <section id="about" className="max-w-[1190px] w-full mx-auto py-12">
+      <section id="about" className="max-w-[1190px] w-full mx-auto py-6">
         {/* <div className="flex flex-col justify-center items-center">
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">About Us</h1>
           <h2 className="text-xs text-center mt-3 text-greenxx ">
@@ -13,9 +13,53 @@ const About = () => {
           </h2>
         </div> */}
 
-        <div className="mt-10 flex lg:flex-row md:flex-row sm:flex-col-reverse justify-between items-center gap-10">
-          <div className="lg:w-5/12 md:w-5/12 sm:w-full">
-            <div className=" w-full shadow-sm border p-6">
+        {/* flex lg:flex-row md:flex-row sm:flex-col-reverse justify-between items-center */}
+
+        <div className="mt-10  gap-10">
+          <div
+            // lg:w-7/12 md:w-7/12 sm:w-full
+            className=" mb-10"
+          >
+            <div className="flex flex-col justify-center items-center  mb-6">
+              <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium ">
+                About Us
+              </h1>
+              <h2 className="text-xs mt-2 text-greenxx">
+                Celebrating Styles: Our Diverse Array of Satisfied Clients
+              </h2>
+            </div>
+
+            <p className="lg:text-md md:text-md sm:text-md ">
+              Rich Cotton is one of the leading apparel sourcing, buying office
+              and Woven factory in Bangladesh. Rich Cotton has been doing
+              business with European, American, Canadian, British, Australian &
+              South Africans clothing brands.
+              {/* <br /> <br /> */}
+              We are strongly capable to handle any products among Woven, Knit &
+              Sweater. We are highly strong in denim items. Also we have a great
+              number of sourcing of all kinds of raw materials and garment
+              facto- ries, textile mills & washing plants.
+              {/* <br /> <br /> */}
+              We have skilled and well trained Merchandising team, Quality
+              Assurance team, Gar- ment Technical team, Wash technical team,
+              Planning team, Social compliance audit team, Commercial & Shipping
+              team.
+              {/* <br /> <br /> */}
+              We have own development team with inhoused sample making facility.
+              Our motto is{" "}
+              <strong>
+                <i>
+                  "Deliver on time in undamaged condition at competitive price"
+                </i>
+              </strong>
+            </p>
+          </div>
+
+          <div
+            // lg:w-5/12 md:w-5/12 sm:w-full
+            className="w-auto mx-auto"
+          >
+            <div className="max-w-[620px] mx-auto   shadow-sm border p-6">
               <Image
                 src={md}
                 height={200}
@@ -23,7 +67,7 @@ const About = () => {
                 alt=""
                 className="rounded-full shadow mx-auto mb-0 sm:mb-4"
               />
-              <div className="max-w-[420px] mx-auto w-full lg:p-6 sm:p-0">
+              <div className="w-full lg:p-6 sm:p-0">
                 <h1 className="text-lg font-semibold text-center">
                   Message From Managing Director
                 </h1>
@@ -42,41 +86,6 @@ const About = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <div className="lg:w-7/12 md:w-7/12 sm:w-full">
-            <div className="flex flex-col lg:justify-start md:justify-start sm:justify-center lg:items-start md:items-start sm:items-center  mb-6">
-              <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium ">
-                About Us
-              </h1>
-              <h2 className="text-xs mt-2 text-greenxx">
-                Celebrating Styles: Our Diverse Array of Satisfied Clients
-              </h2>
-            </div>
-
-            <p className="lg:text-lg md:text-md sm:text-md ">
-              Rich Cotton is one of the leading apparel sourcing, buying office
-              and Woven factory in Bangladesh. Rich Cotton has been doing
-              business with European, American, Canadian, British, Australian &
-              South Africans clothing brands.
-              <br /> <br />
-              We are strongly capable to handle any products among Woven, Knit &
-              Sweater. We are highly strong in denim items. Also we have a great
-              number of sourcing of all kinds of raw materials and garment
-              facto- ries, textile mills & washing plants.
-              <br /> <br />
-              We have skilled and well trained Merchandising team, Quality
-              Assurance team, Gar- ment Technical team, Wash technical team,
-              Planning team, Social compliance audit team, Commercial & Shipping
-              team.
-              <br /> <br />
-              We have own development team with inhoused sample making facility.
-              Our motto is{" "}
-              <strong>
-                <i>
-                  "Deliver on time in undamaged condition at competitive price"
-                </i>
-              </strong>
-            </p>
           </div>
         </div>
       </section>

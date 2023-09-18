@@ -12,7 +12,7 @@ const Product = () => {
   //   }}
   return (
     <div className="lg:px-6 md:px-4 sm:px-3">
-      <section id="product" className="max-w-[1190px] w-full mx-auto py-12">
+      <section id="product" className="max-w-[1190px] w-full mx-auto pt-24 ">
         <div className="flex flex-col justify-center items-center">
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">
             Our Products
@@ -21,15 +21,15 @@ const Product = () => {
             Click on the product category to see our full range of products.
           </h2>
 
-          <div className="mt-10 w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6">
-            {/* <div className="mt-14 w-full flex flex-wrap justify-center gap-6"> */}
+          {/* <div className="mt-10 w-full grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-6"> */}
+          <div className="mt-14 w-full flex flex-wrap justify-center items-center gap-6">
             {parentCategory?.map((x, index) => {
               return (
                 <div
                   onClick={() => {
                     router.push(`/products/${x?.link}`);
                   }}
-                  className="max-h-[360px] h-full w-full relative shadow rounded"
+                  className="max-h-[360px] h-full lg:max-w-[360px] md:max-w-[320px] sm:max-w-full relative shadow rounded"
                 >
                   <img
                     src={x?.img}
@@ -45,10 +45,12 @@ const Product = () => {
                       className="h-[360px] opacity-0 hover:cursor-pointer hover:opacity-1"
                     ></div>
                     <div className="absolute bg-black  bottom-0 p-6  w-full rounded-bl rounded-br">
-                      <h1 className="text-white font-semibold text-2xl">
+                      <h1 className="text-white  lg:text-lg md:text-lg sm:text-md font-medium">
                         {x?.title}
                       </h1>
-                      <h2 className="text-white  text-md">{x?.category}</h2>
+                      <h2 className="text-white  lg:text-sm md:text-sm sm:text-xs  font-medium">
+                        {x?.category}
+                      </h2>
                     </div>
                   </div>
                 </div>

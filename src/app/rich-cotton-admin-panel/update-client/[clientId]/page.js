@@ -1,5 +1,5 @@
 import DashboardHeader from "@/adminpanel/shared/DashboardHeader";
-import UpdateProduct from "@/adminpanel/update/UpdateProduct";
+import UpdateClient from "@/adminpanel/update/UpdateClient";
 import React from "react";
 
 const page = () => {
@@ -11,7 +11,7 @@ const page = () => {
         nav={"/rich-cotton-admin-panel/products"}
       />
 
-      <UpdateProduct />
+      <UpdateClient />
     </div>
   );
 };

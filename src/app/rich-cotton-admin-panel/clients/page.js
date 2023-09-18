@@ -1,9 +1,10 @@
 "use client";
-import ProductsTable from "@/adminpanel/dashboard/ProductsTable";
+import ClientsTable from "@/adminpanel/dashboard/ClientsTable";
 import DashboardHeader from "@/adminpanel/shared/DashboardHeader";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import { clientData } from "../../../../public/assets/data/clientData";
 
 const page = () => {
   const [data, setData] = useState([]);
@@ -14,8 +15,8 @@ const page = () => {
     async function fetchData() {
       try {
         Swal.showLoading();
-        const response = await axios.get("/api/products");
-        setData(response?.data?.product);
+        const response = await axios.get("/api/clients");
+        setData([...response?.data?.clients, ...clientData]);
         Swal.close();
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -31,12 +32,12 @@ const page = () => {
   return (
     <div>
       <DashboardHeader
-        title={"All Products"}
-        nav={"/rich-cotton-admin-panel/create-product"}
-        btnName={"Create Product"}
+        title={"All Clients"}
+        nav={"/rich-cotton-admin-panel/create-client"}
+        btnName={"Create Client"}
       />
 
-      <ProductsTable
+      <ClientsTable
         data={data}
         handleDataChange={handleDataChange}
         changeValue={changeValue}

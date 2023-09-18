@@ -19,7 +19,10 @@ const Team = () => {
           <div className="mt-14 w-full flex flex-wrap justify-center lg:gap-6 md:gap-4 sm:gap-2">
             {te?.map((x, index) => {
               return (
-                <div className="lg:w-[260px] lg:h-[340px] md:w-[200px] md:h-[280px] sm:w-[160px] sm:h-[240px] rounded-lg border flex flex-col justify-center items-center">
+                <div
+                  key={index}
+                  className="lg:w-[260px] lg:h-[340px] md:w-[200px] md:h-[280px] sm:w-[160px] sm:h-[240px] p-2 rounded-lg border flex flex-col justify-center items-center"
+                >
                   <Image
                     src={x?.image}
                     height={140}
@@ -64,8 +67,8 @@ const Team = () => {
                         src={
                           "https://i.ibb.co/WFpLDq4/facebook-app-symbol-min.png"
                         }
-                        height={14}
-                        width={14}
+                        height={16}
+                        width={16}
                         alt=""
                       />{" "}
                     </a>
@@ -78,8 +81,8 @@ const Team = () => {
                       {" "}
                       <Image
                         src={"https://i.ibb.co/Qr41Gcx/instagram-min.png"}
-                        height={14}
-                        width={14}
+                        height={16}
+                        width={16}
                         alt=""
                       />{" "}
                     </a>
@@ -92,8 +95,8 @@ const Team = () => {
                       {" "}
                       <Image
                         src={"https://i.ibb.co/1Tn56Hd/linkedin-min.png"}
-                        height={14}
-                        width={14}
+                        height={16}
+                        width={16}
                         alt=""
                       />{" "}
                     </a>
@@ -106,8 +109,8 @@ const Team = () => {
                       {" "}
                       <Image
                         src={"https://i.ibb.co/BrDM9nQ/twitter-min.png"}
-                        height={14}
-                        width={14}
+                        height={16}
+                        width={16}
                         alt=""
                       />{" "}
                     </a>

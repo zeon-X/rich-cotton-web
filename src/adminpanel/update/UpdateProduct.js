@@ -3,6 +3,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import parentCategory from "../../../public/assets/data/parentCategory";
+import Image from "next/image";
 
 let inputDivCss = "border rounded-lg py-2 px-4 w-full";
 let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
@@ -10,24 +11,29 @@ let outerDivCss = "mb-4 w-[280px] ";
 let wrappingDivCss = "flex flex-wrap gap-4 justify-even mt-4";
 
 const UpdateProduct = () => {
-  let data = JSON.parse(localStorage.getItem("updateProductData"));
+  const [changes, setChanges] = useState(0);
+  // let data = JSON.parse(localStorage.getItem("updateProductData"));
   // Set the initial form data with the retrieved data, using optional chaining
   const [formData, setFormData] = useState({
-    title: data?.title || "",
-    parentCategory: data?.parentCategory || "",
-    productCode: data?.productCode || "",
-    category: data?.category || "",
-    product: data?.product || "",
-    img: data?.img || null,
-    fabric: data?.fabric || "",
-    wash: data?.wash || "",
-    price: data?.price || "",
-    deliveryTime: data?.deliveryTime || "",
-    slug: data?.slug || "",
+    id: "",
+    title: "",
+    parentCategory: "",
+    productCode: "",
+    category: "",
+    product: "",
+    img: "",
+    fabric: "",
+    wash: "",
+    price: "",
+    deliveryTime: "",
+    slug: "",
   });
 
   useEffect(() => {
+    let data = JSON.parse(localStorage.getItem("updateProductData"));
+
     setFormData({
+      id: data?.id || "",
       title: data?.title || "",
       parentCategory: data?.parentCategory || "",
       productCode: data?.productCode || "",
@@ -40,14 +46,17 @@ const UpdateProduct = () => {
       deliveryTime: data?.deliveryTime || "",
       slug: data?.slug || "",
     });
-  }, [data]);
+  }, [changes]);
 
-  const handleImageUpload = async () => {
+  // console.log("Form Data", formData);
+
+  const handleImageUpload = async (reqImage) => {
     let API = "f31ce5befe994fec2a0257d5c9b59d4a";
-    if (formData.img) {
+    console.log("Req Image:");
+    if (reqImage) {
       try {
         const formDataImgBB = new FormData();
-        formDataImgBB.append("image", formData.img);
+        formDataImgBB.append("image", reqImage);
 
         const response = await axios.post(
           `https://api.imgbb.com/1/upload?key=${API}`,
@@ -72,10 +81,11 @@ const UpdateProduct = () => {
 
   const handleChange = async (e) => {
     const { name, value, type, files } = e.target;
+    // console.log(files[0]);
 
     // Handle file input separately
     if (type === "file") {
-      const imageUrl = await handleImageUpload();
+      const imageUrl = await handleImageUpload(files[0]);
       setFormData({
         ...formData,
         [name]: imageUrl, // Store the first selected file
@@ -119,32 +129,24 @@ const UpdateProduct = () => {
       Swal.close();
 
       if (response.status === 201) {
-        setFormData({
-          title: "",
-          parentCategory: "",
-          productCode: "",
-          category: "",
-          product: "",
-          img: null,
-          fabric: "",
-          wash: "",
-          price: "",
-          deliveryTime: "",
-          slug: "",
-        });
-
-        alert("Product created successfully");
+        // console.log(response?.data?.data?.updatedData);
+        localStorage.setItem(
+          "updateProductData",
+          JSON.stringify(response?.data?.data?.updatedData || null)
+        );
+        setChanges((current) => current + 1);
+        alert("Product Updated successfully");
       } else {
-        alert("Product creation failed");
+        alert("Product update failed");
       }
     } catch (error) {
-      console.error("Error creating product:", error);
+      console.error("Error updating product:", error);
     }
     // }
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-lg">
+    <div className="bg-white p-4  ">
       <form onSubmit={handleSubmit}>
         {/* Add input fields for all your product properties */}
         {/* SLUG */}
@@ -153,7 +155,7 @@ const UpdateProduct = () => {
             <label className={labelCss} htmlFor="slug">
               slug
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="slug"
@@ -179,7 +181,7 @@ const UpdateProduct = () => {
               className="border rounded-lg py-2 px-4 w-full"
               required={false}
             >
-              <option value="">Select Parent Category</option>
+              {/* <option value="">Select Parent Category</option> */}
 
               {parentCategory?.map((x, index) => {
                 return <option value={x?.title}>{x?.title}</option>;
@@ -191,7 +193,7 @@ const UpdateProduct = () => {
             <label className={labelCss} htmlFor="category">
               category
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="category"
@@ -207,7 +209,7 @@ const UpdateProduct = () => {
             <label className={labelCss} htmlFor="productCode">
               Product Code
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="productCode"
@@ -219,13 +221,13 @@ const UpdateProduct = () => {
             />
           </div>
         </div>{" "}
-        {/* TITLE */}
+        {/* BASIC */}
         <div className={wrappingDivCss}>
           <div className={outerDivCss}>
             <label className={labelCss} htmlFor="title">
               Title
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="title"
@@ -241,7 +243,7 @@ const UpdateProduct = () => {
             <label className={labelCss} htmlFor="product">
               product
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="product"
@@ -254,6 +256,9 @@ const UpdateProduct = () => {
           </div>
 
           <div className={outerDivCss}>
+            <div>
+              <Image src={formData?.img} height={200} width={200} alt="" />
+            </div>
             <label className={labelCss} htmlFor="img">
               Image
             </label>
@@ -274,7 +279,7 @@ const UpdateProduct = () => {
             <label className={labelCss} htmlFor="fabric">
               fabric
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="fabric"
@@ -289,7 +294,7 @@ const UpdateProduct = () => {
             <label className={labelCss} htmlFor="wash">
               wash
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="wash"
@@ -304,7 +309,7 @@ const UpdateProduct = () => {
             <label className={labelCss} htmlFor="product">
               price
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="price"
@@ -319,7 +324,7 @@ const UpdateProduct = () => {
             <label className={labelCss} htmlFor="deliveryTime">
               deliveryTime
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="deliveryTime"

@@ -18,6 +18,8 @@ const ProductsTable = ({ data, handleDataChange, changeValue }) => {
     }
   };
 
+  console.log(data);
+
   const handleEditClick = async (item) => {
     // Implement edit functionality here
     localStorage.setItem("updateProductData", JSON.stringify(item));

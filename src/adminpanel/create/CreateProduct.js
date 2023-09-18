@@ -126,7 +126,7 @@ function CreateProduct() {
   };
 
   return (
-    <div className="bg-white p-4 rounded-lg shadow-lg">
+    <div className="bg-white p-4 ">
       <form onSubmit={handleSubmit}>
         {/* Add input fields for all your product properties */}
         {/* SLUG */}
@@ -135,7 +135,7 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="slug">
               slug
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="slug"
@@ -173,7 +173,7 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="category">
               category
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="category"
@@ -189,7 +189,7 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="productCode">
               Product Code
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="productCode"
@@ -207,7 +207,7 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="title">
               Title
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="title"
@@ -223,7 +223,7 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="product">
               product
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="product"
@@ -256,7 +256,7 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="fabric">
               fabric
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="fabric"
@@ -271,7 +271,7 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="wash">
               wash
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="wash"
@@ -286,7 +286,7 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="product">
               price
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="price"
@@ -301,7 +301,7 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="deliveryTime">
               deliveryTime
             </label>{" "}
-            <br />
+            {/* <br /> */}
             <input
               type="text"
               id="deliveryTime"

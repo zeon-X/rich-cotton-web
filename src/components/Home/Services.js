@@ -7,7 +7,7 @@ const Services = () => {
 
   return (
     <div className="lg:px-6 md:px-4 sm:px-3">
-      <section id="service" className="max-w-[1190px] w-full mx-auto py-12">
+      <section id="service" className="max-w-[1190px] w-full mx-auto pt-24 ">
         <div className="flex flex-col justify-center items-center">
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">
             Our Services
@@ -16,12 +16,13 @@ const Services = () => {
             Elevating Your Fashion Experience: Our Exceptional Services
           </h2>
 
-          <div className="mt-14 w-full grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 lg:gap-6 sm:gap-2">
+          {/* <div className="mt-14 w-full grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-2 lg:gap-6 sm:gap-2"> */}
+          <div className="mt-14 w-full flex flex-wrap justify-center items-start lg:gap-6 sm:gap-2">
             {ser?.map((x, index) => {
               return (
                 <div
                   key={index}
-                  className="border rounded-lg lg:p-6 md:p-4 sm:p-3 flex flex-col justify-start items-center"
+                  className="lg:max-w-[260px] md:max-w-[210px] sm:max-w-[160px] border rounded-lg lg:p-6 md:p-4 sm:p-3 flex flex-col justify-start items-center"
                 >
                   <div className="lg:h-[100px] lg:w-[100px] md:h-[80px] md:w-[80px] sm:h-[70px] sm:w-[70px] border rounded-full flex justify-center items-center ">
                     <Image
