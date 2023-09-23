@@ -1,4 +1,3 @@
-"use client";
 import { deleteClient, updateClient } from "@/app/lib/clientData"; // Import the client functions
 import { NextResponse } from "next/server";
 

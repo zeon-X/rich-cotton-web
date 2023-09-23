@@ -1,12 +1,11 @@
-"use client";
 import { NextResponse } from "next/server";
 import { postClient } from "@/app/lib/clientData"; // Import the client functions
 import pool from "@/app/lib/poolConnection";
 
 // Define your HTTP method handlers as named exports
-export const POST = async (req) => {
+export async function POST(request) {
   try {
-    const body = await req.json();
+    const body = await request.json();
     let insertedId = await postClient(body); // Use postClient for clients
     return NextResponse.json(
       {
@@ -25,9 +24,10 @@ export const POST = async (req) => {
       { status: 500 }
     );
   }
-};
+}
 
-export const GET = async (req) => {
+export async function GET() {
+  console.log("Get all the clients");
   const sql = "SELECT * FROM `clients`"; // Use "clients" table
   const connection = await pool.getConnection();
   try {
@@ -42,4 +42,4 @@ export const GET = async (req) => {
   } finally {
     connection.release();
   }
-};
+}
