@@ -1,3 +1,4 @@
+"use client";
 import { NextResponse } from "next/server";
 import { postClient } from "@/app/lib/clientData"; // Import the client functions
 import pool from "@/app/lib/poolConnection";
