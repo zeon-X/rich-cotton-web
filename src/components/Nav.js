@@ -6,7 +6,7 @@ import Link from "next/link";
 const Nav = () => {
   return (
     <div className="w-full flex flex-col border-b">
-      <div className="w-full  bg-white flex items-center lg:h-[86px] md:h-[76px] sm:h-[66px]">
+      <div className="w-full  bg-white flex items-center lg:h-[96px] md:h-[76px] sm:h-[66px]">
         <div className="max-w-[1190px] w-full mx-auto lg:px-6 md:px-4 sm:px-3 flex justify-between items-center  ">
           <nav className="flex justify-between items-center w-full">
             <Link href={"/"}>

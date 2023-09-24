@@ -2,7 +2,7 @@
 import useWindowDimensions from "@/utilities/hooks/useWindowDimensions";
 import Image from "next/image";
 import Carousel from "nuka-carousel";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { clientData } from "../../../public/assets/data/clientData";
 import Swal from "sweetalert2";
 import axios from "axios";
