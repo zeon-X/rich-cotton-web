@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import parentCategory from "../../../public/assets/data/parentCategory";
 import Image from "next/image";
+import axiosInstance from "@/utilities/axiosInstance";
 
 let inputDivCss = "border rounded-lg py-2 px-4 w-full";
 let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
@@ -33,7 +34,7 @@ const UpdateProduct = () => {
     let data = JSON.parse(localStorage.getItem("updateProductData"));
 
     setFormData({
-      id: data?.id || "",
+      _id: data?._id || "",
       title: data?.title || "",
       parentCategory: data?.parentCategory || "",
       productCode: data?.productCode || "",
@@ -111,28 +112,23 @@ const UpdateProduct = () => {
 
     // if (imageUrl !== null) {
     try {
-      const response = await axios.post(
-        `/api/products/${formData?.id}`,
+      const response = await axiosInstance.post(
+        `product/update/${formData?._id}`,
         {
           ...formData,
           // img: imageUrl, // Use the ImgBB image URL
           // productStatus: 1,
           // id: new Date().getTime(),
-        },
-        {
-          headers: {
-            "Content-Type": "application/json", // Ensure it's set to JSON
-          },
         }
       );
 
       Swal.close();
 
-      if (response.status === 201) {
-        // console.log(response?.data?.data?.updatedData);
+      if (response.status === 200) {
+        console.log(response?.data);
         localStorage.setItem(
           "updateProductData",
-          JSON.stringify(response?.data?.data?.updatedData || null)
+          JSON.stringify(response?.data || null)
         );
         setChanges((current) => current + 1);
         alert("Product Updated successfully");

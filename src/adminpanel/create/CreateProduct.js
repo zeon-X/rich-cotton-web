@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import parentCategory from "../../../public/assets/data/parentCategory";
 import axios from "axios";
 import Swal from "sweetalert2";
+import axiosInstance from "@/utilities/axiosInstance";
 
 let inputDivCss = "border rounded-lg py-2 px-4 w-full";
 let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
@@ -83,20 +84,12 @@ function CreateProduct() {
 
     if (imageUrl !== null) {
       try {
-        const response = await axios.post(
-          "/api/products",
-          {
-            ...formData,
-            img: imageUrl, // Use the ImgBB image URL
-            productStatus: 1,
-            id: new Date().getTime(),
-          },
-          {
-            headers: {
-              "Content-Type": "application/json", // Ensure it's set to JSON
-            },
-          }
-        );
+        const response = await axiosInstance.post("product", {
+          ...formData,
+          img: imageUrl, // Use the ImgBB image URL
+          productStatus: 1,
+          // id: new Date().getTime(),
+        });
 
         Swal.close();
 

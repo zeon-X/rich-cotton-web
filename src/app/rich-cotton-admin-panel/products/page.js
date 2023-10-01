@@ -1,7 +1,8 @@
 "use client";
 import ProductsTable from "@/adminpanel/dashboard/ProductsTable";
 import DashboardHeader from "@/adminpanel/shared/DashboardHeader";
-import axios from "axios";
+import axiosInstance from "@/utilities/axiosInstance";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
@@ -14,8 +15,9 @@ const page = () => {
     async function fetchData() {
       try {
         Swal.showLoading();
-        const response = await axios.get("/api/products");
-        setData(response?.data?.product);
+        const response = await axiosInstance.get("/product/get");
+        console.log(response?.data);
+        setData(response?.data);
         Swal.close();
       } catch (error) {
         console.error("Error fetching data:", error);

@@ -1,5 +1,6 @@
 "use client";
-import axios from "axios";
+import axiosInstance from "@/utilities/axiosInstance";
+// import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -23,7 +24,7 @@ const ProductsTable = ({ data, handleDataChange, changeValue }) => {
   const handleEditClick = async (item) => {
     // Implement edit functionality here
     localStorage.setItem("updateProductData", JSON.stringify(item));
-    route.push(`/rich-cotton-admin-panel/update-product/${item?.id}`);
+    route.push(`/rich-cotton-admin-panel/update-product/${item?._id}`);
   };
 
   const handleDeleteClick = async (productId) => {
@@ -42,7 +43,8 @@ const ProductsTable = ({ data, handleDataChange, changeValue }) => {
         async function deleteProduct(productId, handleDataChange, changeValue) {
           try {
             // Send a DELETE request to the API endpoint with the product ID
-            let res = await axios.delete(`/api/products/${productId}`);
+            // let res = await axios.delete(`/api/products/${productId}`);
+            let res = await axiosInstance.delete(`product/${productId}`);
             if (res.status == 200) {
               handleDataChange(changeValue + 1);
               Swal.fire(
@@ -111,7 +113,7 @@ const ProductsTable = ({ data, handleDataChange, changeValue }) => {
                     </button>
                     <button
                       className=" btn btn-error text-black  "
-                      onClick={() => handleDeleteClick(item?.id)}
+                      onClick={() => handleDeleteClick(item?._id)}
                     >
                       Delete
                     </button>

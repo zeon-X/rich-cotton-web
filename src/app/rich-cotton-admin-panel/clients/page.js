@@ -1,10 +1,11 @@
 "use client";
 import ClientsTable from "@/adminpanel/dashboard/ClientsTable";
 import DashboardHeader from "@/adminpanel/shared/DashboardHeader";
-import axios from "axios";
+// import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { clientData } from "../../../../public/assets/data/clientData";
+import axiosInstance from "@/utilities/axiosInstance";
 
 const page = () => {
   const [data, setData] = useState([]);
@@ -15,8 +16,14 @@ const page = () => {
     async function fetchData() {
       try {
         Swal.showLoading();
-        const response = await axios.get("/api/clients");
-        setData([...response?.data?.clients, ...clientData]);
+
+        const response = await axiosInstance.get("/client/get");
+
+        response?.data?.length !== 0
+          ? setData([...response?.data, ...clientData])
+          : setData([...clientData]);
+
+        console.log(response?.data);
         Swal.close();
       } catch (error) {
         console.error("Error fetching data:", error);

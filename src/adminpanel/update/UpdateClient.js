@@ -1,4 +1,5 @@
 "use client";
+import axiosInstance from "@/utilities/axiosInstance";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
@@ -21,7 +22,7 @@ const UpdateClient = () => {
     let data = JSON.parse(localStorage.getItem("updateClientData"));
 
     setFormData({
-      id: data?.id || "",
+      _id: data?._id || "",
       title: data?.title || "",
       img: data?.img || null,
     });
@@ -79,24 +80,19 @@ const UpdateClient = () => {
     Swal.showLoading();
 
     try {
-      const response = await axios.post(
-        `/api/clients/${formData?.id}`,
+      const response = await axiosInstance.post(
+        `client/update/${formData?._id}`,
         {
           ...formData,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
         }
       );
 
       Swal.close();
 
-      if (response.status === 201) {
+      if (response.status === 200) {
         localStorage.setItem(
           "updateClientData",
-          JSON.stringify(response?.data?.data?.updatedData || null)
+          JSON.stringify(response?.data || null)
         );
         setChanges((current) => current + 1);
         alert("Client Updated successfully");

@@ -1,5 +1,6 @@
 "use client";
-import axios from "axios";
+import axiosInstance from "@/utilities/axiosInstance";
+// import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
@@ -11,7 +12,7 @@ const ClientsTable = ({ data, handleDataChange, changeValue }) => {
     // Implement edit functionality here
     localStorage.setItem("updateClientData", JSON.stringify(item));
     console.log(item);
-    router.push(`/rich-cotton-admin-panel/update-client/${item?.id}`);
+    router.push(`/rich-cotton-admin-panel/update-client/${item?._id}`);
   };
 
   const handleDeleteClick = async (clientId) => {
@@ -30,7 +31,7 @@ const ClientsTable = ({ data, handleDataChange, changeValue }) => {
         async function deleteClient(clientId, handleDataChange, changeValue) {
           try {
             // Send a DELETE request to the API endpoint with the client ID
-            let res = await axios.delete(`/api/clients/${clientId}`);
+            let res = await axiosInstance.delete(`client/${clientId}`);
             if (res.status === 200) {
               handleDataChange(changeValue + 1);
               Swal.fire("Deleted!", "Your client has been deleted.", "success");
@@ -78,7 +79,7 @@ const ClientsTable = ({ data, handleDataChange, changeValue }) => {
                 <td className={"p-2  justify-center items-center flex gap-2"}>
                   <button
                     className={
-                      item?.id
+                      item?._id
                         ? " btn btn-warning text-black  "
                         : "btn btn-disabled"
                     }
@@ -88,11 +89,11 @@ const ClientsTable = ({ data, handleDataChange, changeValue }) => {
                   </button>
                   <button
                     className={
-                      item?.id
+                      item?._id
                         ? " btn btn-error text-black  "
                         : "btn btn-disabled"
                     }
-                    onClick={() => handleDeleteClick(item?.id)}
+                    onClick={() => handleDeleteClick(item?._id)}
                   >
                     Delete
                   </button>

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import parentCategory from "../../../public/assets/data/parentCategory";
 import axios from "axios";
 import Swal from "sweetalert2";
+import axiosInstance from "@/utilities/axiosInstance";
 
 let inputDivCss = "border rounded-lg py-2 px-4 w-full";
 let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
@@ -74,20 +75,12 @@ function CreateClient() {
 
     if (imageUrl !== null) {
       try {
-        const response = await axios.post(
-          "/api/clients",
-          {
-            ...formData,
-            img: imageUrl, // Use the ImgBB image URL
-            clientStatus: 1,
-            id: new Date().getTime().toString(),
-          },
-          {
-            headers: {
-              "Content-Type": "application/json", // Ensure it's set to JSON
-            },
-          }
-        );
+        const response = await axiosInstance.post("client", {
+          ...formData,
+          img: imageUrl, // Use the ImgBB image URL
+          clientStatus: 1,
+          // id: new Date().getTime().toString(),
+        });
 
         Swal.close();
 

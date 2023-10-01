@@ -5,7 +5,8 @@ import Carousel from "nuka-carousel";
 import { useEffect, useState } from "react";
 import { clientData } from "../../../public/assets/data/clientData";
 import Swal from "sweetalert2";
-import axios from "axios";
+// import axios from "axios";
+import axiosInstance from "@/utilities/axiosInstance";
 
 const ClientsCarousol = () => {
   const [slidesToShow, setSlidesToShow] = useState(4);
@@ -39,8 +40,9 @@ const ClientsCarousol = () => {
     async function fetchData() {
       try {
         Swal.showLoading();
-        const response = await axios.get("/api/clients");
-        let fetchedClients = response?.data?.clients;
+        const response = await axiosInstance.get("/client/get");
+        // let fetchedClients = response?.data?.clients;
+        let fetchedClients = response?.data;
         // setData(fetchedClients);
         // let tem = [...cli, ...fetchedClients];
         setCli([...cli, ...fetchedClients]);

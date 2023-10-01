@@ -5,6 +5,7 @@ import parentCategory from "../../../../public/assets/data/parentCategory";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import axios from "axios";
+import axiosInstance from "@/utilities/axiosInstance";
 
 // let data = productFakeData;
 let parentCategoryData = parentCategory;
@@ -45,12 +46,18 @@ const page = ({ params }) => {
       });
 
       try {
-        const response = await axios.get("/api/products");
-        setData(response?.data?.product);
+        // const response = await axios.get("/api/products");
+        const response = await axiosInstance.get("/product/get");
+        // setData(response?.data?.product);
+        setData(response?.data);
 
-        console.log(response?.data?.product);
+        // console.log(response?.data?.product);
+
         // FILTERING PRODUCTS BY MAIN CATEGORY
-        let temFilteredProducts = response?.data?.product?.filter(
+
+        // let temFilteredProducts = response?.data?.product?.filter(
+
+        let temFilteredProducts = response?.data?.filter(
           (product) => product.parentCategory == category
         );
 
