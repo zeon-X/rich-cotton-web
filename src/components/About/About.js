@@ -10,7 +10,7 @@ const About = () => {
     >
       {aboutUsData.map((section, index) => (
         <div key={index} className="mt-8">
-          <h1 className="lg:text-3xl md:text-2xl sm:text-2xl font-medium mb-4">
+          <h1 className="lg:text-3xl md:text-2xl sm:text-2xl font-semibold  mb-6">
             {section?.section}
           </h1>
           {section.bannerImage ? (

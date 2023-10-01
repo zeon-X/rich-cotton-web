@@ -4,6 +4,8 @@ import { logo } from "../../public";
 import Image from "next/image";
 import BeforeNav from "./BeforeNav";
 import Footer from "./Footer";
+import Link from "next/link";
+import parentCategory from "../../public/assets/data/parentCategory";
 
 const Drawer = ({ children }) => {
   return (
@@ -45,25 +47,37 @@ const Drawer = ({ children }) => {
           </div>
 
           <li>
-            <a href="#home">Home</a>
+            <Link href="#home">Home</Link>
           </li>
           <li>
-            <a href="#about">About Us</a>
+            <Link href="#about">About Us</Link>
+          </li>
+
+          <li tabIndex={0}>
+            <details>
+              <summary>Products</summary>
+              <ul className="p-2">
+                {parentCategory?.map((x, index) => {
+                  return (
+                    <li key={index}>
+                      <Link href={`products/${x?.link}`}>{x?.title}</Link>
+                    </li>
+                  );
+                })}
+              </ul>
+            </details>
           </li>
           <li>
-            <a href="#product">Product</a>
+            <Link href="#client">Clients</Link>
           </li>
           <li>
-            <a href="#client">Clients</a>
+            <Link href="#service">Services</Link>
           </li>
           <li>
-            <a href="#service">Services</a>
+            <Link href="#team">Team</Link>
           </li>
           <li>
-            <a href="#team">Team</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
+            <Link href="#contact">Contact</Link>
           </li>
         </ul>
       </div>

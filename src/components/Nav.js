@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { logo } from "../../public";
 import Link from "next/link";
+import parentCategory from "../../public/assets/data/parentCategory";
 
 const Nav = () => {
   return (
@@ -39,26 +40,55 @@ const Nav = () => {
             <div className="flex-none hidden lg:block">
               <ul className="menu menu-horizontal">
                 <li>
-                  <a href="/#home">Home</a>
+                  <Link href="/#home">Home</Link>
                 </li>
                 <li>
-                  <a href="/about">About Us</a>
+                  <Link href="/about">About Us</Link>
+                </li>
+
+                <li tabIndex={0}>
+                  <details>
+                    <summary>Products</summary>
+                    <ul className="p-2 shadow border">
+                      {parentCategory?.map((x, index) => {
+                        return (
+                          <li key={index} className=" w-[220px]">
+                            <Link
+                              href={`products/${x?.link}`}
+                              style={{
+                                height: "70px",
+                                width: "220px",
+                                padding: "8px",
+                                display: "flex",
+                                // justifyContent: "center",
+                                justifyItems: "center",
+                              }}
+                            >
+                              <Image
+                                src={x?.img}
+                                height={60}
+                                width={70}
+                                alt=""
+                              />
+                              <span>{x?.title}</span>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </details>
                 </li>
                 <li>
-                  <a href="/#product">Product</a>
+                  <Link href="/#client">Clients</Link>
                 </li>
                 <li>
-                  <a href="/#client">Clients</a>
+                  <Link href="/#service">Services</Link>
                 </li>
                 <li>
-                  <a href="/#service">Services</a>
+                  <Link href="/#team">Team</Link>
                 </li>
                 <li>
-                  <a href="/#team">Team</a>
-                </li>
-                <li>
-                  <a href="/#contact">Contact</a>
-                  {/* <Link href={"/#contact"}/> */}
+                  <Link href="/#contact">Contact</Link>
                 </li>
               </ul>
             </div>
