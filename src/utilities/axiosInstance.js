@@ -1,8 +1,7 @@
 import axios from "axios";
 
-const api = "http://localhost:5000/api/v1";
-// const api =
-//   "http://9o6amhx790.execute-api.me-central-1.amazonaws.com/production/api/v1";
+// const api = "http://localhost:5000/api/v1";
+const api = "https://rich-cotton-server-zeonx.onrender.com/api/v1";
 
 // const token = window.localStorage.getItem("token");
 // console.log(token);
