@@ -60,7 +60,7 @@ const Drawer = ({ children }) => {
                 {parentCategory?.map((x, index) => {
                   return (
                     <li key={index}>
-                      <Link href={`products/${x?.link}`}>{x?.title}</Link>
+                      <Link href={`/products/${x?.link}`}>{x?.title}</Link>
                     </li>
                   );
                 })}

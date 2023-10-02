@@ -54,7 +54,7 @@ const Nav = () => {
                         return (
                           <li key={index} className=" w-[220px]">
                             <Link
-                              href={`products/${x?.link}`}
+                              href={`/products/${x?.link}`}
                               style={{
                                 height: "70px",
                                 width: "220px",
