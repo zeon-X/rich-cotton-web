@@ -22,7 +22,7 @@ const Services = () => {
               return (
                 <div
                   key={index}
-                  className="lg:max-w-[260px] md:max-w-[220px] sm:max-w-[190px] lg:min-h-[384px]  md:min-h-[350px] sm:min-h-[240px]    border rounded-lg lg:p-6 md:p-4 sm:p-3 flex flex-col justify-start items-center"
+                  className="lg:w-[280px] md:w-[220px] sm:w-[190px] lg:min-h-[384px]  md:min-h-[350px] sm:min-h-[240px]    border roundedlg lg:p-6 md:p-4 sm:p-3 flex flex-col justify-start items-center"
                 >
                   <div className="lg:h-[100px] lg:w-[100px] md:h-[80px] md:w-[80px] sm:h-[70px] sm:w-[70px] border rounded-full flex justify-center items-center ">
                     <Image
@@ -61,7 +61,7 @@ const Services = () => {
             <div className={`mt-14 w-[${296 * ser?.length}px]  flex sm:gap-2`}>
               {ser?.map((x, index) => {
                 return (
-                  <div className="w-[280px] border rounded-lg lg:p-6 md:p-4 sm:p-4 flex flex-col justify-start items-center">
+                  <div className="w-[280px] border roundedlg lg:p-6 md:p-4 sm:p-4 flex flex-col justify-start items-center">
                     <div className="h-[80px] w-[80px] border rounded-full flex justify-center items-center ">
                       <Image
                         src={x?.icon}

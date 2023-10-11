@@ -16,34 +16,34 @@ const TeamMember = ({ x }) => {
   return (
     <div
       onClick={() => router.push(`/team/${x?.id}`)}
-      className="cursor-pointer bg-white hover:scale-95 transition-all ease-in-out  lg:min-h-[340px]  md:min-h-[280px] sm:min-h-[240px]  lg:w-[280px] md:w-[220px] sm:w-[190px] p-2 rounded-lg border flex flex-col justify-center items-center"
+      className="cursor-pointer bg-white opacity-1 hover:opacity-[0.9] hover:shadow transition-all ease-in-out  lg:min-h-[340px]  md:min-h-[280px] sm:min-h-[240px]  lg:w-[280px] md:w-[220px] sm:w-[190px] p-2 roundedlg border flex flex-col justify-center items-center"
     >
-      <Image
-        src={x?.image === "" ? profileImage : x?.image}
-        height={140}
-        width={140}
-        alt={x?.name}
-        className="rounded-full lg:block md:hidden sm:hidden"
-      />
       <Image
         src={x?.image === "" ? profileImage : x?.image}
         height={120}
         width={120}
         alt={x?.name}
-        className="rounded-full lg:hidden md:block sm:hidden"
+        className="rounded-full lg:block md:hidden sm:hidden"
       />
       <Image
         src={x?.image === "" ? profileImage : x?.image}
         height={100}
         width={100}
         alt={x?.name}
+        className="rounded-full lg:hidden md:block sm:hidden"
+      />
+      <Image
+        src={x?.image === "" ? profileImage : x?.image}
+        height={80}
+        width={80}
+        alt={x?.name}
         className="rounded-full lg:hidden md:hidden sm:block"
       />
-      <h1 className="lg:text-lg sm:text-md  font-semibold text-center mt-4">
+      <h1 className="lg:text-md sm:text-sm text-primary uppercase  font-semibold text-center mt-4">
         {x?.name}
       </h1>
 
-      <h2 className="lg:text-sm sm:text-xs text-center ">{x?.position}</h2>
+      <h2 className="lg:text-sm sm:text-xs text-center  ">{x?.position}</h2>
 
       {/* <div className="max-w-[160px] mx-auto flex flex-wrap justify-center items-center lg:gap-2 md:gap-2 sm:gap-1 mt-6"> */}
       <div className="max-w-[160px] mx-auto flex  justify-center items-center lg:gap-2 md:gap-2 sm:gap-1 mt-6">

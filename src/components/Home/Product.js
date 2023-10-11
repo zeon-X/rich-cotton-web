@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import parentCategory from "../../../public/assets/data/parentCategory";
+import Image from "next/image";
 
 const Product = () => {
   const router = useRouter();
@@ -29,26 +30,27 @@ const Product = () => {
                   onClick={() => {
                     router.push(`/products/${x?.link}`);
                   }}
-                  className="max-h-[360px] h-full lg:max-w-[360px] md:max-w-[320px] sm:max-w-full relative shadow rounded"
+                  className="h-[240px]  w-[320px] relative border rounded"
                 >
-                  <img
+                  <Image
                     src={x?.img}
-                    height={270}
-                    className="rounded w-full h-full"
+                    height={240}
+                    width={320}
+                    className="roundedonly w-full h-full"
                   />
 
-                  <div className="absolute top-0 h-full w-full  ">
+                  <div className="absolute top-0 h-[240px] w-full opacity-1 hover:cursor-pointer hover:opacity-[0.8] hover:shadow ">
+                    <div className="h-[160px] " />
                     <div
                       style={{
-                        backgroundColor: "rgba(0,0,0,0.8)",
+                        backgroundColor: "rgb(22, 170, 27, 0.9)",
                       }}
-                      className="h-[360px] opacity-0 hover:cursor-pointer hover:opacity-1"
-                    ></div>
-                    <div className="absolute bg-black  bottom-0 p-6  w-full rounded-bl rounded-br">
-                      <h1 className="text-white  lg:text-lg md:text-lg sm:text-md font-medium">
+                      className="absolute bottom-0 px-6 py-4 h-[80px] w-full roundedonlyl roundedonlyr"
+                    >
+                      <h1 className="text-white  text-lg  font-bold">
                         {x?.title}
                       </h1>
-                      <h2 className="text-white  lg:text-sm md:text-sm sm:text-xs  font-medium">
+                      <h2 className="text-white  text-sm   font-semibold">
                         {x?.category}
                       </h2>
                     </div>

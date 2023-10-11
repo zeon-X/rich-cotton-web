@@ -13,7 +13,7 @@ const ContactDetailsContainer = ({ data }) => {
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className=" rounded-xl"
+          className=" roundedxl"
         ></iframe>
       </div>
 

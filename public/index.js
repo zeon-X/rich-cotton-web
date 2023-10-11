@@ -6,6 +6,12 @@ import hCar1 from "./assets/homeCarousol/hCar1.jpg";
 import hCar2 from "./assets/homeCarousol/hCar2.jpg";
 import hCar3 from "./assets/homeCarousol/hCar3.jpg";
 
+import aw from "./assets/parentProductsCategory/aw.jpg";
+import kw from "./assets/parentProductsCategory/kw.jpg";
+import lw from "./assets/parentProductsCategory/lw.jpg";
+import mw from "./assets/parentProductsCategory/mw.jpg";
+import ww from "./assets/parentProductsCategory/ww.jpg";
+
 import SupplierNetwork_Service from "./assets/serviceIcon/connection.png";
 import Customization_Service from "./assets/serviceIcon/dress.png";
 import QA_Service from "./assets/serviceIcon/quality-assurance.png";
@@ -28,4 +34,9 @@ export {
   SuppluChain_Service,
   CostEfficiency_Service,
   DedicatedCustomer_Service,
+  aw,
+  mw,
+  lw,
+  kw,
+  ww,
 };

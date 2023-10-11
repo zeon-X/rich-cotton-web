@@ -9,9 +9,10 @@ export default function Home() {
   return (
     <main className="">
       <HomeCarousol />
+
       <Product />
-      <Clients />
       <Services />
+      <Clients />
       <Team />
       <Contact />
     </main>
