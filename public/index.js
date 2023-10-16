@@ -6,7 +6,7 @@ import hCar1 from "./assets/homeCarousol/hCar1.jpg";
 import hCar2 from "./assets/homeCarousol/hCar2.jpg";
 import hCar3 from "./assets/homeCarousol/hCar3.jpg";
 
-import gif1 from "./assets/homeCarousol/Pdresentation1.gif";
+import gif1 from "./assets/homeCarousol/Presentation1.gif";
 import gif2 from "./assets/homeCarousol/rch2.gif";
 import gif3 from "./assets/homeCarousol/rch3.gif";
 
