@@ -39,17 +39,17 @@ const ClientsCarousol = () => {
     // Define an async function to fetch the data
     async function fetchData() {
       try {
-        Swal.showLoading();
+        // Swal.showLoading();
         const response = await axiosInstance.get("/client/get");
         // let fetchedClients = response?.data?.clients;
         let fetchedClients = response?.data;
         // setData(fetchedClients);
         // let tem = [...cli, ...fetchedClients];
         setCli([...cli, ...fetchedClients]);
-        Swal.close();
+        // Swal.close();
       } catch (error) {
         console.error("Error fetching data:", error);
-        Swal.close();
+        // Swal.close();
       }
     }
 

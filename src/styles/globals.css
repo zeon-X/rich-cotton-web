@@ -13,3 +13,149 @@ body {
   position: sticky;
   top: 0;
 }
+
+
+
+
+/* HOME HC 1 */
+
+
+/* Slide In from Left */
+/* 
+.slide-in-from-left {
+  animation: slideInFromLeft 1s ease 0s forwards;
+  transform-origin: left;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in-from-right {
+  animation: slideInFromRight 1s ease 0s forwards;
+  transform-origin: right;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.slide-in-from-top {
+  animation: slideInFromTop 1s ease 0s forwards;
+  transform-origin: top;
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slide-in-from-bottom {
+  animation: slideInFromBottom 1s ease 0s forwards;
+  transform-origin: bottom;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.fade-in {
+  animation: fadeIn 1s ease 0s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.fade-in-from-top {
+  animation: fadeInFromTop 1s ease 0s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.fade-in-from-bottom {
+  animation: fadeInFromBottom 1s ease 0s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.fade-in-from-left {
+  animation: fadeInFromLeft 1s ease 0s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.fade-in-from-right {
+  animation: fadeInFromRight 1s ease 0s forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+} 
+*/
