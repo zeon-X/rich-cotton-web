@@ -18,6 +18,7 @@ const HomeCarousol = () => {
           cellSpacing={0}
           wrapAround={true}
           pauseOnHover={false}
+          withoutControls={true}
           renderCenterLeftControls={({ previousSlide }) => (
             <button
               // className="p-1 border rounded-full"
