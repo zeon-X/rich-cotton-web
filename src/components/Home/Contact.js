@@ -6,7 +6,7 @@ import { email_icon, location_icon, phone_icon } from "../../../public";
 
 const ContactDetailsContainer = ({ data }) => {
   return (
-    <div className="w-full max-w-[480px] mx-auto p-4">
+    <div className="w-full  mx-auto p-4">
       <div className="">
         <iframe
           src={data?.location}
