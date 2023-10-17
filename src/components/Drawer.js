@@ -14,14 +14,14 @@ const Drawer = ({ children }) => {
       <div className="drawer-content flex flex-col m-0 p-0 overflow-hidden">
         {/* Navbar */}
         <BeforeNav />
-        <div className="w-full sticky top-0 z-50 bg-base-300">
+        <div id="sticky" className="w-full sticky top-0 z-50  bg-base-300">
           <Nav />
         </div>
         {/* Page content here */}
         {children}
         <Footer />
       </div>
-      <div className="drawer-side">
+      <div className="drawer-side z-50">
         <label htmlFor="drawer_nav_bar" className="drawer-overlay"></label>
         <ul className="menu p-4 w-80 h-full bg-white shadow">
           {/* Sidebar content here */}

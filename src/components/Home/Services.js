@@ -22,7 +22,7 @@ const Services = () => {
               return (
                 <div
                   key={index}
-                  className="lg:w-[280px] md:w-[220px] sm:w-[190px] lg:min-h-[384px]  md:min-h-[350px] sm:min-h-[240px]    border roundedlg lg:p-6 md:p-4 sm:p-3 flex flex-col justify-start items-center"
+                  className="lg:w-[280px] md:w-[220px] sm:w-[190px] lg:min-h-[384px]  md:min-h-[350px] sm:min-h-[240px] bg-white   border roundedlg lg:p-6 md:p-4 sm:p-3 flex flex-col justify-start items-center"
                 >
                   <div className="lg:h-[100px] lg:w-[100px] md:h-[80px] md:w-[80px] sm:h-[70px] sm:w-[70px] border rounded-full flex justify-center items-center ">
                     <Image

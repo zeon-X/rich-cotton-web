@@ -9,6 +9,8 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/pagination";
 import Carousol1 from "./HomeSlides/Carousol1";
+import Carousol2 from "./HomeSlides/Carousol2";
+import Carousol3 from "./HomeSlides/Carousol3";
 
 const HomeCarousolNew = () => {
   const [carousolHeight, setCarousolHeight] = useState(665);
@@ -16,7 +18,8 @@ const HomeCarousolNew = () => {
   const { height, width } = useWindowDimensions();
 
   useEffect(() => {
-    setCarousolHeight(Math.ceil((width * 665) / 1920));
+    let predictedHeight = Math.ceil((width * 665) / 1920);
+    setCarousolHeight(predictedHeight < 400 ? 400 : predictedHeight);
   }, [width]);
 
   return (
@@ -36,7 +39,7 @@ const HomeCarousolNew = () => {
           backgroundImage: `url(${hCar1.src})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
+          backgroundPosition: "left",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -57,7 +60,21 @@ const HomeCarousolNew = () => {
           alignItems: "center",
         }}
       >
-        <Carousol1 />
+        <Carousol2 />
+      </SwiperSlide>
+      <SwiperSlide
+        style={{
+          height: `${carousolHeight}px`,
+          backgroundImage: `url(${hCar3.src})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "left",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <Carousol3 />
       </SwiperSlide>
     </Swiper>
   );

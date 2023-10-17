@@ -30,7 +30,7 @@ const Product = () => {
                   onClick={() => {
                     router.push(`/products/${x?.link}`);
                   }}
-                  className="lg:h-[240px] sm:h-[280px]  lg:max-w-[320px] sm:max-w-full w-full relative border rounded"
+                  className="lg:h-[240px] md:h-[240px] sm:h-[280px]  lg:max-w-[320px] md:max-w-[320px] sm:max-w-full w-full relative border rounded"
                 >
                   <Image
                     src={x?.img}
@@ -39,8 +39,8 @@ const Product = () => {
                     className="roundedonly w-full h-full"
                   />
 
-                  <div className="absolute top-0 lg:h-[240px] sm:h-[280px]  w-full opacity-1 hover:cursor-pointer hover:opacity-[0.8] hover:shadow ">
-                    <div className="lg:h-[160px] sm:h-[200px] " />
+                  <div className="absolute top-0 lg:h-[240px] md:h-[240px] sm:h-[280px]  w-full opacity-1 hover:cursor-pointer hover:opacity-[0.8] hover:shadow ">
+                    <div className="lg:h-[160px] md:h-[160px] sm:h-[200px] " />
                     <div
                       style={{
                         backgroundColor: "rgb(22, 170, 27, 0.9)",
