@@ -22,21 +22,21 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="m-0 p-0 overflow-hidden">
+    <main className="m-0 p-0 ">
       {showSplash ? (
         <div className="flex flex-col justify-center items-center h-[660px]">
           <Image src={logo} height={70} width={60} alt="" className="" />
           <h1>Loading...</h1>
         </div>
       ) : (
-        <>
+        <div className="overflow-hidden">
           <HomeCarousolNew />
           <Product />
           <Services />
           <Clients />
           <Team />
           <Contact />
-        </>
+        </div>
       )}
     </main>
   );

@@ -72,7 +72,7 @@ const Carousol1 = () => {
     // Trigger the animation after a delay (adjust the delay as needed)
     const animationDelay = setTimeout(() => {
       setShowBorder(true);
-    }, 300); // Delay in milliseconds
+    }, 500); // Delay in milliseconds
 
     // Clear the timeout to prevent memory leaks
     return () => clearTimeout(animationDelay);
@@ -85,8 +85,8 @@ const Carousol1 = () => {
       height: 0,
     },
     to: {
-      opacity: inView ? 1 : 0,
-      height: inView ? 80 : 0,
+      opacity: showBorder ? 1 : 0,
+      height: showBorder ? 80 : 0,
     },
   });
 
