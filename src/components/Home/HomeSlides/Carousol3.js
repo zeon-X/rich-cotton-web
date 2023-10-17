@@ -15,7 +15,7 @@ const Carousol3 = () => {
     setCarousolHeight(Math.ceil((width * 665) / 1920));
   }, [width]);
 
-  const [ref, inView] = useInView({ threshold: 1 }); // Set the threshold to 80%
+  const [ref, inView] = useInView({ threshold: 0.8 }); // Set the threshold to 80%
 
   const trailDivs = useTrail(sd?.length, {
     from: { opacity: 0 },

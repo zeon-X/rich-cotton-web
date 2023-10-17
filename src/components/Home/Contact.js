@@ -10,12 +10,11 @@ const ContactDetailsContainer = ({ data }) => {
       <div className="">
         <iframe
           src={data?.location}
-          width="480"
           height="280"
           allowFullScreen=""
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          className=" roundedxl"
+          className="w-full roundedxl"
         ></iframe>
       </div>
 

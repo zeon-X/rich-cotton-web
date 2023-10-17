@@ -17,8 +17,9 @@ const Drawer = ({ children }) => {
         <div id="sticky" className="w-full sticky top-0 z-50  bg-base-300">
           <Nav />
         </div>
+
         {/* Page content here */}
-        <div className="m-0 p-0 overflow-hidden">{children}</div>
+        <div className=" overflow-x-hidden">{children}</div>
 
         <Footer />
       </div>
