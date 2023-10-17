@@ -1,10 +1,12 @@
 import React from "react";
-import { email, location, phone } from "../../../public/assets/svg";
+
 import contactUsData from "../../../public/assets/data/contactUsData";
+import Image from "next/image";
+import { email_icon, location_icon, phone_icon } from "../../../public";
 
 const ContactDetailsContainer = ({ data }) => {
   return (
-    <div className="lg:w-auto sm:w-full">
+    <div className="w-full max-w-[480px] mx-auto p-4">
       <div className="">
         <iframe
           src={data?.location}
@@ -18,26 +20,30 @@ const ContactDetailsContainer = ({ data }) => {
       </div>
 
       <div className=" mt-6">
-        <h1 className="lg:text-xl md:text-md sm:text-md  mb-2">{data?.name}</h1>
+        <h1 className="lg:text-xl md:text-md sm:text-md  mb-6">{data?.name}</h1>
 
         <div className="mt-2 flex flex-col gap-4 text-sm">
-          <div className="flex gap-4 items-center">
-            {location}
-            <p>{data?.address}</p>
+          <div className="flex gap-6 items-center">
+            <Image src={location_icon} height={20} width={20} alt="" />
+            <p>
+              <span className="font-bold">Address:</span> {data?.address}
+            </p>
           </div>
-          <div className="flex gap-4 items-center">
-            {phone}
+          <div className="flex gap-6 items-center">
+            <Image src={phone_icon} height={20} width={20} alt="" />
+
             <a target="_blank" href={`tel:${data?.phone.replace(/\s/g, "")}`}>
-              {data?.phone}
+              <span className="font-bold">Phone:</span> {data?.phone}
             </a>
           </div>
-          <div className="flex gap-4 items-center">
-            {email}
+          <div className="flex gap-6 items-center">
+            <Image src={email_icon} height={20} width={20} alt="" />
+
             <a
               target="_blank"
               href={`mailto:${data?.email.replace(/\s/g, "")}`}
             >
-              {data?.email}
+              <span className="font-bold">Email:</span> {data?.email}
             </a>
           </div>
         </div>
@@ -60,7 +66,7 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="mt-14 w-full flex lg:flex-row justify-center sm:flex-col gap-8">
+        <div className="mt-14 w-full flex flex-wrap justify-center items-center  gap-8">
           {contactUsData?.map((x, index) => {
             return <ContactDetailsContainer data={x} />;
           })}

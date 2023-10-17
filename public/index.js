@@ -24,6 +24,10 @@ import SuppluChain_Service from "./assets/serviceIcon/supply_chain.png";
 import CostEfficiency_Service from "./assets/serviceIcon/efficiency.png";
 import DedicatedCustomer_Service from "./assets/serviceIcon/technical-support.png";
 
+import email_icon from "./assets/icons/email.png";
+import phone_icon from "./assets/icons/phone.png";
+import location_icon from "./assets/icons/location1.png";
+
 export {
   logo,
   md,
@@ -46,4 +50,7 @@ export {
   gif1,
   gif2,
   gif3,
+  email_icon,
+  phone_icon,
+  location_icon,
 };

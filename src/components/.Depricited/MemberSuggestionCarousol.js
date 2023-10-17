@@ -2,7 +2,7 @@
 import useWindowDimensions from "@/utilities/hooks/useWindowDimensions";
 import Carousel from "nuka-carousel";
 import { useEffect, useState } from "react";
-import TeamMember from "./TeamMember";
+import TeamMember from "../Team/TeamMember";
 
 const MemberSuggestionCarousol = ({ suggestionData }) => {
   const [slidesToShow, setSlidesToShow] = useState(3);

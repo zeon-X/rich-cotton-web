@@ -2,7 +2,7 @@ const contactUsData = [
   {
     name: "Rich Cotton Limited",
     address:
-      "House: 577, Road: 9, Avenue: 3, DOHS Mirpur, Dhaka-1216, Bangladesh",
+      "House 577, Road: 9, Avenue: 3, DOHS Mirpur, Dhaka-1216, Bangladesh",
     phone: "+8801715-86 51 49",
     email: "jake@richcotton.net",
     location:

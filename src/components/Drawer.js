@@ -11,7 +11,7 @@ const Drawer = ({ children }) => {
   return (
     <div className="drawer">
       <input id="drawer_nav_bar" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
+      <div className="drawer-content flex flex-col m-0 p-0 overflow-hidden">
         {/* Navbar */}
         <BeforeNav />
         <div className="w-full sticky top-0 z-50 bg-base-300">

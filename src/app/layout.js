@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html data-theme="light" lang="en">
-      <body className={getfont.className}>
+      <body className={getfont?.className}>
         <Drawer>{children}</Drawer>
       </body>
     </html>

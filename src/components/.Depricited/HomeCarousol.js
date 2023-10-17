@@ -34,6 +34,10 @@ const HomeCarousol = () => {
             ></button>
           )}
         >
+          {/* <div className="w-full h-full flex justify-center items-center">
+            <C1 />
+          </div> */}
+
           <div className="w-full h-full flex justify-center items-center">
             <Image src={gif1} height={660} width={1800} alt={""} />
           </div>

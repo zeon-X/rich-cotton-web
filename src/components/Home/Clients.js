@@ -1,4 +1,4 @@
-import ClientsCarousol from "./ClientsCarousol";
+import ClientCarousolNew from "./ClientCarousolNew";
 
 const Clients = () => {
   return (
@@ -13,7 +13,7 @@ const Clients = () => {
           </h2>
 
           <div className="mt-14 w-full flex flex-wrap justify-center gap-10">
-            <ClientsCarousol />
+            <ClientCarousolNew />
           </div>
         </div>
       </section>

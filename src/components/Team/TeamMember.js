@@ -16,7 +16,7 @@ const TeamMember = ({ x }) => {
   return (
     <div
       onClick={() => router.push(`/team/${x?.id}`)}
-      className="cursor-pointer bg-white opacity-1 hover:opacity-[0.9] hover:shadow transition-all ease-in-out  lg:min-h-[340px]  md:min-h-[280px] sm:min-h-[240px]  lg:w-[280px] md:w-[220px] sm:w-[190px] p-2 roundedlg border flex flex-col justify-center items-center"
+      className="cursor-pointer bg-white opacity-1 hover:opacity-[0.9] hover:shadow transition-all ease-in-out  lg:min-h-[340px]  md:min-h-[280px] sm:min-h-[240px] w-full lg:max-w-[260px] md:max-w-[200px] sm:max-w-[170px] p-2 roundedlg border flex flex-col justify-center items-center"
     >
       <Image
         src={x?.image === "" ? profileImage : x?.image}

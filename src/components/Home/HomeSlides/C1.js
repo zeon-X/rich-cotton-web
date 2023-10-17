@@ -1,17 +1,25 @@
-import React from "react";
+"use client";
 import "animate.css";
-
-import { hCar1 } from "../../../../public";
+import useWindowDimensions from "@/utilities/hooks/useWindowDimensions";
+import { useEffect, useState } from "react";
 
 const C1 = () => {
+  const [carousolHeight, setCarousolHeight] = useState(665);
+
+  const { height, width } = useWindowDimensions();
+
+  useEffect(() => {
+    setCarousolHeight(Math.ceil((width * 665) / 1920));
+  }, [width]);
+
   return (
     <div
-      className="h-[480px] w-full flex flex-col  justify-center items-center pl-24 overflow-hidden "
       style={{
-        backgroundImage: `url(${hCar1.src})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        height: `${carousolHeight}px`,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <h1 className="text-5xl font-bold uppercase mb-4 animate__animated animate__slideInDown ">
@@ -46,49 +54,3 @@ const C1 = () => {
 };
 
 export default C1;
-
-const oldC1 = () => {
-  return;
-  <div className="flex flex-col justify-center items-center">
-    <div
-      className="h-[560px] w-full flex flex-col gap-4 justify-center items-center"
-      style={{
-        backgroundImage: `url(${hCar1.src})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
-      <h1
-        className="text-5xl font-bold uppercase  slide-in-from-left"
-        style={{ "--delay": "0s" }}
-      >
-        RichCotton Ltd
-      </h1>
-      <p
-        className="text-2xl uppercase tracking-widest fade-in-from-bottom"
-        style={{ "--delay": "3s" }}
-      >
-        Fashion is our passion
-      </p>
-
-      <div className="grid grid-cols-2 justify-center items-center">
-        <div className="h-[100px] flex flex-col justify-center pr-6 fade-innn">
-          <p className="text-lg uppercase tracking-normal text-right font-semibold">
-            Global Sourcing
-          </p>
-          <p className="text-lg uppercase tracking-normal text-right font-semibold">
-            Quality Assurance
-          </p>
-        </div>
-        <div className=" border-l-2 h-[100px] flex flex-col justify-center pl-6 fade-innn">
-          <p className="text-lg uppercase tracking-normal text-left font-semibold">
-            Compilance
-          </p>
-          <p className="text-lg uppercase tracking-normal text-left font-semibold">
-            Product Development
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>;
-};

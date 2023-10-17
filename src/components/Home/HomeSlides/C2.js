@@ -1,17 +1,25 @@
-import React from "react";
+"use client";
 import "animate.css";
-
-import { hCar2 } from "../../../../public";
+import useWindowDimensions from "@/utilities/hooks/useWindowDimensions";
+import { useEffect, useState } from "react";
 
 const C2 = () => {
+  const [carousolHeight, setCarousolHeight] = useState(665);
+
+  const { height, width } = useWindowDimensions();
+
+  useEffect(() => {
+    setCarousolHeight(Math.ceil((width * 665) / 1920));
+  }, [width]);
+
   return (
     <div
-      className="h-[480px] w-full flex flex-col  justify-center items-center pl-24  overflow-hidden"
       style={{
-        backgroundImage: `url(${hCar2.src})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
+        height: `${carousolHeight}px`,
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <h1 className="text-5xl font-bold uppercase mb-4 animate__animated animate__slideInDown ">
@@ -26,7 +34,7 @@ const C2 = () => {
           <p className="text-lg uppercase tracking-widest text-right font-semibold animate__animated animate__delay-2s animate__zoomIn ">
             Global Sourcing
           </p>
-          <p className="text-lg uppercase tracking-widest text-right font-semibold  animate__animated animate__delay-2s animate__zoomIn  ">
+          <p className="text-lg uppercase tracking-widest text-right font-semibold  animate__animated animate__delay-2s animate__zoomIn ">
             Quality Assurance
           </p>
         </div>

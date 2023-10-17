@@ -3,7 +3,7 @@ import { teamData } from "../../../../public/assets/data/teamData";
 import Image from "next/image";
 import { fb, insta, linkedin, twitter } from "../../../../public/assets/svg";
 import { profileImage } from "../../../../public";
-import MemberSuggestionCarousol from "@/components/Team/MemberSuggestionCarousol";
+import MemberSuggestion from "@/components/Team/MemberSugestion";
 
 const page = ({ params }) => {
   const id = params.slug;
@@ -93,7 +93,7 @@ const page = ({ params }) => {
           </div>
         </div>
 
-        <div className="p-12 w-full flex flex-wrap justify-center gap-10 ">
+        <div className="lg:px-6 md:px-6 sm:px-0 w-full flex flex-col justify-center gap-10 mt-12">
           <div>
             <h1 className=" lg:text-4xl md:text-3xl sm:text-xl text-green font-bold uppercase text-center">
               The Textiles Experts!
@@ -102,7 +102,7 @@ const page = ({ params }) => {
               Unraveling the World of Textiles
             </h2>
           </div>
-          <MemberSuggestionCarousol suggestionData={suggestionData} />
+          <MemberSuggestion suggestionData={suggestionData} />
         </div>
       </section>
     </>
