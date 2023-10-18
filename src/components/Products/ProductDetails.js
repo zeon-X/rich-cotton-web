@@ -1,9 +1,10 @@
 import Image from "next/image";
 import React from "react";
 import Swal from "sweetalert2";
+import CustomLoadingScreen from "../Shared/CustomLoadingScreen";
 
 const ProductDetails = ({ productDetails }) => {
-  console.log(productDetails);
+  // console.log(productDetails);
   if (productDetails) {
     return (
       <div className="lg:px-6 md:px-4 sm:px-3 py-6">
@@ -62,7 +63,7 @@ const ProductDetails = ({ productDetails }) => {
   } else
     return (
       <>
-        {Swal.showLoading()} <div className="h-screen w-full" />
+        <CustomLoadingScreen />
       </>
     );
 };

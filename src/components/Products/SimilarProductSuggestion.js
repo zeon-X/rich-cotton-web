@@ -39,8 +39,8 @@ const SimilarProductSuggestion = ({ similarProductsData }) => {
       autoplay={{ delay: 1500 }}
       spaceBetween={cellSpacing}
       slidesPerView={slidesToShow}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      // onSlideChange={() => console.log("slide change")}
+      // onSwiper={(swiper) => console.log(swiper)}
     >
       {similarProductsData?.map((product, index) => {
         return (

@@ -1,10 +1,8 @@
 "use client";
 import ProductCategory from "@/components/Products/ProductCategory";
 import parentCategory from "../../../../public/assets/data/parentCategory";
-// import { productFakeData } from "../../../../public/assets/data/productFakeData";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import axios from "axios";
 import axiosInstance from "@/utilities/axiosInstance";
 
 // let data = productFakeData;
@@ -12,7 +10,7 @@ let parentCategoryData = parentCategory;
 
 const page = ({ params }) => {
   const category = params.slug;
-  console.log(category);
+  // console.log(category);
 
   const [data, setData] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
@@ -47,7 +45,9 @@ const page = ({ params }) => {
 
       try {
         // const response = await axios.get("/api/products");
-        const response = await axiosInstance.get("/product/get");
+        const response = await axiosInstance.get(
+          `/product/findByCategory/${category}`
+        );
         // setData(response?.data?.product);
         setData(response?.data);
 
@@ -57,11 +57,11 @@ const page = ({ params }) => {
 
         // let temFilteredProducts = response?.data?.product?.filter(
 
-        let temFilteredProducts = response?.data?.filter(
-          (product) => product.parentCategory == category
-        );
+        // let temFilteredProducts = response?.data?.filter(
+        //   (product) => product.parentCategory == category
+        // );
 
-        setFilteredProducts(temFilteredProducts);
+        // setFilteredProducts(temFilteredProducts);
         Swal.close();
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -90,7 +90,7 @@ const page = ({ params }) => {
   return (
     <section className="max-w-[1190px] min-h-screen w-full mx-auto py-12">
       <ProductCategory
-        productsData={filteredProducts}
+        productsData={data}
         productsTitle={matchedTitle}
         parentCategory={category}
       />

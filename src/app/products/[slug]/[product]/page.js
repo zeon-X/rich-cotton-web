@@ -1,7 +1,8 @@
 "use client";
 import ProductDetails from "@/components/Products/ProductDetails";
 import SimilarProductSuggestion from "@/components/Products/SimilarProductSuggestion";
-import axios from "axios";
+import CustomLoadingScreen from "@/components/Shared/CustomLoadingScreen";
+import axiosInstance from "@/utilities/axiosInstance";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
@@ -17,7 +18,7 @@ const filterProductsByCategoryAndExclude = (
   category,
   excludedProductCode
 ) =>
-  products.filter(
+  products?.filter(
     (product) =>
       product.category === category &&
       product.productCode !== excludedProductCode
@@ -28,34 +29,41 @@ const page = ({ params }) => {
   const slug = params.slug;
 
   const [data, setData] = useState([]);
-  //   console.log(productId, slug);
-  const [productDetailsData, setProductDetailsData] = useState({});
-  const [similarProductsData, setSimilarProductsData] = useState([]);
+  console.log(slug, productId);
+  const [productDetailsData, setProductDetailsData] = useState(null);
+  const [similarProductsData, setSimilarProductsData] = useState(null);
 
   useEffect(() => {
     async function fetchProductData() {
       try {
-        Swal.showLoading();
-        const response = await axios.get(`/api/products/${productId}`);
-        setProductDetailsData(response?.data?.product);
-        console.log(response?.data?.product);
-        Swal.close();
+        // Swal.showLoading();
+        const response = await axiosInstance.get(
+          `/product/findByProductId/${productId}`
+        );
+        // console.log(response);
+        setProductDetailsData(response?.data);
+        // console.log(response);
+        // Swal.close();
       } catch (error) {
         console.error("Error fetching data:", error);
-        Swal.close();
+        // Swal.close();
       }
     }
 
     // Define an async function to fetch the data
     async function fetchAllData() {
       try {
-        Swal.showLoading();
-        const response = await axios.get("/api/products");
-        setData(response?.data?.product);
-        Swal.close();
+        // Swal.showLoading();
+        const response = await axiosInstance.get(
+          `/product/findByCategory/${slug}`
+        );
+        console.log(response?.data);
+        setData(response?.data);
+        // Swal.close();
       } catch (error) {
+        setData([]);
         console.error("Error fetching data:", error);
-        Swal.close();
+        // Swal.close();
       }
     }
 
@@ -74,10 +82,25 @@ const page = ({ params }) => {
     // console.log(filteredProducts);
   }, [slug, productId, data, productDetailsData]);
 
+  // console.log(similarProductsData);
+  // console.log(productDetailsData);
+
   return (
     <section className="max-w-[1190px] w-full mx-auto py-12">
-      <ProductDetails productDetails={productDetailsData} />
-      <SimilarProductSuggestion similarProductsData={similarProductsData} />
+      {productDetailsData === null && similarProductsData === null ? (
+        <CustomLoadingScreen />
+      ) : (
+        <>
+          <ProductDetails productDetails={productDetailsData} />
+          {similarProductsData === null ? (
+            <></>
+          ) : (
+            <SimilarProductSuggestion
+              similarProductsData={similarProductsData}
+            />
+          )}
+        </>
+      )}
     </section>
   );
 };
