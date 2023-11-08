@@ -13,23 +13,23 @@ import Carousol2 from "./HomeSlides/Carousol2";
 import Carousol3 from "./HomeSlides/Carousol3";
 
 const HomeCarousolNew = () => {
-  const [carousolHeight, setCarousolHeight] = useState(665);
+  const [carousolHeight, setCarousolHeight] = useState(685);
 
   const { height, width } = useWindowDimensions();
 
   useEffect(() => {
-    let predictedHeight = Math.ceil((width * 665) / 1920);
-    setCarousolHeight(predictedHeight < 400 ? 400 : predictedHeight);
+    let predictedHeight = Math.ceil((width * 685) / 1920);
+    setCarousolHeight(predictedHeight < 240 ? 240 : predictedHeight);
   }, [width]);
 
   return (
     <Swiper
-      // modules={[Autoplay]}
+      modules={[Autoplay]}
       style={{ width: `${width - 20}px` }}
-      // autoplay={{ delay: 4000 }}
+      autoplay={{ delay: 4000 }}
       className=" overflow-x-hidden"
-      // spaceBetween={0}
-      // slidesPerView={1}
+      spaceBetween={0}
+      slidesPerView={1}
       //   onSlideChange={() => console.log("slide change")}
       //   onSwiper={(swiper) => console.log(swiper)}
     >

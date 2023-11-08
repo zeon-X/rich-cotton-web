@@ -6,13 +6,13 @@ import { useInView } from "react-intersection-observer"; // Import the useInView
 import { serviceData } from "../../../../public/assets/data/serviceData";
 
 const Carousol3 = () => {
-  const [carousolHeight, setCarousolHeight] = useState(665);
+  const [carousolHeight, setCarousolHeight] = useState(685);
   const [sd, setCd] = useState(serviceData);
   const { height, width } = useWindowDimensions();
   const [animationsPlayed, setAnimationsPlayed] = useState(false); // Flag to track if animations have played
 
   useEffect(() => {
-    setCarousolHeight(Math.ceil((width * 665) / 1920));
+    setCarousolHeight(Math.ceil((width * 685) / 1920));
   }, [width]);
 
   const [ref, inView] = useInView({ threshold: 0.8 }); // Set the threshold to 80%
@@ -45,18 +45,25 @@ const Carousol3 = () => {
   return (
     <animated.div
       style={{
-        height: `${carousolHeight}px`,
+        height: carousolHeight < 280 ? "auto" : `${carousolHeight}px`,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+        width: `${
+          width *
+          (width > 1280 ? 0.4 : width > 1080 ? 0.7 : width > 680 ? 0.6 : 0.8)
+        }px`,
       }}
+      className={
+        "lg:mt-[-28px]  sm:mt-[0px]  lg:bg-transparent md:bg-transparent  sm:bg-[#ffffff87] lg:p-0 md:p-0 sm:p-4"
+      }
     >
       {trailHead.map((props, index) => (
         <animated.h1
           style={props}
           key={index}
-          className="lg:text-4xl md:text-2xl sm:text-md font-bold uppercase  lg:mb-10 md:mb-6 sm:mb-4"
+          className="lg:text-[44px] md:text-2xl sm:text-md font-bold uppercase  lg:mb-12 md:mb-6 sm:mb-2"
         >
           Our Services
         </animated.h1>
@@ -64,10 +71,10 @@ const Carousol3 = () => {
       <div>
         <div
           ref={ref}
-          className="flex flex-wrap justify-center items-center lg:gap-8 md:gap-4 sm:gap-2 max-w-[980px] px-4 mx-auto"
+          className="flex flex-wrap justify-center items-start lg:gap-4 md:gap-4 sm:gap-2   mx-auto"
         >
           {trailDivs.map((props, index) => (
-            <animated.div style={props} key={index}>
+            <animated.div style={props} key={index} className={""}>
               <div className=" lg:flex md:hidden sm:hidden justify-center items-center ">
                 <Image
                   src={sd[index]?.icon}
@@ -92,7 +99,7 @@ const Carousol3 = () => {
                   alt={sd[index]?.title}
                 />
               </div>
-              <h2 className="lg:text-md md:text-sm sm:text-xs mt-6 ">
+              <h2 className="lg:text-[14px] md:text-xs sm:text-[6px] lg:mt-4 md:mt-2 sm:mt-2 lg:max-w-[120px] md:max-w-[80px] sm:max-w-[40px] text-center font-semibold ">
                 {sd[index]?.title}
               </h2>
             </animated.div>

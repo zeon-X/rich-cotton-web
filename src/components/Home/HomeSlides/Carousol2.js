@@ -6,13 +6,13 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer"; // Import the useInView hook
 
 const Carousol2 = () => {
-  const [carousolHeight, setCarousolHeight] = useState(665);
+  const [carousolHeight, setCarousolHeight] = useState(685);
   const [cd, setCd] = useState(clientData?.slice(2, 16));
   const { height, width } = useWindowDimensions();
   const [animationsPlayed, setAnimationsPlayed] = useState(false); // Flag to track if animations have played
 
   useEffect(() => {
-    setCarousolHeight(Math.ceil((width * 665) / 1920));
+    setCarousolHeight(Math.ceil((width * 685) / 1920));
 
     if (width <= 480) {
       setCd(clientData?.slice(2, 8));
@@ -59,12 +59,13 @@ const Carousol2 = () => {
         justifyContent: "center",
         alignItems: "center",
       }}
+      className={"lg:mt-[-28px]  sm:mt-[0px]"}
     >
       {trailHead.map((props, index) => (
         <animated.h1
           style={props}
           key={index}
-          className="lg:text-4xl md:text-2xl sm:text-md font-bold uppercase text-white lg:mb-10 md:mb-6 sm:mb-4"
+          className="lg:text-[52px] md:text-2xl sm:text-md font-bold uppercase text-white lg:mb-16 md:mb-6 sm:mb-4"
         >
           Our Clients
         </animated.h1>
