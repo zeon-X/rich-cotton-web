@@ -5,7 +5,7 @@ import { useInView } from "react-intersection-observer";
 import { useSpring, useTrail, animated } from "react-spring";
 
 const Carousol1 = () => {
-  const [carousolHeight, setCarousolHeight] = useState(665);
+  const [carousolHeight, setCarousolHeight] = useState(685);
   const { height, width } = useWindowDimensions();
 
   useEffect(() => {
@@ -104,7 +104,7 @@ const Carousol1 = () => {
         <animated.h1
           style={props}
           key={textContentLeft[index]} // Use textContentLeft for h1 elements
-          className="lg:text-5xl md:text-3xl sm:text-md font-bold uppercase lg:mb-4 md:mb-2 sm:mb-1"
+          className="lg:text-[64px]  md:text-3xl sm:text-md font-bold uppercase lg:mb-6 md:mb-2 sm:mb-1"
         >
           Rich Cotton Ltd
         </animated.h1>
@@ -114,19 +114,19 @@ const Carousol1 = () => {
         <animated.p
           style={props}
           key={textContentLeft[index]} // Use textContentLeft for p elements
-          className="lg:text-xl md:text-lg sm:text-sm uppercase tracking-widest lg:mb-12 md:mb-6 sm:mb-4"
+          className="lg:text-[24px] md:text-lg sm:text-sm uppercase tracking-widest lg:mb-12 md:mb-6 sm:mb-4 text-primary"
         >
           FASHION WHEREVER YOU GO
         </animated.p>
       ))}
 
       <div className="flex  justify-center items-center">
-        <div className="h-[80px] flex flex-col justify-center lg:pr-6 md:p-4 sm:pl-2 fade-innn">
+        <div className=" h-[52px] flex flex-col justify-between  lg:pr-6 md:pr-4 sm:pl-2 fade-innn ">
           {trailLeft.map((props, index) => (
             <animated.p
               style={props}
               key={textContentLeft[index]} // Use textContentLeft for these elements
-              className="lg:text-lg md:text-md sm:text-xs uppercase tracking-widest text-right font-semibold"
+              className="lg:text-[22px] md:text-md sm:text-xs uppercase tracking-widiest text-right font-semibold text-[#3b3b3b]"
             >
               {textContentLeft[index]}
             </animated.p>
@@ -141,12 +141,12 @@ const Carousol1 = () => {
           }}
           className="h-[80px] border"
         />
-        <div className=" h-[80px] flex flex-col justify-center lg:pl-6 md:pl-4 sm:pl-2 fade-innn">
+        <div className=" h-[52px] flex flex-col justify-between lg:pl-6 md:pl-4 sm:pl-2 fade-innn ">
           {trailRight.map((props, index) => (
             <animated.p
               style={props}
               key={textContentRight[index]} // Use textContentRight for these elements
-              className="lg:text-lg md:text-md sm:text-xs uppercase tracking-widest text-left font-semibold"
+              className="lg:text-[22px] md:text-md sm:text-xs uppercase tracking-widiest text-left font-semibold  text-[#3b3b3b]"
             >
               {textContentRight[index]}
             </animated.p>

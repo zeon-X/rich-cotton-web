@@ -49,7 +49,7 @@ const page = ({ params }) => {
           `/product/findByCategory/${category}`
         );
         // setData(response?.data?.product);
-        setData(response?.data);
+        setData(response?.data?.reverse());
 
         // console.log(response?.data?.product);
 

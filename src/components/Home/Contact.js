@@ -6,7 +6,7 @@ import { email_icon, location_icon, phone_icon } from "../../../public";
 
 const ContactDetailsContainer = ({ data }) => {
   return (
-    <div className="w-full  mx-auto p-4">
+    <div className="w-full max-w-[520px] mx-auto p-4">
       <div className="">
         <iframe
           src={data?.location}
@@ -67,7 +67,7 @@ const Contact = () => {
 
         <div className="mt-14 w-full flex flex-wrap justify-center items-center  gap-8">
           {contactUsData?.map((x, index) => {
-            return <ContactDetailsContainer data={x} />;
+            return <ContactDetailsContainer key={index} data={x} />;
           })}
         </div>
       </section>

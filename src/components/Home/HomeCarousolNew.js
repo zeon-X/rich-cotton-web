@@ -24,12 +24,12 @@ const HomeCarousolNew = () => {
 
   return (
     <Swiper
-      modules={[Autoplay]}
+      // modules={[Autoplay]}
       style={{ width: `${width - 20}px` }}
-      autoplay={{ delay: 4000 }}
+      // autoplay={{ delay: 4000 }}
       className=" overflow-x-hidden"
-      spaceBetween={0}
-      slidesPerView={1}
+      // spaceBetween={0}
+      // slidesPerView={1}
       //   onSlideChange={() => console.log("slide change")}
       //   onSwiper={(swiper) => console.log(swiper)}
     >

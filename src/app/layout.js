@@ -1,11 +1,17 @@
 import Drawer from "@/components/Drawer";
 import "@/styles/globals.css";
-import { Nunito, Roboto, Sora } from "next/font/google";
+// import {
+//   Dela_Gothic_One,
+//   Nunito,
+//   Open_Sans,
+//   Roboto,
+//   Sora,
+// } from "next/font/google";
 
-const getfont = Nunito({
-  subsets: ["latin"],
-  display: "fallback", // <--
-});
+// const getfont = Open_Sans({
+//   subsets: ["latin"],
+//   display: "fallback", // <--
+// });
 
 export const metadata = {
   title: "Rich Cotton Ltd. - A house of fashion garments soureing",
@@ -15,7 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html data-theme="light" lang="en">
-      <body className={getfont?.className}>
+      <body
+      // className={getfont?.className}
+      >
         <Drawer>{children}</Drawer>
       </body>
     </html>

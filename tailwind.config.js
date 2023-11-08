@@ -8,7 +8,10 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {},
+      fontFamily: {
+        // DGO: ["Dela Gothic One"],
+        Poppins: ["Poppins"],
+      },
       colors: {
         green: "#16AA1B",
         lgreen: "#1acf21",
