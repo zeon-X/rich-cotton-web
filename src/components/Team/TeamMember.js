@@ -18,14 +18,14 @@ const TeamMember = ({ x }) => {
       onClick={() => router.push(`/team/${x?.id}`)}
       className="cursor-pointer bg-white opacity-1 hover:opacity-[0.9] hover:shadow transition-all ease-in-out  lg:min-h-[340px]  md:min-h-[280px] sm:min-h-[240px] w-full lg:max-w-[260px] md:max-w-[200px] sm:max-w-[170px] p-2 roundedlg border flex flex-col justify-center items-center"
     >
-      <Image
+      {/* <Image
         src={x?.image === "" ? profileImage : x?.image}
         height={120}
         width={120}
         alt={x?.name}
         className="rounded-full lg:block md:hidden sm:hidden"
-      />
-      <Image
+      /> 
+       <Image
         src={x?.image === "" ? profileImage : x?.image}
         height={100}
         width={100}
@@ -39,6 +39,23 @@ const TeamMember = ({ x }) => {
         alt={x?.name}
         className="rounded-full lg:hidden md:hidden sm:block"
       />
+      
+      */}
+
+      <div
+        style={{
+          backgroundImage: `url(${
+            x?.image === "" ? profileImage : x.image.src
+          })`,
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+          borderRadius: "50%",
+          overflow: "hidden",
+        }}
+        className="rounded-full lg:w-[120px] lg:h-[120px] md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] "
+        alt={x?.name}
+      />
+
       <h1 className="lg:text-md sm:text-sm text-primary uppercase  font-semibold text-center mt-4">
         {x?.name}
       </h1>

@@ -22,7 +22,7 @@ const page = ({ params }) => {
         </div>
       </section> */}
       <section className="max-w-[1190px] w-full mx-auto py-14 lg:px-6 md:px-4 sm:px-2">
-        <div className="flex lg:flex-row md:flex-row sm:flex-col justify-between items-center gap-8  lg:p-12 md:p-8 sm:p-4 border bg-gray-50">
+        <div className="flex lg:flex-row md:flex-row sm:flex-col justify-between items-center gap-8  lg:p-12 md:p-8 sm:p-4  ">
           <div className="lg:w-5/12 md:w-5/12 sm:w-full">
             <Image
               src={memberData?.image === "" ? profileImage : memberData?.image}
