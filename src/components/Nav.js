@@ -38,7 +38,7 @@ const Nav = () => {
               </div>{" "}
             </Link>
             <div className="flex-none hidden lg:block">
-              <ul className="menu menu-horizontal">
+              <ul className="menu menu-horizontal text-[12px]">
                 <li>
                   <Link href="/#home">Home</Link>
                 </li>

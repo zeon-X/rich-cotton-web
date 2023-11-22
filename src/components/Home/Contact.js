@@ -19,20 +19,22 @@ const ContactDetailsContainer = ({ data }) => {
       </div>
 
       <div className=" mt-6">
-        <h1 className="lg:text-xl md:text-md sm:text-md  mb-6">{data?.name}</h1>
+        <h1 className="lg:text-[18px] md:text-md sm:text-md text-green mb-6">
+          {data?.name}
+        </h1>
 
-        <div className="mt-2 flex flex-col gap-4 text-sm">
+        <div className="mt-2 flex flex-col gap-4 text-[12px]">
           <div className="flex gap-6 items-center">
             <Image src={location_icon} height={20} width={20} alt="" />
             <p>
-              <span className="font-bold">Address:</span> {data?.address}
+              <span className="font-medium">Address:</span> {data?.address}
             </p>
           </div>
           <div className="flex gap-6 items-center">
             <Image src={phone_icon} height={20} width={20} alt="" />
 
             <a target="_blank" href={`tel:${data?.phone.replace(/\s/g, "")}`}>
-              <span className="font-bold">Phone:</span> {data?.phone}
+              <span className="font-medium">Phone:</span> {data?.phone}
             </a>
           </div>
           <div className="flex gap-6 items-center">
@@ -42,7 +44,7 @@ const ContactDetailsContainer = ({ data }) => {
               target="_blank"
               href={`mailto:${data?.email.replace(/\s/g, "")}`}
             >
-              <span className="font-bold">Email:</span> {data?.email}
+              <span className="font-medium">Email:</span> {data?.email}
             </a>
           </div>
         </div>

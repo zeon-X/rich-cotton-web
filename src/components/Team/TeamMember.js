@@ -60,7 +60,7 @@ const TeamMember = ({ x }) => {
         {x?.name}
       </h1>
 
-      <h2 className="lg:text-sm sm:text-xs text-center  ">{x?.position}</h2>
+      <h2 className="lg:text-[10px] sm:text-xs text-center  ">{x?.position}</h2>
 
       {/* <div className="max-w-[160px] mx-auto flex flex-wrap justify-center items-center lg:gap-2 md:gap-2 sm:gap-1 mt-6"> */}
       <div className="max-w-[160px] mx-auto flex  justify-center items-center lg:gap-2 md:gap-2 sm:gap-1 mt-6">

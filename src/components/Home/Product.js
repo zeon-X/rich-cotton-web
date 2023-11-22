@@ -47,10 +47,10 @@ const Product = () => {
                       }}
                       className="absolute bottom-0 px-6 py-4 h-[80px] w-full roundedonlyl roundedonlyr"
                     >
-                      <h1 className="text-white  text-lg  font-bold">
+                      <h1 className="text-white  text-[18px]  font-medium">
                         {x?.title}
                       </h1>
-                      <h2 className="text-white  text-sm   font-semibold">
+                      <h2 className="text-white  text-[10px]   font-semibold">
                         {x?.category}
                       </h2>
                     </div>

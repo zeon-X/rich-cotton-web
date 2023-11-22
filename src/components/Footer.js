@@ -8,7 +8,7 @@ const Footer = () => {
     <footer>
       <div className="bg-green w-full px-4 mt-24">
         <div className="max-w-[1190px] mx-auto lg:px-0 md:px-2 sm:px-2 py-10 text-white flex justify-between items-center">
-          <p className="text-sm">
+          <p className="text-[12px]">
             Copyright © {currentYear} Rich Cotton Ltd. | Developed By{" "}
             <a target="_blank" href="http://www.aleehatech.com">
               AleehaTech
