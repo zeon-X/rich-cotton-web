@@ -51,7 +51,7 @@ const page = ({ params }) => {
         // setData(response?.data?.product);
         setData(response?.data?.reverse());
 
-        // console.log(response?.data?.product);
+        console.log("product : ", response?.data);
 
         // FILTERING PRODUCTS BY MAIN CATEGORY
 

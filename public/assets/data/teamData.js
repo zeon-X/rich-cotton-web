@@ -23,12 +23,12 @@ import {
 export const teamData = [
   {
     id: 1,
-    name: "Mamun Reza Jake",
+    name: "Jake",
     position: "Managing Director",
     phone: "+8801715-86 51 49",
     email: "jake@richcotton.net",
     details:
-      "Mamun Reza Jake, an astute leader in the buying house and garments trade, steers our company's success as the Managing Director, combining industry expertise with effective global partnerships.",
+      "Jake, an astute leader in the buying house and garments trade, steers our company's success as the Managing Director, combining industry expertise with effective global partnerships.",
     social: {
       fb: "",
       insta: "",
@@ -60,7 +60,7 @@ export const teamData = [
     phone: "+8801715-86 51 49",
     email: "jake@richcotton.net",
     details:
-      'Md. Mehadul Hossain, a creative visionary with a deep passion for branding, directs our marketing initiatives as the Marketing Director, crafting compelling narratives and engaging experiences for our audience."',
+      "As the Assistant General Manager of Marketing and Merchandising, Md. Mehadul Hossain plays a key role in shaping our brand's success. He leads marketing strategies, collaborates with diverse teams, and oversees merchandising operations. His responsibilities include enhancing brand visibility, driving customer engagement, and ensuring a seamless connection between marketing efforts and merchandising initiatives to achieve sustainable business growth.  ",
     social: {
       fb: "",
       insta: "",
@@ -269,7 +269,7 @@ export const teamData = [
     phone: "+8801715-86 51 49",
     email: "jake@richcotton.net",
     details:
-      "Md. Ibrahim Hossain, a versatile leader with a compassionate approach, takes on the responsibilities of HR, Admin, and CSR Manager, fostering a harmonious workplace, efficient operations, and impactful corporate social responsibility initiatives.",
+      "Md Ibrahim Hossain, as Assistant Manager CSR, oversees our corporate social responsibility initiatives. He coordinates community engagement programs, ensures ethical practices within the organization, and leads sustainability efforts. His role involves fostering partnerships, implementing CSR strategies, and promoting social and environmental welfare aligned with company values.",
     social: {
       fb: "",
       insta: "",
@@ -301,7 +301,7 @@ export const teamData = [
     phone: "+8801715-86 51 49",
     email: "jake@richcotton.net",
     details:
-      "Md. Sindhumoy Debnath, a meticulous financial strategist, leads our fiscal endeavors as the Finance General Manager, optimizing resources and driving sustainable growth with a keen eye for detail.",
+      "As the General Manager of Logistics, Sindhumoy Debnath oversees the comprehensive logistics operations. He manages transportation, warehousing, and distribution, ensuring efficient supply chain management. Sindhumoy strategizes logistics planning, optimizes routes, and implements cost-effective measures while maintaining high standards of delivery and inventory management. His role is pivotal in streamlining operations and ensuring smooth, timely product movement.  ",
     social: {
       fb: "",
       insta: "",
