@@ -10,7 +10,7 @@ import Rayhan from "./Rayhan.jpg";
 import Fatema from "./Fatema_Merchandiser.jpg";
 import Lamiya from "./lamiya.jpg";
 import Hasibullah from "./Hasibullah.jpg";
-// import Younos from "./";
+import Younos from "./younos.png";
 import Billal from "./Billal_Assistant_Manager_Sample_And_CAD.jpg";
 import Omar from "./Omar_Faruk_Sr_Technician.jpg";
 import Ibrahim from "./Ibrahim_Hossain_Asst_Manager_CSR.jpg";
@@ -37,4 +37,5 @@ export {
   Fatema,
   Lamiya,
   Billal,
+  Younos,
 };

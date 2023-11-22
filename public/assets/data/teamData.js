@@ -17,6 +17,7 @@ import {
   Rayhan,
   Sindhumoy,
   Tariqul,
+  Younos,
 } from "../team";
 
 export const teamData = [
@@ -151,7 +152,7 @@ export const teamData = [
   {
     id: 9,
     name: "Md Rayhan Sharif",
-    position: "Senior Merchandiser",
+    position: "Assistant Manager, Merchandising",
     phone: "+8801715-86 51 49",
     email: "jake@richcotton.net",
     details:
@@ -226,7 +227,7 @@ export const teamData = [
       linkedin: "",
       twitter: "",
     },
-    image: "",
+    image: Younos,
   },
   {
     id: 14,
