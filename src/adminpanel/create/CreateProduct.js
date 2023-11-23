@@ -157,7 +157,7 @@ function CreateProduct() {
               <option value="">Select Parent Category</option>
 
               {parentCategory?.map((x, index) => {
-                return <option value={x?.title}>{x?.title}</option>;
+                return <option value={x?.link}>{x?.link}</option>;
               })}
               {/* Add more options as needed */}
             </select>

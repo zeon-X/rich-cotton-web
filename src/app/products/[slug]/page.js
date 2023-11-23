@@ -48,6 +48,8 @@ const page = ({ params }) => {
         const response = await axiosInstance.get(
           `/product/findByCategory/${category}`
         );
+
+        console.log("link: ", `/product/findByCategory/${category}`);
         // setData(response?.data?.product);
         setData(response?.data?.reverse());
 
