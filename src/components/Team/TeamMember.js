@@ -49,7 +49,7 @@ const TeamMember = ({ x }) => {
           })`,
           backgroundSize: "cover",
           backgroundPosition: "top",
-          borderRadius: "50%",
+          borderRadius: "0%",
           overflow: "hidden",
         }}
         className="rounded-full lg:w-[120px] lg:h-[120px] md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] "

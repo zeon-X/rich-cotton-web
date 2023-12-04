@@ -49,10 +49,10 @@ const Drawer = ({ children }) => {
           </div>
 
           <li>
-            <Link href="#home">Home</Link>
+            <Link href="/#home">Home</Link>
           </li>
           <li>
-            <Link href="#about">About Us</Link>
+            <Link href="/about">About Us</Link>
           </li>
 
           <li tabIndex={0}>
@@ -70,16 +70,16 @@ const Drawer = ({ children }) => {
             </details>
           </li>
           <li>
-            <Link href="#client">Clients</Link>
+            <Link href="/#client">Clients</Link>
           </li>
           <li>
-            <Link href="#service">Services</Link>
+            <Link href="/#service">Services</Link>
           </li>
           <li>
-            <Link href="#team">Team</Link>
+            <Link href="/#team">Team</Link>
           </li>
           <li>
-            <Link href="#contact">Contact</Link>
+            <Link href="/#contact">Contact</Link>
           </li>
         </ul>
       </div>
