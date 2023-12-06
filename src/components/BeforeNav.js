@@ -3,9 +3,10 @@ import React from "react";
 const BeforeNav = () => {
   // [#F9F9F9] text-[#C2C2C2]"
   return (
-    <div className="w-full bg-green lg:flex md:hidden sm:hidden items-center h-[30px] ">
+    <div className="w-full bg-[#c2c2c212] lg:flex md:hidden sm:hidden items-center h-[30px] ">
       <div className="max-w-[1190px] w-full mx-auto lg:px-6 md:px-4 sm:px-3 flex justify-between items-center">
-        <p className="flex gap-4 text-sm text-[#fff]">
+        <p></p>
+        <p className="flex gap-4 text-[12px] text-gray-400">
           <a href="tel:+8801715865149" className="flex gap-1 items-center">
             <span>
               <svg
