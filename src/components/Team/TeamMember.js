@@ -16,7 +16,7 @@ const TeamMember = ({ x }) => {
   return (
     <div
       onClick={() => router.push(`/team/${x?.id}`)}
-      className="cursor-pointer bg-white opacity-1 hover:opacity-[0.9] hover:shadow transition-all ease-in-out  lg:min-h-[340px]  md:min-h-[280px] sm:min-h-[240px] w-full lg:max-w-[260px] md:max-w-[200px] sm:max-w-[170px] p-2 roundedlg border flex flex-col justify-center items-center"
+      className=" cursor-pointer bg-white opacity-1 hover:opacity-[0.9] hover:shadow transition-all ease-in-out  lg:min-h-[340px]  md:min-h-[280px] sm:min-h-[240px] w-full lg:max-w-[280px] md:max-w-[200px] sm:max-w-[170px] p-2 roundedlg border flex flex-col justify-center items-center"
     >
       {/* <Image
         src={x?.image === "" ? profileImage : x?.image}
@@ -52,15 +52,15 @@ const TeamMember = ({ x }) => {
           borderRadius: "0%",
           overflow: "hidden",
         }}
-        className="rounded-full lg:w-[120px] lg:h-[120px] md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] "
+        className="rounded-full lg:w-[158px] lg:h-[158px] md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] "
         alt={x?.name}
       />
 
-      <h1 className="lg:text-md sm:text-sm text-primary uppercase  font-semibold text-center mt-4">
+      <h1 className="lg:text-[14px] sm:text-sm text-primary uppercase  font-semibold text-center mt-4">
         {x?.name}
       </h1>
 
-      <h2 className="lg:text-[10px] sm:text-xs text-center  ">{x?.position}</h2>
+      <h2 className="lg:text-[12px] sm:text-xs text-center  ">{x?.position}</h2>
 
       {/* <div className="max-w-[160px] mx-auto flex flex-wrap justify-center items-center lg:gap-2 md:gap-2 sm:gap-1 mt-6"> */}
       <div className="max-w-[160px] mx-auto flex  justify-center items-center lg:gap-2 md:gap-2 sm:gap-1 mt-6">

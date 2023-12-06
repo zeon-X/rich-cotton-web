@@ -22,7 +22,7 @@ const Services = () => {
               return (
                 <div
                   key={index}
-                  className="lg:w-[260px] md:w-[220px] sm:w-[190px] lg:min-h-[320px]  md:min-h-[320px] sm:min-h-[210px] bg-white   border roundedlg lg:py-6 md:p-4 sm:p-3 flex flex-col justify-start items-center"
+                  className="lg:w-[280px] md:w-[220px] sm:w-[190px] lg:min-h-[320px]  md:min-h-[320px] sm:min-h-[210px] bg-white   border roundedlg lg:py-6 md:p-4 sm:p-3 flex flex-col justify-start items-center"
                 >
                   <div className="lg:h-[100px] lg:w-[100px] md:h-[80px] md:w-[80px] sm:h-[70px] sm:w-[70px]  rounded-full flex justify-center items-center ">
                     <Image
@@ -47,7 +47,7 @@ const Services = () => {
                       className="lg:hidden md:hidden sm:block "
                     />
                   </div>
-                  <h1 className="text-center lg:text-[14px] md:text-[14px] sm:text-[12px] font-medium lg:mt-3 sm:mt-2">
+                  <h1 className="text-center lg:text-[14px] md:text-[14px] sm:text-[12px] text-primary uppercase  font-bold lg:mt-3 sm:mt-2">
                     {x?.title}
                   </h1>
                   <p className="text-center lg:text-[12px] md:text-[12px] sm:text-[10px] lg:mt-2 sm:mt-1">

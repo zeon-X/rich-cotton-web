@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import TeamMember from "./TeamMember";
 
 const MemberSuggestion = ({ suggestionData }) => {
-  const [slidesToShow, setSlidesToShow] = useState(4);
+  const [slidesToShow, setSlidesToShow] = useState(3);
   const [slidesToScroll, setSlidesToScroll] = useState(1);
   const [cellSpacing, setCellSpacing] = useState(2);
   const [carousolWidth, setCarousolWidth] = useState(1080);
@@ -36,7 +36,7 @@ const MemberSuggestion = ({ suggestionData }) => {
     <Swiper
       modules={[Autoplay]}
       style={{ width: `${carousolWidth}px` }}
-      autoplay={{ delay: 1500 }}
+      autoplay={{ delay: 2500 }}
       spaceBetween={cellSpacing}
       slidesPerView={slidesToShow}
       onSlideChange={() => console.log("slide change")}

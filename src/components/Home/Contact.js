@@ -19,11 +19,11 @@ const ContactDetailsContainer = ({ data }) => {
       </div>
 
       <div className=" mt-6">
-        <h1 className="lg:text-[18px] md:text-md sm:text-md text-green mb-6">
+        <h1 className="lg:text-[18px] md:text-md sm:text-md text-primary uppercase font-bold mb-6">
           {data?.name}
         </h1>
 
-        <div className="mt-2 flex flex-col gap-4 text-[12px]">
+        <div className="mt-2 flex flex-col gap-4 text-[14px]">
           <div className="flex gap-6 items-center">
             <Image src={location_icon} height={20} width={20} alt="" />
             <p>
@@ -56,7 +56,7 @@ const ContactDetailsContainer = ({ data }) => {
 const Contact = () => {
   return (
     <section id="contact" className="lg:px-6 md:px-4 sm:px-3">
-      <section id="product" className="max-w-[1190px] w-full mx-auto pt-24 ">
+      <section id="product" className="max-w-[1080px] w-full mx-auto pt-24 ">
         <div className="flex flex-col justify-center items-center">
           <h1 className="lg:text-4xl md:text-3xl sm:text-3xl font-medium">
             Contact Us
