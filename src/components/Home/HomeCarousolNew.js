@@ -26,7 +26,7 @@ const HomeCarousolNew = () => {
     <Swiper
       modules={[Autoplay]}
       style={{ width: `${width - 20}px` }}
-      autoplay={{ delay: 4000 }}
+      autoplay={{ delay: 5000 }}
       className=" overflow-x-hidden"
       spaceBetween={0}
       slidesPerView={1}
