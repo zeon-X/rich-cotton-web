@@ -81,6 +81,11 @@ const Drawer = ({ children }) => {
           <li>
             <Link href="/#contact">Contact</Link>
           </li>
+          <li>
+            <a target="_blank" href="https://richcottonapparels.net/">
+              Factory
+            </a>
+          </li>
         </ul>
       </div>
     </div>

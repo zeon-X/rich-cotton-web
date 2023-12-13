@@ -27,6 +27,7 @@ import DedicatedCustomer_Service from "./assets/serviceIcon/technical-support.pn
 import email_icon from "./assets/icons/email.png";
 import phone_icon from "./assets/icons/phone.png";
 import location_icon from "./assets/icons/location1.png";
+import web_icon from "./assets/icons/web_link.png";
 
 export {
   logo,
@@ -53,4 +54,5 @@ export {
   email_icon,
   phone_icon,
   location_icon,
+  web_icon,
 };

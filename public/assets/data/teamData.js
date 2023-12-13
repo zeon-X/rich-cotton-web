@@ -314,7 +314,7 @@ export const teamData = [
   {
     id: 19,
     name: "Amimul Islam",
-    position: "Accounts Manager",
+    position: "Manager, Accounts",
     phone: "+8801715-86 51 49",
     email: "jake@richcotton.net",
     details:

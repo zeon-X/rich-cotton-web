@@ -2,7 +2,12 @@ import React from "react";
 
 import contactUsData from "../../../public/assets/data/contactUsData";
 import Image from "next/image";
-import { email_icon, location_icon, phone_icon } from "../../../public";
+import {
+  email_icon,
+  location_icon,
+  phone_icon,
+  web_icon,
+} from "../../../public";
 
 const ContactDetailsContainer = ({ data }) => {
   return (
@@ -47,6 +52,16 @@ const ContactDetailsContainer = ({ data }) => {
               <span className="font-medium">Email:</span> {data?.email}
             </a>
           </div>
+          {data?.web && (
+            <div className="flex gap-6 items-center">
+              <Image src={web_icon} height={20} width={20} alt="" />
+
+              <a target="_blank" href={data?.web}>
+                <span className="font-medium">Website:</span>{" "}
+                richcottonapparels.net
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </div>
@@ -67,7 +82,7 @@ const Contact = () => {
           </h2>
         </div>
 
-        <div className="mt-14 w-full flex flex-wrap justify-center items-center  gap-8">
+        <div className="mt-14 w-full flex flex-wrap justify-center items-start  gap-8">
           {contactUsData?.map((x, index) => {
             return <ContactDetailsContainer key={index} data={x} />;
           })}

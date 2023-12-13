@@ -90,6 +90,11 @@ const Nav = () => {
                 <li>
                   <Link href="/#contact">Contact</Link>
                 </li>
+                <li>
+                  <Link target="_blank" href="https://richcottonapparels.net/">
+                    Factory
+                  </Link>
+                </li>
               </ul>
             </div>
           </nav>
