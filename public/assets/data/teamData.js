@@ -72,11 +72,11 @@ export const teamData = [
   {
     id: 4,
     name: "Md. Monirul Islam",
-    position: "Senior Manager, Merchandising ",
+    position: "AGM, Merchandising ",
     phone: "+8801715-86 51 49",
     email: "jake@richcotton.net",
     details:
-      "Monirul Islam, a dynamic leader in the merchandising realm, assumes the role of Senior Merchandising Manager, guiding and inspiring our team to excel in client relations, production coordination, and delivering exceptional results.",
+      "Monirul Islam, a dynamic leader in the merchandising realm, assumes the role of AGM Merchandising Manager, guiding and inspiring our team to excel in client relations, production coordination, and delivering exceptional results.",
     social: {
       fb: "",
       insta: "",
@@ -265,11 +265,11 @@ export const teamData = [
   {
     id: 16,
     name: "Md. Ibrahim Hossain",
-    position: "Assistant Manager CSR",
+    position: "Manager, CSR",
     phone: "+8801715-86 51 49",
     email: "jake@richcotton.net",
     details:
-      "Md Ibrahim Hossain, as Assistant Manager CSR, oversees our corporate social responsibility initiatives. He coordinates community engagement programs, ensures ethical practices within the organization, and leads sustainability efforts. His role involves fostering partnerships, implementing CSR strategies, and promoting social and environmental welfare aligned with company values.",
+      "Md Ibrahim Hossain, as  Manager CSR, oversees our corporate social responsibility initiatives. He coordinates community engagement programs, ensures ethical practices within the organization, and leads sustainability efforts. His role involves fostering partnerships, implementing CSR strategies, and promoting social and environmental welfare aligned with company values.",
     social: {
       fb: "",
       insta: "",

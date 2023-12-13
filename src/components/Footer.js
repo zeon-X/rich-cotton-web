@@ -18,7 +18,7 @@ const Footer = () => {
           <div className="flex gap-3">
             <a target="_balnk" href="facebook.com">
               <Image
-                src={"https://i.ibb.co/WFpLDq4/facebook-app-symbol-min.png"}
+                src={"https://i.ibb.co/GJMBMrR/fb.png"}
                 height={20}
                 width={20}
                 alt="fb"
@@ -26,7 +26,7 @@ const Footer = () => {
             </a>
             <a target="_balnk" href="facebook.com">
               <Image
-                src={"https://i.ibb.co/Qr41Gcx/instagram-min.png"}
+                src={"https://i.ibb.co/HpWSLHk/insta.png"}
                 height={20}
                 width={20}
                 alt="fb"

@@ -85,7 +85,21 @@ const About = () => {
         );
       })}
 
-      <p>Please click on the below link To know more about our factory </p>
+      <a
+        target="_blank"
+        href="https://richcottonapparels.net/"
+        className="font-medium"
+      >
+        Please click on the below link To know more about our factory{" "}
+      </a>
+      <br />
+      <a
+        target="_blank"
+        href="https://richcottonapparels.net/"
+        className="text-primary font-semibold btn mt-6"
+      >
+        richcottonapparels.net
+      </a>
     </section>
   );
 };
