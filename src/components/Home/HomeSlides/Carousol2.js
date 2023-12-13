@@ -46,7 +46,7 @@ const Carousol2 = () => {
       transform: inView ? "translateX(0px)" : "translateX(-100px)",
       opacity: 1,
     },
-    config: { tension: 100, friction: 10 },
+    config: { tension: 60, friction: 14 },
     delay: [0],
   });
 

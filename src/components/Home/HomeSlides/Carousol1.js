@@ -35,7 +35,7 @@ const Carousol1 = () => {
       transform: inView ? "translateX(0px)" : "translateX(-100px)",
       opacity: inView ? 1 : 0,
     },
-    config: { tension: 100, friction: 10 },
+    config: { tension: 60, friction: 14 },
     delay: [0],
   });
   const trailSubHead = useTrail(1, {
@@ -44,7 +44,7 @@ const Carousol1 = () => {
       transform: inView ? "translateX(0px)" : "translateX(-100px)",
       opacity: inView ? 1 : 0,
     },
-    config: { tension: 100, friction: 10 },
+    config: { tension: 60, friction: 14 },
     delay: [0],
   });
 
@@ -54,7 +54,7 @@ const Carousol1 = () => {
       transform: inView ? "translateX(0px)" : "translateX(-100px)",
       opacity: inView ? 1 : 0,
     },
-    config: { tension: 100, friction: 10 },
+    config: { tension: 60, friction: 14 },
     delay: [2000, 2000], // Delay for the left elements
   });
 
@@ -64,7 +64,7 @@ const Carousol1 = () => {
       transform: inView ? "translateX(0px)" : "translateX(-100px)",
       opacity: inView ? 1 : 0,
     },
-    config: { tension: 100, friction: 10 },
+    config: { tension: 60, friction: 14 },
     delay: [2000, 2000], // Delay for the right elements
   });
 

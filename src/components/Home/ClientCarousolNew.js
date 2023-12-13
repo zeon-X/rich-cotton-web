@@ -64,6 +64,8 @@ const ClientCarousolNew = () => {
       autoplay={{ delay: 1500 }}
       spaceBetween={cellSpacing}
       slidesPerView={slidesToShow}
+      loop={true}
+      speed={1500}
       //   pagination={{ clickable: true }}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
