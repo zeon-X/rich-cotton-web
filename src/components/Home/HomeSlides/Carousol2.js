@@ -28,8 +28,8 @@ const Carousol2 = () => {
   const trailDivs = useTrail(cd?.length, {
     from: { opacity: 0 },
     to: { opacity: inView ? 1 : 0 }, // Trigger opacity animation based on inView state and animationsPlayed flag
-    config: { tension: 100, friction: 10 },
-    delay: (index) => (inView ? index * 500 : 0), // Delay animation if inView is true and animationsPlayed is false
+    config: { tension: 60, friction: 14 },
+    delay: (index) => (inView ? index * 1000 : 0), // Delay animation if inView is true and animationsPlayed is false
   });
 
   // Handle the flag when animations have played
@@ -47,7 +47,7 @@ const Carousol2 = () => {
       opacity: 1,
     },
     config: { tension: 60, friction: 14 },
-    delay: [0],
+    delay: [500],
   });
 
   return (
