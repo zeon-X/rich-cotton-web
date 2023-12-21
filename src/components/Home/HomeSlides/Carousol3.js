@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useInView } from "react-intersection-observer"; // Import the useInView hook
 import { serviceData } from "../../../../public/assets/data/serviceData";
 
+let sdlen = 6;
 const Carousol3 = () => {
   const [carousolHeight, setCarousolHeight] = useState(685);
   const [sd, setCd] = useState(serviceData);
@@ -17,11 +18,11 @@ const Carousol3 = () => {
 
   const [ref, inView] = useInView({ threshold: 0.8 }); // Set the threshold to 80%
 
-  const trailDivs = useTrail(sd?.length, {
+  const trailDivs = useTrail(sdlen, {
     from: { opacity: 0 },
     to: { opacity: inView ? 1 : 0 }, // Trigger opacity animation based on inView state and animationsPlayed flag
-    config: { tension: 100, friction: 10 },
-    delay: (index) => (inView ? index * 500 : 0), // Delay animation if inView is true and animationsPlayed is false
+    config: { tension: 60, friction: 14 },
+    delay: (index) => (inView ? index * 1000 : 0), // Delay animation if inView is true and animationsPlayed is false
   });
 
   // Handle the flag when animations have played
@@ -36,7 +37,7 @@ const Carousol3 = () => {
     from: { transform: "translateX(-100px)", opacity: 0 },
     to: {
       transform: inView ? "translateX(0px)" : "translateX(-100px)",
-      opacity: 1,
+      opacity: inView ? 1 : 0,
     },
     config: { tension: 60, friction: 14 },
     delay: [0],
@@ -99,7 +100,7 @@ const Carousol3 = () => {
                   alt={sd[index]?.title}
                 />
               </div>
-              <h2 className="lg:text-[14px] md:text-xs sm:text-[6px] lg:mt-4 md:mt-2 sm:mt-2 lg:max-w-[120px] md:max-w-[80px] sm:max-w-[40px] text-center font-semibold ">
+              <h2 className="lg:text-[14px]  md:text-xs sm:text-[6px] lg:mt-4 md:mt-2 sm:mt-2 lg:max-w-[120px] md:max-w-[80px] sm:max-w-[40px] text-center font-medium ">
                 {sd[index]?.title}
               </h2>
             </animated.div>

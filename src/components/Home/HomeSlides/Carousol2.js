@@ -5,9 +5,11 @@ import { clientData } from "../../../../public/assets/data/clientData";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer"; // Import the useInView hook
 
+let cdlen = 16;
 const Carousol2 = () => {
   const [carousolHeight, setCarousolHeight] = useState(685);
-  const [cd, setCd] = useState(clientData?.slice(2, 16));
+  const [cd, setCd] = useState(clientData?.slice(0, 16));
+
   const { height, width } = useWindowDimensions();
   const [animationsPlayed, setAnimationsPlayed] = useState(false); // Flag to track if animations have played
 
@@ -15,17 +17,20 @@ const Carousol2 = () => {
     setCarousolHeight(Math.ceil((width * 685) / 1920));
 
     if (width <= 480) {
-      setCd(clientData?.slice(2, 8));
+      setCd(clientData?.slice(0, 6));
+      cdlen = 6;
     } else if (width > 480 && width < 880) {
-      setCd(clientData?.slice(2, 12));
+      setCd(clientData?.slice(0, 10));
+      cdlen = 10;
     } else {
       setCd(clientData?.slice(0, 16));
+      cdlen = 16;
     }
   }, [width]);
 
   const [ref, inView] = useInView({ threshold: 0.8 }); // Set the threshold to 80%
 
-  const trailDivs = useTrail(cd?.length, {
+  const trailDivs = useTrail(cdlen, {
     from: { opacity: 0 },
     to: { opacity: inView ? 1 : 0 }, // Trigger opacity animation based on inView state and animationsPlayed flag
     config: { tension: 60, friction: 14 },
@@ -44,10 +49,10 @@ const Carousol2 = () => {
     from: { transform: "translateX(-100px)", opacity: 0 },
     to: {
       transform: inView ? "translateX(0px)" : "translateX(-100px)",
-      opacity: 1,
+      opacity: inView ? 1 : 0,
     },
     config: { tension: 60, friction: 14 },
-    delay: [500],
+    delay: [0],
   });
 
   return (
