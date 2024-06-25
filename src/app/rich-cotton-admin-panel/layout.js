@@ -61,6 +61,9 @@ const layout = ({ children }) => {
             <li className="mb-2">
               <Link href="/rich-cotton-admin-panel/clients">Clients</Link>
             </li>
+            <li className="mb-2">
+              <Link href="/rich-cotton-admin-panel/team">Team Members</Link>
+            </li>
           </ul>
         </div>
       </div>
