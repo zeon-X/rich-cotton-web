@@ -10,17 +10,6 @@ let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
 let outerDivCss = "mb-4 w-[280px] ";
 let wrappingDivCss = "flex flex-wrap gap-4 justify-even mt-4";
 
-function createSlug(line) {
-  if (typeof line !== "string") {
-    throw new Error("Input must be a string");
-  }
-  return line
-    .toLowerCase() // Convert to lowercase
-    .trim() // Trim leading/trailing whitespace
-    .replace(/[^\w\s-]/g, "") // Remove special characters
-    .replace(/\s+/g, "-"); // Replace spaces with hyphens
-}
-
 function CreateTeam() {
   const [formData, setFormData] = useState({
     name: "",
@@ -94,7 +83,6 @@ function CreateTeam() {
 
     if (imageUrl !== null) {
       let temp = {
-        slug: createSlug(formData.name),
         name: formData.name,
         position: formData.position,
         phone: formData.phone,

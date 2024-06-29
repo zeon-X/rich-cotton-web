@@ -1,9 +1,35 @@
-import React from "react";
-import { teamData } from "../../../public/assets/data/teamData";
+"use client";
+import React, { useEffect, useState } from "react";
+// import { teamData } from "../../../public/assets/data/teamData";
 import TeamMember from "./TeamMember";
+import axiosInstance from "@/utilities/axiosInstance";
 
 const Team = () => {
-  let te = teamData;
+  // let te = teamData;
+
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    // Define an async function to fetch the data
+    async function fetchData() {
+      try {
+        const response = await axiosInstance.get("/team/get");
+
+        // response?.data?.length !== 0
+        //   ? setData([...response?.data, ...teamData])
+        //   :setData([...teamData]);
+        setData([...response?.data]);
+
+        console.log(response?.data);
+        // Swal.close();
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        // Swal.close();
+      }
+    }
+
+    // Call the fetchData function
+    fetchData();
+  }, []);
 
   return (
     // <div className="">
@@ -20,7 +46,7 @@ const Team = () => {
         </h2>
 
         <div className="mt-14 w-full flex flex-wrap justify-center lg:gap-6 md:gap-4 sm:gap-2">
-          {te?.map((x, index) => {
+          {data?.map((x, index) => {
             return <TeamMember x={x} key={index} />;
           })}
         </div>

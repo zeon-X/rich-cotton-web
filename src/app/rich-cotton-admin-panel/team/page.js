@@ -4,7 +4,7 @@ import DashboardHeader from "@/adminpanel/shared/DashboardHeader";
 // import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
-import { teamData } from "../../../../public/assets/data/teamData";
+// import { teamData } from "../../../../public/assets/data/teamData";
 import axiosInstance from "@/utilities/axiosInstance";
 
 const page = () => {

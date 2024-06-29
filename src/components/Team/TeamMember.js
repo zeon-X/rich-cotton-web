@@ -13,9 +13,11 @@ import { useRouter } from "next/navigation";
 
 const TeamMember = ({ x }) => {
   const router = useRouter();
+
+  console.log(x);
   return (
     <div
-      onClick={() => router.push(`/team/${x?.id}`)}
+      onClick={() => router.push(`/team/${x?.slug}`)}
       className=" cursor-pointer bg-white opacity-1 hover:opacity-[0.9] hover:shadow transition-all ease-in-out  lg:min-h-[340px]  md:min-h-[280px] sm:min-h-[240px] w-full lg:max-w-[280px] md:max-w-[200px] sm:max-w-[170px] p-2 roundedlg border flex flex-col justify-center items-center"
     >
       {/* <Image
@@ -45,8 +47,11 @@ const TeamMember = ({ x }) => {
       <div
         style={{
           backgroundImage: `url(${
-            x?.image === "" ? profileImage : x.image.src
+            x?.image === "" ? profileImage.src : x?.image
           })`,
+          // backgroundImage: `url(${
+          //   x?.image === "" ? profileImage : x.image.src
+          // })`,
           backgroundSize: "cover",
           backgroundPosition: "top",
           borderRadius: "0%",
