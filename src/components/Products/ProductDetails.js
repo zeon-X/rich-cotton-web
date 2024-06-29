@@ -23,23 +23,25 @@ const ProductDetails = ({ productDetails }) => {
           {/* IMAGE */}
           {/* <div className="lg:w-6/12 md:w-6/12  sm:w-full border"> */}
           <div className="flex lg:flex-row md:flex-row sm:flex-col-reverse gap-8">
-            <div className="flex lg:flex-col md:flex-col sm:flex-row gap-6">
-              {[...productDetails?.imagesArray, productDetails?.img].map(
-                (x, index) => {
-                  return (
-                    <Image
-                      key={index}
-                      onClick={() => setDp((preState) => x)}
-                      src={x}
-                      height={100}
-                      width={100}
-                      alt={x}
-                      className="border cursor-pointer"
-                    />
-                  );
-                }
-              )}
-            </div>
+            {productDetails?.imagesArray.length > 0 && (
+              <div className="flex lg:flex-col md:flex-col sm:flex-row gap-6">
+                {[...productDetails?.imagesArray, productDetails?.img].map(
+                  (x, index) => {
+                    return (
+                      <Image
+                        key={index}
+                        onClick={() => setDp((preState) => x)}
+                        src={x}
+                        height={100}
+                        width={100}
+                        alt={x}
+                        className="border cursor-pointer"
+                      />
+                    );
+                  }
+                )}
+              </div>
+            )}
             <div className=" border cursor-zoom-in flex justify-center items-center">
               {/* <Image
               src={productDetails?.img}

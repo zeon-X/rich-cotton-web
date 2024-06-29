@@ -12,20 +12,22 @@ const CategoryProductComponent = ({ product }) => {
         //   `/products/${product?.parentCategory}/${product?.productCode}`
         // );
       }}
-      className=" border w-[280px] cursor-pointer theproduct bg-[#FEFCFB] "
+      className=" border w-[276px] cursor-pointer theproduct bg-[#FEFCFB] "
     >
-      <div className="mx-auto  px-0 flex justify-center items-center h-[280px] w-[280px] ">
+      <div className="mx-auto  px-0 flex justify-center items-center h-[276px] w-[276px] ">
         <Image
           src={product?.img}
-          height={240}
-          width={240}
+          height={276}
+          width={200}
           alt={product?.product}
           className="mx-auto "
         />
       </div>
       <div className="bg-lgreen py-3  px-5">
-        <h1 className="text-xl text-center">{product?.productCode}</h1>
-        <h2 className="text-md text-center">{product?.category}</h2>
+        <h1 className="text-lg text-center uppercase">
+          {product?.productCode}
+        </h1>
+        <h2 className="text-sm text-center">{product?.category}</h2>
       </div>
     </div>
   );

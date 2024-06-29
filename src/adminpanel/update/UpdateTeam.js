@@ -3,6 +3,7 @@ import axiosInstance from "@/utilities/axiosInstance";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import Image from "next/image";
 
 let inputDivCss = "border rounded-lg py-2 px-4 w-full";
 let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
@@ -40,7 +41,7 @@ const UpdateClient = () => {
       insta: data?.insta || "",
       linkedin: data?.linkedin || "",
       twitter: data?.twitter || "",
-      img: data?.img || null,
+      image: data?.image || null,
       priority: data?.priority || 9999,
     });
   }, [changes]);
@@ -217,6 +218,14 @@ const UpdateClient = () => {
           </div>
 
           <div className={outerDivCss}>
+            <div>
+              <Image
+                src={formData?.image || ""}
+                height={200}
+                width={200}
+                alt=""
+              />
+            </div>
             <label className={labelCss} htmlFor="image">
               Image
             </label>
