@@ -19,6 +19,7 @@ function CreateProduct() {
     category: "",
     product: "",
     img: null,
+    imagesArray: [],
     fabric: "",
     wash: "",
     price: "",
@@ -39,6 +40,17 @@ function CreateProduct() {
       setFormData({
         ...formData,
         [name]: value, // Escape single quotes in the value
+      });
+    }
+  };
+  const handleChangeImageArray = (e) => {
+    const { name, value, type, files } = e.target;
+
+    // Handle file input separately
+    if (type === "file") {
+      setFormData({
+        ...formData,
+        [name]: files, // Store the first selected file
       });
     }
   };
@@ -70,6 +82,41 @@ function CreateProduct() {
       return null;
     }
   };
+  const handleImageArrayUpload = async () => {
+    let API = "f31ce5befe994fec2a0257d5c9b59d4a";
+    let imgArrayUrl = [];
+    if (formData.imagesArray.length > 0) {
+      for (let img of formData.imagesArray) {
+        try {
+          const formDataImgBB = new FormData();
+          formDataImgBB.append("image", img);
+
+          const response = await axios.post(
+            `https://api.imgbb.com/1/upload?key=${API}`,
+            formDataImgBB
+          );
+
+          if (response.status === 200) {
+            const imageUrl = response.data.data.url;
+            imgArrayUrl.push(imageUrl);
+          } else {
+            console.error(
+              "Error uploading image to ImgBB:",
+              response.statusText
+            );
+            return null;
+          }
+        } catch (error) {
+          console.error("Error uploading image to ImgBB:", error);
+          return null;
+        }
+      }
+
+      return imgArrayUrl;
+    } else {
+      return null;
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -81,6 +128,9 @@ function CreateProduct() {
     Swal.showLoading();
 
     const imageUrl = await handleImageUpload();
+    const imageArrayUrl = await handleImageArrayUpload();
+
+    // console.log(imageArrayUrl);
 
     if (imageUrl !== null) {
       try {
@@ -88,6 +138,7 @@ function CreateProduct() {
           ...formData,
           img: imageUrl, // Use the ImgBB image URL
           productStatus: 1,
+          imagesArray: imageArrayUrl !== null ? imageArrayUrl : [],
           // id: new Date().getTime(),
         });
 
@@ -101,6 +152,7 @@ function CreateProduct() {
             category: "",
             product: "",
             img: null,
+            imagesArray: [],
             fabric: "",
             wash: "",
             price: "",
@@ -117,7 +169,7 @@ function CreateProduct() {
       }
     }
   };
-
+  // console.log(formData);
   return (
     <div className="bg-white p-4 ">
       <form onSubmit={handleSubmit}>
@@ -128,7 +180,6 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="slug">
               slug
             </label>{" "}
-            {/* <br /> */}
             <input
               type="text"
               id="slug"
@@ -166,7 +217,6 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="category">
               category
             </label>{" "}
-            {/* <br /> */}
             <input
               type="text"
               id="category"
@@ -182,7 +232,6 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="productCode">
               Product Code
             </label>{" "}
-            {/* <br /> */}
             <input
               type="text"
               id="productCode"
@@ -200,7 +249,6 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="title">
               Title
             </label>{" "}
-            {/* <br /> */}
             <input
               type="text"
               id="title"
@@ -216,7 +264,6 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="product">
               product
             </label>{" "}
-            {/* <br /> */}
             <input
               type="text"
               id="product"
@@ -242,6 +289,21 @@ function CreateProduct() {
               required={false}
             />
           </div>
+          <div className={outerDivCss}>
+            <label className={labelCss} htmlFor="img">
+              Image Array
+            </label>
+            <input
+              type="file"
+              id="imagesArray"
+              name="imagesArray"
+              accept="image/*" // Allow only image files
+              onChange={handleChangeImageArray}
+              className="border rounded-lg py-2 px-4 w-full"
+              required={false}
+              multiple={true}
+            />
+          </div>
         </div>{" "}
         {/* DETAILS */}
         <div className={wrappingDivCss}>
@@ -249,7 +311,6 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="fabric">
               fabric
             </label>{" "}
-            {/* <br /> */}
             <input
               type="text"
               id="fabric"
@@ -264,7 +325,6 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="wash">
               wash
             </label>{" "}
-            {/* <br /> */}
             <input
               type="text"
               id="wash"
@@ -279,7 +339,6 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="product">
               price
             </label>{" "}
-            {/* <br /> */}
             <input
               type="text"
               id="price"
@@ -294,7 +353,6 @@ function CreateProduct() {
             <label className={labelCss} htmlFor="deliveryTime">
               deliveryTime
             </label>{" "}
-            {/* <br /> */}
             <input
               type="text"
               id="deliveryTime"

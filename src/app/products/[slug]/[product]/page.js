@@ -17,12 +17,13 @@ const filterProductsByCategoryAndExclude = (
   products,
   category,
   excludedProductCode
-) =>
-  products?.filter(
+) => {
+  // console.log(products, category, excludedProductCode);
+  return products?.filter(
     (product) =>
-      product.category === category &&
-      product.productCode !== excludedProductCode
+      product.category === category && product.slug !== excludedProductCode
   );
+};
 
 const page = ({ params }) => {
   const productId = params.product;
@@ -38,8 +39,13 @@ const page = ({ params }) => {
       try {
         // Swal.showLoading();
         const response = await axiosInstance.get(
-          `/product/findByProductId/${productId}`
+          `/product/findByProductSlug/${productId}`
         );
+
+        // const response = await axiosInstance.get(
+        //   `/product/findByProductId/${productId}`
+        // );
+
         // console.log(response);
         setProductDetailsData(response?.data);
         // console.log(response);

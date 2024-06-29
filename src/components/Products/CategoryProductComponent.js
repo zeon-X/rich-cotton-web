@@ -3,22 +3,24 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 const CategoryProductComponent = ({ product }) => {
   const router = useRouter();
+  console.log(product);
   return (
     <div
       onClick={() => {
-        router.push(
-          `/products/${product?.parentCategory}/${product?.productCode}`
-        );
+        router.push(`/products/${product?.parentCategory}/${product?.slug}`);
+        // router.push(
+        //   `/products/${product?.parentCategory}/${product?.productCode}`
+        // );
       }}
-      className=" border min-w-[240px] cursor-pointer "
+      className=" border w-[280px] cursor-pointer theproduct bg-[#FEFCFB] "
     >
-      <div className="mx-auto my-6 px-2 ">
+      <div className="mx-auto  px-0 flex justify-center items-center h-[280px] w-[280px] ">
         <Image
           src={product?.img}
           height={240}
           width={240}
           alt={product?.product}
-          className="mx-auto"
+          className="mx-auto "
         />
       </div>
       <div className="bg-lgreen py-3  px-5">
