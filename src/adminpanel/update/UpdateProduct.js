@@ -13,8 +13,6 @@ let wrappingDivCss = "flex flex-wrap gap-4 justify-even mt-4";
 
 const UpdateProduct = () => {
   const [changes, setChanges] = useState(0);
-  // let data = JSON.parse(localStorage.getItem("updateProductData"));
-  // Set the initial form data with the retrieved data, using optional chaining
   const [formData, setFormData] = useState({
     id: "",
     title: "",
@@ -23,12 +21,15 @@ const UpdateProduct = () => {
     category: "",
     product: "",
     img: "",
+    imagesArray: [],
     fabric: "",
     wash: "",
     price: "",
     deliveryTime: "",
     slug: "",
   });
+
+  // const [imagesArray, setImagesArray] = useState([]);
 
   useEffect(() => {
     let data = JSON.parse(localStorage.getItem("updateProductData"));
@@ -41,12 +42,15 @@ const UpdateProduct = () => {
       category: data?.category || "",
       product: data?.product || "",
       img: data?.img || null,
+      imagesArray: data?.imagesArray || [],
       fabric: data?.fabric || "",
       wash: data?.wash || "",
       price: data?.price || "",
       deliveryTime: data?.deliveryTime || "",
       slug: data?.slug || "",
     });
+
+    // setImagesArray(data?.imagesArray || []);
   }, [changes]);
 
   // console.log("Form Data", formData);
@@ -79,6 +83,41 @@ const UpdateProduct = () => {
       return null;
     }
   };
+  const handleImageArrayUpload = async (reqImageArray) => {
+    let API = "f31ce5befe994fec2a0257d5c9b59d4a";
+    let imgArrayUrl = [];
+    if (reqImageArray.length > 0) {
+      for (let img of reqImageArray) {
+        try {
+          const formDataImgBB = new FormData();
+          formDataImgBB.append("image", img);
+
+          const response = await axios.post(
+            `https://api.imgbb.com/1/upload?key=${API}`,
+            formDataImgBB
+          );
+
+          if (response.status === 200) {
+            const imageUrl = response.data.data.url;
+            imgArrayUrl.push(imageUrl);
+          } else {
+            console.error(
+              "Error uploading image to ImgBB:",
+              response.statusText
+            );
+            return null;
+          }
+        } catch (error) {
+          console.error("Error uploading image to ImgBB:", error);
+          return null;
+        }
+      }
+
+      return imgArrayUrl;
+    } else {
+      return null;
+    }
+  };
 
   const handleChange = async (e) => {
     const { name, value, type, files } = e.target;
@@ -86,7 +125,11 @@ const UpdateProduct = () => {
 
     // Handle file input separately
     if (type === "file") {
+      // Swal.showLoading();
       const imageUrl = await handleImageUpload(files[0]);
+      //   .then(() =>
+      //   Swal.close()
+      // );
       setFormData({
         ...formData,
         [name]: imageUrl, // Store the first selected file
@@ -95,6 +138,21 @@ const UpdateProduct = () => {
       setFormData({
         ...formData,
         [name]: value, // Escape single quotes in the value
+      });
+    }
+  };
+  const handleChangeImageArray = async (e) => {
+    const { name, value, type, files } = e.target;
+    // Swal.showLoading();
+    const imageArrayUrl = await handleImageArrayUpload(files);
+    //   .then(() =>
+    //   Swal.close()
+    // );
+    // Handle file input separately
+    if (type === "file") {
+      setFormData({
+        ...formData,
+        [name]: imageArrayUrl, // Store the first selected file
       });
     }
   };
@@ -109,6 +167,10 @@ const UpdateProduct = () => {
     Swal.showLoading();
 
     // const imageUrl = await handleImageUpload();
+
+    // const imageArrayUrl = await handleImageArrayUpload();
+
+    // console.log(imageUrl, imageArrayUrl);
 
     // if (imageUrl !== null) {
     try {
@@ -250,7 +312,8 @@ const UpdateProduct = () => {
               required={false}
             />
           </div>
-
+        </div>
+        <div className={wrappingDivCss}>
           <div className={outerDivCss}>
             <div>
               <Image src={formData?.img} height={200} width={200} alt="" />
@@ -268,7 +331,75 @@ const UpdateProduct = () => {
               required={false}
             />
           </div>
-        </div>{" "}
+        </div>
+        <div className={"flex flex-wrap gap-4 justify-even mt-4 bg-red-500"}>
+          <div className={"mb-4   "}>
+            <div className="flex flex-wrap gap-4 mb-4">
+              {formData?.imagesArray?.map((x, ind) => {
+                return (
+                  <Image
+                    key={ind}
+                    src={x || ""}
+                    height={200}
+                    width={200}
+                    alt=""
+                  />
+                );
+              })}
+            </div>
+
+            <label
+              className={"block uppercase text-red-700 text-xs font-bold mb-2 "}
+              htmlFor="imagesArray"
+            >
+              Update the whole Image Array (Select all the images with the
+              updated ones)
+            </label>
+            <input
+              type="file"
+              id="imagesArray"
+              name="imagesArray"
+              accept="image/*" // Allow only image files
+              onChange={handleChangeImageArray}
+              className="border rounded-lg py-2 px-4 w-full"
+              required={false}
+              multiple={true}
+            />
+          </div>
+        </div>
+        {/* <div className={wrappingDivCss}>
+          {imagesArray?.map((x, index) => {
+            return (
+              <div className={outerDivCss}>
+                <div>
+                  <Image src={x} height={200} width={200} alt="" />
+                </div>
+                <label className={labelCss} htmlFor="img">
+                  Image Array No {index + 1}
+                </label>
+                <input
+                  type="file"
+                  id="imagesArray"
+                  name="imagesArray"
+                  accept="image/*" // Allow only image files
+                  onChange={handleChange}
+                  className="border rounded-lg py-2 px-4 w-full"
+                  required={false}
+                />
+                <p
+                  className="w-full btn btn-warning mt-2 cursor-pointer"
+                  onClick={() =>
+                    setImagesArray((prevState) =>
+                      prevState.filter((_, ind) => ind !== index)
+                    )
+                  }
+                >
+                  REMOVE
+                </p>
+              </div>
+            );
+          })}
+        </div> */}
         {/* DETAILS */}
         <div className={wrappingDivCss}>
           <div className={outerDivCss}>

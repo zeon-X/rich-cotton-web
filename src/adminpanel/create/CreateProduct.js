@@ -43,6 +43,7 @@ function CreateProduct() {
       });
     }
   };
+
   const handleChangeImageArray = (e) => {
     const { name, value, type, files } = e.target;
 
