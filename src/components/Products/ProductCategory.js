@@ -52,7 +52,7 @@ const ProductCategory = ({ productsData, productsTitle, parentCategory }) => {
 
       {/* PRODUCTS */}
 
-      <div className="flex flex-wrap gap-2 justify-center items-start mt-8">
+      <div className="flex flex-wrap gap-4 justify-center items-start mt-8">
         {displayProducts?.map((product, index) => {
           return <CategoryProductComponent key={index} product={product} />;
         })}

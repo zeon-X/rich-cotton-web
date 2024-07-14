@@ -10,13 +10,13 @@ const Footer = () => {
         <div className="max-w-[1190px] mx-auto lg:px-0 md:px-2 sm:px-2 py-10 text-white flex justify-between items-center">
           <p className="text-[12px]">
             Copyright © {currentYear} Rich Cotton Ltd. | Developed By{" "}
-            <a target="_blank" href="http://www.aleehatech.com">
+            <a target="_blank" href="https://www.aleehatech.com">
               AleehaTech
             </a>
           </p>
 
           <div className="flex gap-3">
-            <a target="_balnk" href="facebook.com">
+            <a target="_balnk" href="https://www.facebook.com/richcotton.net">
               <Image
                 src={"https://i.ibb.co/GJMBMrR/fb.png"}
                 height={20}
@@ -24,7 +24,7 @@ const Footer = () => {
                 alt="fb"
               />
             </a>
-            <a target="_balnk" href="facebook.com">
+            <a target="_balnk" href="https://www.instagram.com/richcottonltd/">
               <Image
                 src={"https://i.ibb.co/HpWSLHk/insta.png"}
                 height={20}
