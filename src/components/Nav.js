@@ -45,8 +45,42 @@ const Nav = () => {
                 <li>
                   <Link href="/about">About Us</Link>
                 </li>
+                <li className="dropdown dropdown-end">
+                  <div
+                    tabIndex={0}
+                    role="button"
+                    className="flex justify-center items-center"
+                  >
+                    <p>Products</p>
+                  </div>
+                  <ul
+                    tabIndex={0}
+                    className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3  p-2 shadow border w-[220px]"
+                  >
+                    {parentCategory?.map((x, index) => {
+                      return (
+                        <li key={index} className=" w-[220px]">
+                          <Link
+                            href={`/products/${x?.link}`}
+                            style={{
+                              height: "70px",
+                              width: "200px",
+                              // padding: "8px",
+                              display: "flex",
+                              // justifyContent: "center",
+                              justifyItems: "center",
+                            }}
+                          >
+                            <Image src={x?.img} height={50} width={60} alt="" />
+                            <span className="text-xs">{x?.title}</span>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </li>
 
-                <li tabIndex={0}>
+                {/* <li tabIndex={0}>
                   <details>
                     <summary>Products</summary>
                     <ul className="p-2 shadow border">
@@ -77,7 +111,7 @@ const Nav = () => {
                       })}
                     </ul>
                   </details>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/#client">Clients</Link>
                 </li>
