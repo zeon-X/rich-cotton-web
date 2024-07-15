@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 let inputDivCss = "border rounded-lg py-2 px-4 w-full";
 let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
@@ -12,6 +13,7 @@ let wrappingDivCss = "flex flex-wrap gap-4 justify-even mt-4";
 
 const UpdateClient = () => {
   const [changes, setChanges] = useState(0);
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -51,6 +53,7 @@ const UpdateClient = () => {
 
     if (reqImage) {
       try {
+        Swal.showLoading();
         const formDataImgBB = new FormData();
         formDataImgBB.append("image", reqImage);
 
@@ -61,13 +64,16 @@ const UpdateClient = () => {
 
         if (response.status === 200) {
           const imageUrl = response.data.data.url;
+          Swal.close();
           return imageUrl;
         } else {
           console.error("Error uploading image to ImgBB:", response.statusText);
+          Swal.close();
           return null;
         }
       } catch (error) {
         console.error("Error uploading image to ImgBB:", error);
+        Swal.close();
         return null;
       }
     } else {
@@ -79,10 +85,12 @@ const UpdateClient = () => {
     const { name, value, type, files } = e.target;
 
     if (type === "file") {
-      const imageUrl = await handleImageUpload(files[0]);
-      setFormData({
-        ...formData,
-        [name]: imageUrl,
+      await handleImageUpload(files[0]).then((imageUrl) => {
+        console.log("img: ", imageUrl);
+        setFormData({
+          ...formData,
+          [name]: imageUrl === null ? "" : imageUrl,
+        });
       });
     } else {
       setFormData({
@@ -113,7 +121,10 @@ const UpdateClient = () => {
           JSON.stringify(response?.data || null)
         );
         setChanges((current) => current + 1);
-        alert("Team Updated successfully");
+        // alert("Team Updated successfully");
+        Swal.fire({ text: "Team Updated successfully", icon: "success" }).then(
+          () => router.push("/rich-cotton-admin-panel/team")
+        );
       } else {
         alert("Team update failed");
       }

@@ -5,6 +5,7 @@ import parentCategory from "../../../public/assets/data/parentCategory";
 import axios from "axios";
 import Swal from "sweetalert2";
 import axiosInstance from "@/utilities/axiosInstance";
+import { useRouter } from "next/navigation";
 
 let inputDivCss = "border rounded-lg py-2 px-4 w-full";
 let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
@@ -26,6 +27,7 @@ function CreateProduct() {
     deliveryTime: "",
     slug: "",
   });
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -60,6 +62,7 @@ function CreateProduct() {
     let API = "f31ce5befe994fec2a0257d5c9b59d4a";
     if (formData.img) {
       try {
+        Swal.showLoading();
         const formDataImgBB = new FormData();
         formDataImgBB.append("image", formData.img);
 
@@ -70,22 +73,27 @@ function CreateProduct() {
 
         if (response.status === 200) {
           const imageUrl = response.data.data.url;
+          Swal.close();
           return imageUrl;
         } else {
           console.error("Error uploading image to ImgBB:", response.statusText);
+          Swal.close();
           return null;
         }
       } catch (error) {
         console.error("Error uploading image to ImgBB:", error);
+        Swal.close();
         return null;
       }
     } else {
+      Swal.close();
       return null;
     }
   };
   const handleImageArrayUpload = async () => {
     let API = "f31ce5befe994fec2a0257d5c9b59d4a";
     let imgArrayUrl = [];
+    Swal.showLoading();
     if (formData.imagesArray.length > 0) {
       for (let img of formData.imagesArray) {
         try {
@@ -105,16 +113,19 @@ function CreateProduct() {
               "Error uploading image to ImgBB:",
               response.statusText
             );
+            Swal.close();
             return null;
           }
         } catch (error) {
           console.error("Error uploading image to ImgBB:", error);
+          Swal.close();
           return null;
         }
       }
-
+      Swal.close();
       return imgArrayUrl;
     } else {
+      Swal.close();
       return null;
     }
   };
@@ -161,7 +172,11 @@ function CreateProduct() {
             slug: "",
           });
 
-          alert("Product created successfully");
+          // alert("Product created successfully");
+          Swal.fire({
+            text: "Product Created successfully",
+            icon: "success",
+          }).then(() => router.push("/rich-cotton-admin-panel/products"));
         } else {
           alert("Product creation failed");
         }

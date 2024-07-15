@@ -1,6 +1,7 @@
 "use client";
 import axiosInstance from "@/utilities/axiosInstance";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 
@@ -11,7 +12,7 @@ let wrappingDivCss = "flex flex-wrap gap-4 justify-even mt-4";
 
 const UpdateClient = () => {
   const [changes, setChanges] = useState(0);
-
+  const router = useRouter();
   const [formData, setFormData] = useState({
     id: "",
     title: "",
@@ -95,7 +96,11 @@ const UpdateClient = () => {
           JSON.stringify(response?.data || null)
         );
         setChanges((current) => current + 1);
-        alert("Client Updated successfully");
+        // alert("Client Updated successfully");
+        Swal.fire({
+          text: " Client Updated successfully",
+          icon: "success",
+        }).then(() => router.push("/rich-cotton-admin-panel/clients"));
       } else {
         alert("Client update failed");
       }

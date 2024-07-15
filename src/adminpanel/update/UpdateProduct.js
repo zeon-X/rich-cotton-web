@@ -5,6 +5,7 @@ import Swal from "sweetalert2";
 import parentCategory from "../../../public/assets/data/parentCategory";
 import Image from "next/image";
 import axiosInstance from "@/utilities/axiosInstance";
+import { useRouter } from "next/navigation";
 
 let inputDivCss = "border rounded-lg py-2 px-4 w-full";
 let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
@@ -13,6 +14,7 @@ let wrappingDivCss = "flex flex-wrap gap-4 justify-even mt-4";
 
 const UpdateProduct = () => {
   const [changes, setChanges] = useState(0);
+  const router = useRouter();
   const [formData, setFormData] = useState({
     id: "",
     title: "",
@@ -58,8 +60,10 @@ const UpdateProduct = () => {
   const handleImageUpload = async (reqImage) => {
     let API = "f31ce5befe994fec2a0257d5c9b59d4a";
     console.log("Req Image:");
+
     if (reqImage) {
       try {
+        Swal.showLoading();
         const formDataImgBB = new FormData();
         formDataImgBB.append("image", reqImage);
 
@@ -70,13 +74,16 @@ const UpdateProduct = () => {
 
         if (response.status === 200) {
           const imageUrl = response.data.data.url;
+          Swal.close();
           return imageUrl;
         } else {
           console.error("Error uploading image to ImgBB:", response.statusText);
+          Swal.close();
           return null;
         }
       } catch (error) {
         console.error("Error uploading image to ImgBB:", error);
+        Swal.close();
         return null;
       }
     } else {
@@ -87,6 +94,7 @@ const UpdateProduct = () => {
     let API = "f31ce5befe994fec2a0257d5c9b59d4a";
     let imgArrayUrl = [];
     if (reqImageArray.length > 0) {
+      Swal.showLoading();
       for (let img of reqImageArray) {
         try {
           const formDataImgBB = new FormData();
@@ -105,16 +113,19 @@ const UpdateProduct = () => {
               "Error uploading image to ImgBB:",
               response.statusText
             );
+            Swal.close();
             return null;
           }
         } catch (error) {
           console.error("Error uploading image to ImgBB:", error);
+          Swal.close();
           return null;
         }
       }
-
+      Swal.close();
       return imgArrayUrl;
     } else {
+      Swal.close();
       return null;
     }
   };
@@ -126,14 +137,15 @@ const UpdateProduct = () => {
     // Handle file input separately
     if (type === "file") {
       // Swal.showLoading();
-      const imageUrl = await handleImageUpload(files[0]);
+      await handleImageUpload(files[0]).then((imageUrl) => {
+        setFormData({
+          ...formData,
+          [name]: imageUrl, // Store the first selected file
+        });
+      });
       //   .then(() =>
       //   Swal.close()
       // );
-      setFormData({
-        ...formData,
-        [name]: imageUrl, // Store the first selected file
-      });
     } else {
       setFormData({
         ...formData,
@@ -144,17 +156,12 @@ const UpdateProduct = () => {
   const handleChangeImageArray = async (e) => {
     const { name, value, type, files } = e.target;
     // Swal.showLoading();
-    const imageArrayUrl = await handleImageArrayUpload(files);
-    //   .then(() =>
-    //   Swal.close()
-    // );
-    // Handle file input separately
-    if (type === "file") {
+    await handleImageArrayUpload(files).then((imageArrayUrl) => {
       setFormData({
         ...formData,
         [name]: imageArrayUrl, // Store the first selected file
       });
-    }
+    });
   };
 
   const handleSubmit = async (e) => {
@@ -193,7 +200,11 @@ const UpdateProduct = () => {
           JSON.stringify(response?.data || null)
         );
         setChanges((current) => current + 1);
-        alert("Product Updated successfully");
+        // alert("Product Updated successfully");
+        Swal.fire({
+          text: "Product Updated successfully",
+          icon: "success",
+        }).then(() => router.push("/rich-cotton-admin-panel/products"));
       } else {
         alert("Product update failed");
       }

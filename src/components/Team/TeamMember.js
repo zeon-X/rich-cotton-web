@@ -47,7 +47,9 @@ const TeamMember = ({ x }) => {
       <div
         style={{
           backgroundImage: `url(${
-            x?.image === "" ? profileImage.src : x?.image
+            x?.image === "" || x?.image === null || x?.image === undefined
+              ? profileImage.src
+              : x?.image
           })`,
           // backgroundImage: `url(${
           //   x?.image === "" ? profileImage : x.image.src

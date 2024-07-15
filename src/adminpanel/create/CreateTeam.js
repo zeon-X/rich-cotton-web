@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import axiosInstance from "@/utilities/axiosInstance";
+import { useRouter } from "next/navigation";
 
 let inputDivCss = "border rounded-lg py-2 px-4 w-full";
 let labelCss = "block uppercase text-gray-700 text-xs font-bold mb-2";
@@ -24,6 +25,7 @@ function CreateTeam() {
     image: null,
     priority: 9999,
   });
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value, type, files } = e.target;
@@ -46,6 +48,7 @@ function CreateTeam() {
     let API = "f31ce5befe994fec2a0257d5c9b59d4a";
     if (formData.image) {
       try {
+        Swal.showLoading();
         const formDataImgBB = new FormData();
         formDataImgBB.append("image", formData.image);
 
@@ -56,16 +59,20 @@ function CreateTeam() {
 
         if (response.status === 200) {
           const imageUrl = response.data.data.url;
+          Swal.close();
           return imageUrl;
         } else {
           console.error("Error uploading image to ImgBB:", response.statusText);
+          Swal.close();
           return null;
         }
       } catch (error) {
         console.error("Error uploading image to ImgBB:", error);
+        Swal.close();
         return null;
       }
     } else {
+      Swal.close();
       return null;
     }
   };
@@ -121,7 +128,11 @@ function CreateTeam() {
             priority: 9999,
           });
 
-          alert("Team created successfully");
+          // alert("Team created successfully");
+          Swal.fire({
+            text: "Team member created successfully",
+            icon: "success",
+          }).then(() => router.push("/rich-cotton-admin-panel/team"));
         } else {
           alert("Team creation failed");
         }

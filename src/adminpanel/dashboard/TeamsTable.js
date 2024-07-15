@@ -4,6 +4,7 @@ import axiosInstance from "@/utilities/axiosInstance";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Swal from "sweetalert2";
+import { profileImage } from "../../../public";
 
 const TeamsTable = ({ data, handleDataChange, changeValue }) => {
   const router = useRouter();
@@ -62,13 +63,14 @@ const TeamsTable = ({ data, handleDataChange, changeValue }) => {
         </thead>
         <tbody>
           {data?.map((item, index) => {
+            // console.log(item);
             return (
               <tr className="border-b border-slate-600" key={index}>
                 <td className="p-2 ">{index + 1}</td>
                 <td className="p-2 ">
                   <div className="flex items-center max-h-[60px] gap-2">
                     <Image
-                      src={item?.image}
+                      src={item?.image ? item?.image : profileImage}
                       height={60}
                       width={60}
                       alt="team image"
