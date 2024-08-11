@@ -12,13 +12,13 @@ const CategoryProductComponent = ({ product }) => {
         //   `/products/${product?.parentCategory}/${product?.productCode}`
         // );
       }}
-      className=" border w-[266px] cursor-pointer shadow hover:shadow-xl hover:scale-105 rounded transition-all ease-in-out bg-[#FEFCFB] "
+      className=" border w-[248px] cursor-pointer shadow hover:shadow-xl hover:scale-105 rounded transition-all ease-in-out bg-[#FEFCFB] "
     >
-      <div className="mx-auto  px-0 flex justify-center items-center h-[266px] w-[266px] ">
+      <div className="mx-auto  px-0 flex justify-center items-center h-[266px] w-[199px] ">
         <Image
           src={product?.img}
           height={266}
-          width={190}
+          width={199}
           alt={product?.product}
           className="mx-auto "
         />

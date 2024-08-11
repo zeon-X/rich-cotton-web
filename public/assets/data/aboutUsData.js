@@ -38,7 +38,7 @@ const FactoryData = [
   {
     section: "",
     content:
-      "Rich Cotton Apparels Ltd Founded by the enterprising Mr. Mamun Raza Jake, has swiftly become a prominent player in the woven garments manufacturing sector. The company, under the visionary leadership of Mr. Jake, focuses on crafting high-quality apparel. ",
+      "Rich Cotton Apparels Ltd Founded by the enterprising Mr. Mamun Reza Jake, has swiftly become a prominent player in the woven garments manufacturing sector. The company, under the visionary leadership of Mr. Jake, focuses on crafting high-quality apparel. ",
     bannerImage: "", // Leave this field empty for now
   },
 

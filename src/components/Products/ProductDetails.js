@@ -33,7 +33,7 @@ const ProductDetails = ({ productDetails }) => {
                         onClick={() => setDp((preState) => x)}
                         src={x}
                         height={100}
-                        width={100}
+                        width={75}
                         alt={x}
                         className="border cursor-pointer"
                       />
@@ -52,7 +52,7 @@ const ProductDetails = ({ productDetails }) => {
             /> */}
 
               <ReactImageZoom
-                width={400}
+                width={300}
                 height={400}
                 zoomWidth={500}
                 img={dp || productDetails?.img}

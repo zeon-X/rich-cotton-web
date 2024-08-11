@@ -35,7 +35,7 @@ const SimilarProductSuggestion = ({ similarProductsData }) => {
   return (
     <Swiper
       modules={[Autoplay]}
-      style={{ width: `${carousolWidth}px` }}
+      style={{ width: `${carousolWidth}px`, marginTop: "74px" }}
       autoplay={{ delay: 1500 }}
       spaceBetween={cellSpacing}
       slidesPerView={slidesToShow}
