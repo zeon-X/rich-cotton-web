@@ -1,8 +1,8 @@
 import axios from "axios";
 
-// const api = "http://localhost:5001/api/v1";
+const api = "http://localhost:5001/api/v1";
 // const api = "https://rich-cotton-server-zeonx.onrender.com/api/v1";
-const api = "https://server.richcotton.net/api/v1";
+// const api = "https://server.richcotton.net/api/v1";
 
 // const token = window.localStorage.getItem("token");
 // console.log(token);

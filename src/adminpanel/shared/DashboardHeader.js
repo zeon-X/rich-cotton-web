@@ -9,14 +9,17 @@ const DashboardHeader = ({ title, nav, btnName }) => {
     <div className="flex justify-between items-center">
       <p className="text-2xl font-semibold">{title ? title : "title"}</p>
 
-      {btnName != "" && (
+      {(btnName !== "" || nav !== null) && (
         <button
           onClick={() => {
             router.push(`${nav ? "" + nav : "/rich-cotton-admin-panel"}`);
-            // localStorage.removeItem("updateCampign");
           }}
           type=""
-          className="bg-secondary btn hover:bg-warning hover:scale-95 transition-all ease-in-out px-6 py-4 text-[16px] "
+          className={
+            btnName !== ""
+              ? "hidden"
+              : "bg-secondary btn hover:bg-warning hover:scale-95 transition-all ease-in-out px-6 py-4 text-[16px] "
+          }
         >
           {btnName}
         </button>
