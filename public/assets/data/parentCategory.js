@@ -2,6 +2,12 @@ import { aw, kw, lw, mw, ww } from "../..";
 
 const parentCategory = [
   {
+    title: "Trending Products",
+    img: mw,
+    category: "Shirts, T-Shirts, Polo Shirts,Tops,Pant,Panjabi",
+    link: "trending-products",
+  },
+  {
     title: "Men's Wear",
     img: mw,
     category: "Shirts, T-Shirts, Polo Shirts",
