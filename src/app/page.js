@@ -7,6 +7,7 @@ import Clients from "@/components/Home/Clients";
 import Team from "@/components/Team/Team";
 import Contact from "@/components/Home/Contact";
 import CustomLoadingScreen from "@/components/Shared/CustomLoadingScreen";
+import PhotoGallerySection from "@/components/Home/PhotoGallerySection";
 
 export default function Home() {
   const [showSplash, setShowSplash] = useState(true);
@@ -31,6 +32,7 @@ export default function Home() {
           <Services />
           <Clients />
           <Team />
+          <PhotoGallerySection />
           <Contact />
         </div>
       )}

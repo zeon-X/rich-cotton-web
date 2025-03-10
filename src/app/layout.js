@@ -14,8 +14,8 @@ import "@/styles/globals.css";
 // });
 
 export const metadata = {
-  title: "Rich Cotton Ltd. - A house of fashion garments soureing",
-  description: "A house of fashion garments soureing",
+  title: "Rich Cotton Ltd. - A house of fashion garments sourcing",
+  description: "A house of fashion garments sourcing",
 };
 
 export default function RootLayout({ children }) {

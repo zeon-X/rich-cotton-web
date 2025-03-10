@@ -8,8 +8,7 @@ import axios from "axios";
 const PhotoGalleryAdmin = () => {
   const [photoGallery, setPhotoGallery] = useState([]); // Holds gallery images
   const [appBasicId, setAppBasicId] = useState(null); // Holds AppBasic document ID
-  const [selectedFiles, setSelectedFiles] = useState(null); // Stores selected images
-  const [caption, setCaption] = useState(""); // Stores selected images
+  const [selectedFiles, setSelectedFiles] = useState([]); // Stores selected images
   const fileInputRef = useRef(null); // Reference to file input
 
   useEffect(() => {
@@ -32,14 +31,11 @@ const PhotoGalleryAdmin = () => {
   };
 
   const handleFileChange = (e) => {
-    setSelectedFiles(e.target.files[0]);
-  };
-  const handleCaption = (e) => {
-    setCaption(e.target.value);
+    setSelectedFiles(Array.from(e.target.files));
   };
 
   const handleImageUpload = async () => {
-    if (selectedFiles === null) {
+    if (selectedFiles.length === 0) {
       Swal.fire(
         "No Image Selected",
         "Please select images to upload",
@@ -52,30 +48,26 @@ const PhotoGalleryAdmin = () => {
     let uploadedImageUrls = [];
 
     try {
-      const formData = new FormData();
-      formData.append("image", selectedFiles);
+      for (const file of selectedFiles) {
+        const formData = new FormData();
+        formData.append("image", file);
 
-      const response = await axios.post(
-        `https://api.imgbb.com/1/upload?key=f31ce5befe994fec2a0257d5c9b59d4a`,
-        formData
-      );
+        const response = await axios.post(
+          `https://api.imgbb.com/1/upload?key=f31ce5befe994fec2a0257d5c9b59d4a`,
+          formData
+        );
 
-      if (response.status === 200) {
-        uploadedImageUrls.push({
-          url: response.data.data.url,
-          caption: caption,
-        });
+        if (response.status === 200) {
+          uploadedImageUrls.push(response.data.data.url);
+        }
       }
 
       const updatedGallery = [...photoGallery, ...uploadedImageUrls];
-      // console.log(updatedGallery);
-
       await updateGallery(updatedGallery);
 
       setSelectedFiles([]); // Clear selected files
       if (fileInputRef.current) {
         fileInputRef.current.value = ""; // Clear input field
-        setCaption((prev) => "");
       }
 
       Swal.fire("Success", "Images uploaded successfully", "success");
@@ -128,8 +120,6 @@ const PhotoGalleryAdmin = () => {
         photoGallery={photoGallery}
         handleFileChange={handleFileChange}
         handleImageUpload={handleImageUpload}
-        caption={caption}
-        handleCaption={handleCaption}
         handleRemoveImage={handleRemoveImage}
         fileInputRef={fileInputRef}
       />
@@ -142,8 +132,6 @@ export default PhotoGalleryAdmin;
 const PhotoGallery = ({
   photoGallery,
   handleFileChange,
-  caption,
-  handleCaption,
   handleImageUpload,
   handleRemoveImage,
   fileInputRef,
@@ -152,26 +140,15 @@ const PhotoGallery = ({
     <div className="mt-6">
       <div className="mb-12">
         <p className="underline">Image Upload </p>
-        <div className="flex flex-col gap-4 items-start mb-4">
-          <input
-            ref={fileInputRef}
-            type="file"
-            multiple={false}
-            onChange={handleFileChange}
-          />
-
-          <textarea
-            cols="30"
-            rows="10"
-            className="border"
-            onChange={handleCaption}
-            value={caption}
-          />
-        </div>
-
+        <input
+          ref={fileInputRef}
+          type="file"
+          multiple
+          onChange={handleFileChange}
+        />
         <button
           onClick={handleImageUpload}
-          className="bg-blue-500 text-white p-2 rounded-md mt-2"
+          className="bg-blue-500 text-white p-2 rounded-md ml-2"
         >
           Upload
         </button>
@@ -181,15 +158,7 @@ const PhotoGallery = ({
       <div className="grid grid-cols-3 gap-4 mt-4">
         {photoGallery.map((img, index) => (
           <div key={index} className="relative">
-            <div>
-              <img
-                src={img?.url}
-                alt="Gallery"
-                className="w-full h-auto rounded-md"
-              />
-              <p className="mt-2 text-[12px]">Caption: {img?.caption}</p>
-            </div>
-
+            <img src={img} alt="Gallery" className="w-full h-auto rounded-md" />
             <button
               className="absolute top-0 right-0 bg-red-500 text-white p-1 rounded-full"
               onClick={() => handleRemoveImage(img)}
