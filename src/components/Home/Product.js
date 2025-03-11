@@ -27,6 +27,7 @@ const Product = () => {
             {parentCategory?.map((x, index) => {
               return (
                 <div
+                  key={index}
                   onClick={() => {
                     router.push(`/products/${x?.link}`);
                   }}

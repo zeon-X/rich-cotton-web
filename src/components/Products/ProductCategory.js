@@ -41,6 +41,7 @@ const ProductCategory = ({ productsData, productsTitle, parentCategory }) => {
         {uniqueCategories?.map((catName, index) => {
           return (
             <button
+              key={index}
               onClick={() => handleCatSelection(catName)}
               className="px-4 py-2 hover:bg-mgreen hover:text-white cursor-pointer border rounded text-xs"
             >

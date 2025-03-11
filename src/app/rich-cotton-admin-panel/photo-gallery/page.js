@@ -163,9 +163,10 @@ const PhotoGallery = ({
           <textarea
             cols="30"
             rows="10"
-            className="border"
+            className="border p-4"
             onChange={handleCaption}
             value={caption}
+            placeholder="Write a Caption"
           />
         </div>
 
