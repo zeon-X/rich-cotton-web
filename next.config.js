@@ -10,6 +10,14 @@ const nextConfig = {
         protocol: "https",
         hostname: "i.ibb.co.com",
       },
+      {
+        protocol: "https",
+        hostname: "richcotton.net",
+      },
+      {
+        protocol: "https",
+        hostname: "server.richcotton.net",
+      },
     ],
   },
 };
