@@ -107,13 +107,13 @@ const PhotoCard = ({
         height: imageWidth,
         width: isEvenIndex ? imageWidth * (4 / 3) : imageWidth,
       }}
-      className="bg-cover bg-center cursor-pointer"
+      className="bg-cover bg-center cursor-pointer flex justify-start items-end"
       onClick={() => {
         setModalOpen(true);
         setCurrentPhotoInView(index);
       }}
     >
-      <div className="bg-gradient-to-tr from-[#171717a1] via-transparent to-transparent h-full w-full flex justify-start items-end">
+      <div className=" bg-[#0000005b] w-full ">
         <p className="p-4 text-[12px] text-white">{img?.caption}</p>
       </div>
     </div>

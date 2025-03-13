@@ -69,6 +69,9 @@ const layout = ({ children }) => {
                 Photo Gallery
               </Link>
             </li>
+            <li className="mb-2">
+              <Link href="/rich-cotton-admin-panel/settings">Settings</Link>
+            </li>
           </ul>
         </div>
       </div>

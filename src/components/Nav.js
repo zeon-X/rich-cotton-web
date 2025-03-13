@@ -129,6 +129,9 @@ const Nav = () => {
                     Factory
                   </Link>
                 </li>
+                <li>
+                  <Link href="/company-profile">Company Profile</Link>
+                </li>
               </ul>
             </div>
           </nav>
