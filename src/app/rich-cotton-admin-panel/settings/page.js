@@ -83,7 +83,7 @@ const SettingsPage = () => {
           onClick={handleUpload}
           className="ml-4 px-4 py-2 bg-blue-600 text-white rounded"
         >
-          Upload PDF
+          Update PDF
         </button>
       </div>
 
@@ -91,17 +91,14 @@ const SettingsPage = () => {
       {pdfUrl ? (
         <div className="mt-4">
           <h3 className="text-md font-semibold">Latest Uploaded PDF</h3>
-          <a
-            href={pdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500"
-          >
-            View PDF
-          </a>
-          <a href={pdfUrl} download className="ml-4 text-green-500">
+          <iframe
+            src={pdfUrl}
+            className="w-full min-h-[600px] border"
+            title="Company Profile PDF"
+          ></iframe>
+          {/* <a href={pdfUrl} download className="ml-4 text-green-500">
             Download PDF
-          </a>
+          </a> */}
         </div>
       ) : (
         <p className="text-gray-500">No PDF uploaded yet.</p>

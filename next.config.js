@@ -18,6 +18,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "server.richcotton.net",
       },
+      {
+        protocol: "https",
+        hostname: "borderflash.com",
+      },
     ],
   },
 };
